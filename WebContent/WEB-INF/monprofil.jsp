@@ -51,12 +51,11 @@
 			<div class="enLigne col ">
 				<label class="labelProfil" for="ville">Ville : </label> <input class="form-control inputEnlectureSeul" type="text" placeholder="${utilisateur.ville}" readonly name="ville" id="ville">
 			</div>
-			<div class="divBtnModifier">
+
+					<div class="divBtnModifier">
 				<button class="btn btn-lg btn-primary btnModiferProfil ">Modifier</button>
 			</div>
-
 		</div>
-
 	</div>
 
 

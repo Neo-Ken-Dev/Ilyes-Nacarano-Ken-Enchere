@@ -33,9 +33,7 @@
 			<%@ include file="logoTop.jsp"%>
 		</div>
 
-		<form method="post"
-			action="${pageContext.request.contextPath}/connexion"
-			class="formLogin ">
+		<form method="post" action="${pageContext.request.contextPath}/connexion" class="formLogin ">
 
 			<c:if test="${!empty messageErreur }">
 				<div class="alert alert-danger" role="alert">
@@ -72,14 +70,12 @@
 		<button class="btn  btn-primary btnConnexion" type="submit">Connexion</button>
 
 		<div class="checkBoxDiv">
-			<label class="labelCheckBox"> <input type="checkbox" name="seSouvenirDeMoi"
-				id="seSouvenirDeMoi">Se souvenir de moi
+			<label class="labelCheckBox"> <input type="checkbox" name="seSouvenirDeMoi" id="seSouvenirDeMoi">Se souvenir de moi
 			</label> <a href="">Mot de passe oublié</a>
 		</div>
 	</div>
 	<div>
-		<button class="btn btn-lg btn-primary btnCreerCompte ">Créer
-			un compte</button>
+		<a href="${pageContext.request.contextPath}/inscription" class="btn btn-primary btn-lg btnCreerCompte" role="button" >Créer un compte</a>
 	</div>
 	</form>
 	</div>
