@@ -13,8 +13,11 @@ body {
 	background-color: #fcfcfc;
 }
 
-/*******Style Page Connexion et page profil*******/
+/*********end Style Global*************/
 
+
+
+/*******Style Page Connexion et page profil*******/
 
 
 .container-fluid {
@@ -118,6 +121,13 @@ body {
         border: 1px solid #ced4da;
         border-radius: .25rem; 
 }
+
+
+/*********end Style Style Page Connexion et page profil*************/
+
+
+
+
 
 /*********style Formulaire Inscription************/
 
@@ -246,3 +256,35 @@ body {
 }
 
 /*********end style Formulaire Inscription*************/
+
+
+
+/*********style Page mon profil************/
+
+.btnModiferProfil {
+	margin: 50px auto;
+	  width :30%;
+}
+
+.divBtnModifier {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
