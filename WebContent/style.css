@@ -1,0 +1,244 @@
+/*******Style Global*******/
+
+body {
+	height: 100%;
+}
+
+.container-fluid {
+	width: 450px;
+}
+
+.containerProfil {
+    width: 600px ;
+    }
+
+body {
+	/*display: flex;*/
+	align-items: center;
+	justify-content: center;
+	padding-top: 80px;
+	padding-bottom: 80px;
+	background-color: #fcfcfc;
+}
+
+.form-group {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.connexionDiv {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.enLigne {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    
+}
+
+.enLigne label {
+	display: flex;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	align-items: center;
+    
+}
+
+.checkBoxDiv {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 0px;
+}
+
+.checkBoxDiv input {
+    margin: 10px 10px 10px 0px
+}
+
+.checkBoxDiv label {
+    margin: 0px 20px 0px 3px
+}
+
+
+
+.inline {
+	display: inline-flex;
+}
+
+.btnCreerCompte {
+	margin-top: 50px;
+	width: 100%;
+}
+
+.btnConnexion {
+	width: 50%;
+	font-size: 18px;
+	padding: 10px 0px;
+}
+
+#identifiant {
+	width: 250px;
+}
+
+#motDePasse {
+	width: 250px;
+}
+
+.btn {
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
+}
+
+.logo {
+	margin-bottom: 100px;
+	
+}
+
+.inputEnlectureSeul {
+     
+        width: 60%;
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: rgb(238, 238, 238);
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+  
+}
+
+/*********style Formulaire Inscription************/
+
+#inscription .container .heading h2{
+	text-align: center;
+	padding-bottom: 40px;
+}
+
+#inscription-form
+{
+    font-size: 20px;
+    margin-left: -25px;
+}
+
+#inscription-form .col-md-6{
+	height: 60px;
+}
+
+.inscription-control
+{
+    height: 34px;
+    font-size: 18px;
+    width: 250px;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#inscription label{
+	width: 150px;
+}
+
+#inscriptionRow .passwordPart{
+	margin-top: 10px;
+}
+
+.buttonInscription {
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+	width: 200px;
+    font-size: 18px;
+    padding: 10px 0px;
+}
+
+.btnCreer {
+	text-align: end;
+    padding-right: 30px;
+}
+
+.btnAnnuler {
+	padding-left: 80px;
+}
+
+.infoUtile{
+	margin:5px;
+	font-size: 18px;
+}
+
+.comments
+{
+    font-style: italic;
+    font-size: 15px;
+    height: 25px;
+    color: red;
+}
+
+.glyphicon-ok
+{
+    margin-right: 15px;
+
+}
+.btn-success{
+	margin-bottom: 15px;
+}
+
+.sucessCreation {
+	border: 5px inset #16910A;
+	border-radius: 0px 40px 0px 40px;
+	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.52);
+	margin-bottom: 15px;
+}
+
+/**********media queries ****************/
+
+@media (max-width: 1200px) {
+	
+	#inscription-form {
+    	margin: auto;
+	}	 
+	
+}	
+
+@media (max-width: 990px) {
+	
+	#inscription-form {
+   	 margin: auto;
+   	 text-align: center;
+	}	
+	
+	.divBtn {
+	display: flex;
+    justify-content: space-around;
+	}
+	
+	.buttonInscription{
+	width: 150px;
+	}
+	
+	.btnCreer {
+	text-align: center;
+	padding: 0px;
+	wi
+	}
+
+	.btnAnnuler {	
+	padding: 0px;
+	}	
+}	
+
+@media (max-width: 436px) {
+	
+	#inscription label{
+    display: block;
+    margin: 10px auto 5px;
+	}
+		
+}
+
+/*********end style Formulaire Inscription*************/
