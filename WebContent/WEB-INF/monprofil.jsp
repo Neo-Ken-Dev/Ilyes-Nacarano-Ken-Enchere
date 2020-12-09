@@ -1,4 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
@@ -10,10 +11,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page Profil</title>
 <!-- Bootstrap -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+	crossorigin="anonymous">
 <!--Google Font Family-->
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+	rel="stylesheet">
 <!--Custom Styles CSS-->
 <link rel="stylesheet" href="../style.css">
 </head>
@@ -25,11 +31,9 @@
 			<div class="logo">
 				<%@ include file="logoTop.jsp"%>
 			</div>
-
 			<div class="enLigne col ">
 				<label class="labelProfil" for="nom">Pseudo : </label> <input class="form-control inputEnlectureSeul" type="text" placeholder="${utilisateur.pseudo}" readonly name="nom" id="nom">
 			</div>
-
 			<div class="enLigne col ">
 				<label class="labelProfil" for="nom">Nom : </label> <input class="form-control inputEnlectureSeul" type="text" placeholder="${utilisateur.nom}" readonly name="nom" id="nom">
 			</div>
@@ -51,9 +55,8 @@
 			<div class="enLigne col ">
 				<label class="labelProfil" for="ville">Ville : </label> <input class="form-control inputEnlectureSeul" type="text" placeholder="${utilisateur.ville}" readonly name="ville" id="ville">
 			</div>
-
-					<div class="divBtnModifier">
-				<button class="btn btn-lg btn-primary btnModiferProfil ">Modifier</button>
+			<div class="divBtnModifier">
+				<a href="${pageContext.request.contextPath}/modifie-profil"	class="btn btn-lg btn-primary btnModiferProfil" role="button">Modifier</a>
 			</div>
 		</div>
 	</div>
@@ -61,17 +64,10 @@
 
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-		integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-		crossorigin="anonymous">
-		
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">		
 	</script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-		integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-		crossorigin="anonymous">
-		
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">		
 	</script>
 </body>
 
