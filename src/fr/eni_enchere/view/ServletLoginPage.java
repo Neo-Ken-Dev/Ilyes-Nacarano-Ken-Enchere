@@ -16,7 +16,7 @@ import fr.eni_enchere.bo.Utilisateurs;
 /**
  * Servlet implementation class ServletLoginPage
  */
-@WebServlet("/ServletLoginPage")
+@WebServlet("/connexion")
 public class ServletLoginPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        

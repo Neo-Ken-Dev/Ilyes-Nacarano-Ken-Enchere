@@ -5,7 +5,7 @@
 <%@ taglib prefix="fmt" uri ="http://java.sun.com/jsp/jstl/fmt"%>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
 <meta charset="UTF-8">
@@ -34,7 +34,7 @@
 		</div>
 
 		<form method="post"
-			action="${pageContext.request.contextPath}/ServletLoginPage"
+			action="${pageContext.request.contextPath}/connexion"
 			class="formLogin ">
 
 			<c:if test="${!empty messageErreur }">

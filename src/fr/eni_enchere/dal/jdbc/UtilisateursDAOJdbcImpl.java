@@ -20,6 +20,7 @@ public class UtilisateursDAOJdbcImpl implements UtilisateursDAO {
 
 	private static final String INSERT_USER = "INSERT INTO UTILISATEURS (pseudo,nom,prenom,email,telephone,rue,code_postal,ville,mot_de_passe,credit,administrateur) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 	private static final String CHECK_LOGIN = "SELECT * FROM UTILISATEURS WHERE (pseudo = ? AND  mot_de_passe = ?) ";
+	private static final String SELECT_BY_ID = "SELECT * FROM UTILISATEURS WHERE no_utilisateur = ?";
 	
 	private void loadDatabase() {		
 		try {
@@ -86,6 +87,42 @@ public class UtilisateursDAOJdbcImpl implements UtilisateursDAO {
 		}
 		
 		return 	utilisateur;
+	}
+	
+	@Override
+	public Utilisateurs selectionnerUtilisateurParId(int id) {
+		
+		loadDatabase();
+		Utilisateurs utilisateur = null;
+		
+		try {
+			PreparedStatement pstmt = connection.prepareStatement(SELECT_BY_ID);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				utilisateur = new Utilisateurs();
+				utilisateur.setNoUtilisateur(id);
+				utilisateur.setPseudo(rs.getString("pseudo"));
+				utilisateur.setNom(rs.getString("nom"));
+				utilisateur.setPrenom(rs.getString("prenom"));
+				utilisateur.setEmail(rs.getString("email"));
+				utilisateur.setTelephone(rs.getString("telephone"));
+				utilisateur.setRue(rs.getString("rue"));
+				utilisateur.setCode_postal(rs.getString("code_postal"));
+				utilisateur.setVille(rs.getString("ville"));
+				utilisateur.setMotDePasse(rs.getString("mot_de_passe"));
+				utilisateur.setCredit(rs.getInt("credit"));
+				utilisateur.setAdministrateur(rs.getInt("administrateur"));
+			}			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return utilisateur;
+		
+		
+		
 	}
 	
 

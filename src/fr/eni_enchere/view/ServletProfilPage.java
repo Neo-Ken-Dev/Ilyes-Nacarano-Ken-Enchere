@@ -9,10 +9,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import fr.eni_enchere.bll.UtilisateursManager;
+import fr.eni_enchere.bo.Utilisateurs;
+
 /**
  * Servlet implementation class ServletProfilPage
  */
-@WebServlet("/ServletProfilPage")
+@WebServlet("/user/profil")
 public class ServletProfilPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -23,6 +26,14 @@ public class ServletProfilPage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			
+UtilisateursManager utilisateursManager = new UtilisateursManager();
+		
+		int id = Integer.parseInt(request.getParameter("id"));
+		Utilisateurs utilisateur = UtilisateursManager.selectionnerUtilisateurParId(id);
+		
+		
+		request.setAttribute("utilisateur", utilisateur);
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/profil.jsp");
 		rd.forward(request, response);
 		
