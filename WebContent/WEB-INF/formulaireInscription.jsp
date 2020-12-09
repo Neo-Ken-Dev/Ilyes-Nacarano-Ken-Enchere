@@ -102,7 +102,7 @@
                             
                             <div class="col-md-6 passwordPart">
                                 <label for="password">Mot de passe: *</label>
-                                <input id="password" type="password" name="password" class="inscription-control" placeholder="Votre mot de passe" value="${param.password}">
+                                <input id="password" type="password" name="password" class="inscription-control" placeholder="Votre mot de passe" >
                                 <c:if test="${!empty messageErreurPassword }">
                                 	<p class="comments">${messageErreurPassword }</p>                               
                                 </c:if>
@@ -110,7 +110,7 @@
                             
                             <div class="col-md-6 passwordPart">
                                 <label for="confirmation">Confirmation: *</label>
-                                <input id="confirmation" type="password" name="confirmation" class="inscription-control" placeholder="" value="${param.pseudo}">
+                                <input id="confirmation" type="password" name="confirmation" class="inscription-control" >
                                 <c:if test="${!empty messageErreurConfirmation }">
                                 	<p class="comments">${messageErreurConfirmation }</p>                               
                                 </c:if>

@@ -1,20 +1,15 @@
 package fr.eni_enchere.view;
 
 import java.io.IOException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
 import fr.eni_enchere.bll.UtilisateursManager;
 import fr.eni_enchere.bll.ValidationForm;
 import fr.eni_enchere.bo.Utilisateurs;
-
-
-
 /**
  * Servlet pour le formulaire d'inscription.
 
@@ -26,7 +21,7 @@ public class ServletFormulaireInscription extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher("/WEB-INF/formulaireInscription.jsp").forward(request, response);;
+		this.getServletContext().getRequestDispatcher("/WEB-INF/formulaireInscription.jsp").forward(request, response);
 	}
 
 	/**
@@ -52,7 +47,6 @@ public class ServletFormulaireInscription extends HttpServlet {
 			String messageErreur = "* Vous avez du faire une erreur dans votre email.";
 			request.setAttribute("messageErreurEmail", messageErreur);
 			isFormValid= false;
-			System.out.println("erreur d'email");
 		}
 		
 		//verifier le telephone
@@ -60,7 +54,6 @@ public class ServletFormulaireInscription extends HttpServlet {
 			String messageErreur = "* Vous avez du faire une erreur dans votre numéro de téléphone.";
 			request.setAttribute("messageErreurPhone", messageErreur);
 			isFormValid= false;
-			System.out.println("erreur téléphone");
 		}
 		
 		//verifier le code postal
@@ -68,7 +61,6 @@ public class ServletFormulaireInscription extends HttpServlet {
 			String messageErreur = "* Vous avez du faire une erreur dans votre code postal.";
 			request.setAttribute("messageErreurZipcode", messageErreur);
 			isFormValid= false;
-			System.out.println("erreur Zipcode");
 		}
 		
 		//verifier le mot de passe
@@ -122,7 +114,6 @@ public class ServletFormulaireInscription extends HttpServlet {
 		
 		//renvoyer la réponse sur la page de formulaire
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/formulaireInscription.jsp");
-		rd.forward(request, response);
-			
+		rd.forward(request, response);		
 	}
 }
