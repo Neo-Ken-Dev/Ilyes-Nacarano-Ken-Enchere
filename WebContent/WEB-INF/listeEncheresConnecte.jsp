@@ -15,7 +15,7 @@
     <!--Pour icone-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <!--Custom Styles CSS-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
 </head>
 <body>
 <section id="enchereConnecte">
@@ -82,7 +82,7 @@
                     <div class="col divAchats">
                         <div class="radio">
                             <label>
-                                <input type="radio" value="">
+                                <input type="radio" value="achat" id="radioButtonAchat" name="radioButtonAchat">
                                 <strong>Achats</strong>
                             </label>
                         </div>
@@ -110,10 +110,12 @@
                     <div class="col divMesVentes">
                         <div class="radio">
                             <label>
-                                <input type="radio" value="">
+                                <input type="radio"  value="ventes" id="radioButtonVentes" name="radioButtonVentes">
                                 <strong>Mes ventes</strong>
                             </label>
                         </div>
+                       
+
                         <div class="divCheckMesVentes">
                             <div class="checkbox">
                                 <label>
