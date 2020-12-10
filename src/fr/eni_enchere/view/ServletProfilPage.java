@@ -18,25 +18,13 @@ import fr.eni_enchere.bo.Utilisateurs;
 @WebServlet("/user/profil")
 public class ServletProfilPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-<<<<<<< HEAD
-=======
-
-
->>>>>>> branch 'main' of https://github.com/Neo-Ken-Dev/Ilyes-Nacarano-Ken-Enchere.git
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD
 			
 		UtilisateursManager utilisateursManager = new UtilisateursManager();
-		
-=======
 
-		UtilisateursManager utilisateursManager = new UtilisateursManager();
-
->>>>>>> branch 'main' of https://github.com/Neo-Ken-Dev/Ilyes-Nacarano-Ken-Enchere.git
 		int id = Integer.parseInt(request.getParameter("id"));
 		Utilisateurs utilisateur = UtilisateursManager.selectionnerUtilisateurParId(id);
 
@@ -47,11 +35,6 @@ public class ServletProfilPage extends HttpServlet {
 		rd.forward(request, response);
 
 	}
-
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'main' of https://github.com/Neo-Ken-Dev/Ilyes-Nacarano-Ken-Enchere.git
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
