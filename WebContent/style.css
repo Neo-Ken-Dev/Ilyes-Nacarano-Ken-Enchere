@@ -1,34 +1,27 @@
 /*******Style Global*******/
 
-body {
+/*body {
 	height: 100%;
-}
-
+}*/
 body {
-	/*display: flex;*/
+	background-color: #fcfcfc;
+	/*display: flex;
 	align-items: center;
 	justify-content: center;
 	padding-top: 80px;
-	padding-bottom: 80px;
-	background-color: #fcfcfc;
+	padding-bottom: 80px;*/
 }
 
 /*********end Style Global*************/
 
-
-
 /*******Style Page Connexion et page profil*******/
-
-
 #monprofil .container-fluid {
 	width: 450px;
 }
 
 #monprofil .containerProfil {
-    width: 600px ;
-    }
-
-
+	width: 600px;
+}
 
 #monprofil .form-group {
 	display: flex;
@@ -37,19 +30,17 @@ body {
 }
 
 #monprofil .connexionDiv {
-    margin-top: 30px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 
 #monprofil .enLigne {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-    
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
 }
 
 #monprofil .enLigne label {
@@ -57,23 +48,21 @@ body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
 	align-items: center;
-    
 }
 
 #monprofil .checkBoxDiv {
-    display: inline-flex;
-    flex-direction: column;
-    padding: 0px;
+	display: inline-flex;
+	flex-direction: column;
+	padding: 0px;
 }
 
 #monprofil .checkBoxDiv input {
-    margin: 10px 10px 10px 0px
+	margin: 10px 10px 10px 0px
 }
 
 #monprofil .checkBoxDiv label {
-    margin: 0px 20px 0px 3px
+	margin: 0px 20px 0px 3px
 }
-
 
 #monprofil .inline {
 	display: inline-flex;
@@ -104,231 +93,250 @@ body {
 
 #monprofil .logo {
 	margin-bottom: 100px;
-	
 }
 
 #monprofil .inputEnlectureSeul {
-     
-        width: 60%;
-        height: calc(1.5em + .75rem + 2px);
-        padding: .375rem .75rem;
-        font-size: 14px;
-        font-weight: 400;
-        line-height: 1.5;
-        color: #495057;
-        background-color: rgb(238, 238, 238);
-        background-clip: padding-box;
-        border: 1px solid #ced4da;
-        border-radius: .25rem; 
+	width: 60%;
+	height: calc(1.5em + .75rem + 2px);
+	padding: .375rem .75rem;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	background-color: rgb(238, 238, 238);
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
 }
 
-
 /*********end Style Style Page Connexion et page profil*************/
-
-
-
-
 
 /*********style Page accueil************/
 #page_accueil * {
 	font-family: 'Chilanka';
 }
 
-#page_accueil .section {
-	border: 1px solid red;
+#page_accueil .partie_recherche {
+	padding: 0px 4%;
 }
 
-#page_accueil h4 {         
-	font-weight: bolder;      /* ??? */
+#page_accueil h1 {
+	font-weight: bold; 
+	text-align: center;
+	margin-left: -200px;
+	font-size: 25px;
+}
+
+#page_accueil h2 {
+	font-weight: bold; 
+}
+
+#page_accueil img {
+	max-height: 131px;
+}
+
+.barre_recherche {
+    width: 450px;
+    height: 35px;
+    border-radius: 11px;
+}
+
+.liste_categories {
+	margin-top: 20px;
+}
+
+#categories {
+	margin-left: 35px;
+	height: 25px;
+	width: 350px;
+}
+
+.bouton_rechercher_accueil {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	padding-left: 150px;
+	padding-right: 150px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+}
+
+.resultats_encheres {
+	margin-top: 100px;
+}
+
+#page_accueil .enchere {
+	width: 500px;
+	border: 3px solid;
+	margin: 0px 4%;
+	padding: 15px;
+}
+
+/*#page_accueil .row {
+	margin: 0px;
 }
 
 #page_accueil .liens {
 	text-align: right;
-	padding-top:10px;
-	padding-bottom:10px;
-	padding-right:100px;
-	padding-left:100px;
-}
-
-#page_accueil h2 {     
-	text-align: center;
-	font-weight: bolder;     /* ??? */
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-right: 100px;
+	padding-left: 100px;
 }
 
 #page_accueil .formulaire {
+	
 }
 
 #page_accueil p.formulaire {
-	font-size:20px;
+	font-size: 20px;
 	font-weight: bold;
-}
+}*/
 
-#page_accueil .encheres {
-	border: 1px solid;
-	padding: 15px;
-}
+
 /*********fin du style Page accueil************/
 
-
 /*********style Formulaire Inscription************/
-
-#inscription .container .heading h2{
+#inscription .container .heading h2 {
 	text-align: center;
 	padding-bottom: 40px;
 }
 
-#inscription-form
-{
-    font-size: 20px;
-    margin-left: -25px;
+#inscription-form {
+	font-size: 20px;
+	margin-left: -25px;
 }
 
-#inscription-form .col-md-6{
+#inscription-form .col-md-6 {
 	height: 60px;
 }
 
-.inscription-control
-{
-    height: 34px;
-    font-size: 18px;
-    width: 250px;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.inscription-control {
+	height: 34px;
+	font-size: 18px;
+	width: 250px;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
 }
 
-#inscription label{
+#inscription label {
 	width: 150px;
 }
 
-#inscriptionRow .passwordPart{
+#inscriptionRow .passwordPart {
 	margin-top: 10px;
 }
 
 .buttonInscription {
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 	width: 200px;
-    font-size: 18px;
-    padding: 10px 0px;
+	font-size: 18px;
+	padding: 10px 0px;
 }
 
 .btnCreer {
 	text-align: end;
-    padding-right: 30px;
+	padding-right: 30px;
 }
 
 .btnAnnuler {
 	padding-left: 80px;
 }
 
-.infoUtile{
-	margin:5px;
+.infoUtile {
+	margin: 5px;
 	font-size: 18px;
 }
 
-.comments
-{
-    font-style: italic;
-    font-size: 15px;
-    height: 25px;
-    color: red;
+.comments {
+	font-style: italic;
+	font-size: 15px;
+	height: 25px;
+	color: red;
 }
 
-.glyphicon-ok
-{
-    margin-right: 15px;
-
+.glyphicon-ok {
+	margin-right: 15px;
 }
-.btn-success{
+
+.btn-success {
 	margin-bottom: 15px;
 }
 
 .sucessCreation {
 	border: 5px inset #16910A;
 	border-radius: 0px 40px 0px 40px;
-	box-shadow: 5px 5px 15px 0px rgba(0,0,0,0.52);
+	box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.52);
 	margin-bottom: 15px;
 }
 
 /**********media queries ****************/
-
-@media (max-width: 1200px) {
-	
+@media ( max-width : 1200px) {
 	#inscription-form {
-    	margin: auto;
-	}	 
-	
-}	
+		margin: auto;
+	}
+}
 
-@media (max-width: 990px) {
-	
+@media ( max-width : 990px) {
 	#inscription-form {
-   	 margin: auto;
-   	 text-align: center;
-	}	
-	
+		margin: auto;
+		text-align: center;
+	}
 	.divBtn {
-	display: flex;
-    justify-content: space-around;
+		display: flex;
+		justify-content: space-around;
 	}
-	
-	.buttonInscription{
-	width: 150px;
+	.buttonInscription {
+		width: 150px;
 	}
-	
 	.btnCreer {
-	text-align: center;
-	padding: 0px;
+		text-align: center;
+		padding: 0px;
 	}
-
-	.btnAnnuler {	
-	padding: 0px;
-	}	
-}	
-
-@media (max-width: 436px) {
-	
-	#inscription label{
-    display: block;
-    margin: 10px auto 5px;
+	.btnAnnuler {
+		padding: 0px;
 	}
-		
+}
+
+@media ( max-width : 436px) {
+	#inscription label {
+		display: block;
+		margin: 10px auto 5px;
+	}
 }
 
 /*********end style Formulaire Inscription*************/
-<<<<<<< HEAD
-/*********style Formulaire Modification de profil************/
-.creditPart h2{
+<<<<<<<
+HEAD /*********style Formulaire Modification de profil************/ 
+.creditPart h2 {
 	font-size: 18px;
 	font-weight: 700;
 }
 
-.creditPart h2 span{
+.creditPart h2 span {
 	margin-left: 55px;
 }
 
 #modification-form {
-    font-size: 20px;
+	font-size: 20px;
 }
 
-#modificationProfil .col-md-6{
+#modificationProfil .col-md-6 {
 	height: 60px;
 	width: 550px;
 }
 
-#modificationProfil .col-md-12{
+#modificationProfil .col-md-12 {
 	height: 60px;
 }
 
-#modificationProfil .container .heading h2{
+#modificationProfil .container .heading h2 {
 	text-align: center;
 	padding-bottom: 40px;
 }
 
-#modificationProfil label{
+#modificationProfil label {
 	width: 250px;
 }
-
 
 #modificationProfil .container {
 	width: 1500px;
@@ -342,85 +350,67 @@ body {
 	margin-left: -150px;
 }
 /**********media queries ****************/
-
-@media (max-width: 1200px) {
-	
+@media ( max-width : 1200px) {
 	#modificationProfil {
-   	 margin: auto;
-   	 text-align: inherit;
-	}	
-	
+		margin: auto;
+		text-align: inherit;
+	}
 	#modification-form {
-    margin-left: 200px;
+		margin-left: 200px;
 	}
-	
 	.divBtn {
-	display: flex;
-    justify-content: space-around;
+		display: flex;
+		justify-content: space-around;
 	}
-	
-	.buttonInscription{
-	width: 200px;
+	.buttonInscription {
+		width: 200px;
 	}
-	
 	.btnEnregistrer {
-	width: 100px;
+		width: 100px;
 	}
-	
 	.btnCreer {
-	text-align: center;
-	padding: 0px;
+		text-align: center;
+		padding: 0px;
 	}
-
-	.btnAnnuler {	
-	padding: 0px;
+	.btnAnnuler {
+		padding: 0px;
 	}
-	
 	#modificationProfil .container {
-	width: 900px;
-	}	 
-	
-}	
-	
-@media (max-width: 436px) {
-	
-	#modificationProfil label{
-    display: block;
-    margin: 10px auto 5px;
+		width: 900px;
 	}
-		
 }
+
+@media ( max-width : 436px) {
+	#modificationProfil label {
+		display: block;
+		margin: 10px auto 5px;
+	}
+}
+
 =======
 
-
-
 /*********style Page mon profil************/
-
 .btnModiferProfil {
 	margin: 50px auto;
-	  width :30%;
+	width: 30%;
 }
 
 .divBtnModifier {
-  display: flex;
-  justify-content: center;
+	display: flex;
+	justify-content: center;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
->>>>>>> branch 'main' of https://github.com/Neo-Ken-Dev/Ilyes-Nacarano-Ken-Enchere.git
+>>>>>>>
+branch
+ 
+'
+main
+'
+ 
+of
+ 
+https
+:
+//github
+.com
+/Neo-Ken-Dev/Ilyes-Nacarano-Ken-Enchere
+.git
