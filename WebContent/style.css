@@ -116,6 +116,47 @@ body {
 }
 
 /*********style Formulaire Inscription************/
+#page_accueil * {
+	font-family: 'Chilanka';
+}
+
+#page_accueil .section {
+	border: 1px solid red;
+}
+
+#page_accueil h4 {         
+	font-weight: bolder;      /* ??? */
+}
+
+#page_accueil .liens {
+	text-align: right;
+	padding-top:10px;
+	padding-bottom:10px;
+	padding-right:100px;
+	padding-left:100px;
+}
+
+#page_accueil h2 {     
+	text-align: center;
+	font-weight: bolder;     /* ??? */
+}
+
+#page_accueil .formulaire {
+}
+
+#page_accueil p.formulaire {
+	font-size:20px;
+	font-weight: bold;
+}
+
+#page_accueil .encheres {
+	border: 1px solid;
+	padding: 15px;
+}
+/*********fin du style Formulaire Inscription************/
+
+
+/*********style Formulaire Inscription************/
 
 #inscription .container .heading h2{
 	text-align: center;
