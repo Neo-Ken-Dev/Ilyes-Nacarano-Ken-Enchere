@@ -131,14 +131,12 @@ body {
 	font-weight: bold; 
 }
 
-<<<<<<< HEAD
 #page_accueil img {
 	max-height: 131px; 
-=======
+}
 /*********style page accueil************/
 #page_accueil * {
 	font-family: 'Chilanka';
->>>>>>> d507419c142cec557fae7bedc8aeaceac44f8a27
 }
 
 .barre_recherche {
@@ -176,35 +174,10 @@ body {
 	padding: 15px;
 }
 
-/*#page_accueil .row {
-	margin: 0px;
-}
-
-#page_accueil .liens {
-	text-align: right;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-right: 100px;
-	padding-left: 100px;
-}
-
-#page_accueil .formulaire {
-	
-}
-
-#page_accueil p.formulaire {
-	font-size: 20px;
-	font-weight: bold;
-}*/
-
-<<<<<<< HEAD
-=======
 #page_accueil .encheres {
 	border: 1px solid;
 	padding: 15px;
 }
-/*********fin de style page accueil************/
->>>>>>> d507419c142cec557fae7bedc8aeaceac44f8a27
 
 /*********fin du style Page accueil************/
 
@@ -319,15 +292,9 @@ body {
 }
 
 /*********end style Formulaire Inscription*************/
-<<<<<<< HEAD
-<<<<<<<
-HEAD /*********style Formulaire Modification de profil************/ 
-.creditPart h2 {
-=======
 
 /*********style Formulaire Modification de profil************/
 .creditPart h2{
->>>>>>> d507419c142cec557fae7bedc8aeaceac44f8a27
 	font-size: 18px;
 	font-weight: 700;
 }
@@ -399,7 +366,6 @@ HEAD /*********style Formulaire Modification de profil************/
 		width: 900px;
 	}
 }
-<<<<<<< HEAD
 
 @media ( max-width : 436px) {
 	#modificationProfil label {
@@ -407,42 +373,18 @@ HEAD /*********style Formulaire Modification de profil************/
 		margin: 10px auto 5px;
 	}
 }
-=======
->>>>>>> d507419c142cec557fae7bedc8aeaceac44f8a27
-
-=======
 
 /*********style Page mon profil************/
 .btnModiferProfil {
 	margin: 50px auto;
-<<<<<<< HEAD
 	width: 30%;
-=======
-	width :30%;
->>>>>>> d507419c142cec557fae7bedc8aeaceac44f8a27
+
 }
 
 .divBtnModifier {
 	display: flex;
 	justify-content: center;
 }
-<<<<<<< HEAD
->>>>>>>
-branch
- 
-'
-main
-'
- 
-of
- 
-https
-:
-//github
-.com
-/Neo-Ken-Dev/Ilyes-Nacarano-Ken-Enchere
-.git
-=======
 
 
 
@@ -452,14 +394,3 @@ https
 
 
 
-
-
-
-
-
-
-
-
-
-
->>>>>>> d507419c142cec557fae7bedc8aeaceac44f8a27
