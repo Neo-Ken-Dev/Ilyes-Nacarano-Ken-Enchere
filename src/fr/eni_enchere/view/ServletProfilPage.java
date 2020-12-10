@@ -13,33 +13,31 @@ import fr.eni_enchere.bll.UtilisateursManager;
 import fr.eni_enchere.bo.Utilisateurs;
 
 /**
- * Servlet implementation class ServletProfilPage
- */
+* Servlet implementation class ServletProfilPage
+*/
 @WebServlet("/user/profil")
 public class ServletProfilPage extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-			
-		UtilisateursManager utilisateursManager = new UtilisateursManager();
+private static final long serialVersionUID = 1L;
+/**
+* @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+*/
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+UtilisateursManager utilisateursManager = new UtilisateursManager();
 
-		int id = Integer.parseInt(request.getParameter("id"));
-		Utilisateurs utilisateur = UtilisateursManager.selectionnerUtilisateurParId(id);
+ int id = Integer.parseInt(request.getParameter("id"));
+Utilisateurs utilisateur = UtilisateursManager.selectionnerUtilisateurParId(id);
 
+request.setAttribute("utilisateur", utilisateur);
 
-		request.setAttribute("utilisateur", utilisateur);
+ RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/profil.jsp");
+rd.forward(request, response);
 
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/profil.jsp");
-		rd.forward(request, response);
-
-	}
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
+ }
+/**
+* @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+*/
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+doGet(request, response);
+}
 
 }
