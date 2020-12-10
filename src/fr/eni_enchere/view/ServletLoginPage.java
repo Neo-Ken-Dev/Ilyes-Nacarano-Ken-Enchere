@@ -51,7 +51,7 @@ public class ServletLoginPage extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("utilisateur", utilisateur);			
 		//	request.setAttribute("utilisateur", utilisateur);
-			pageDestination = "index.html";
+			pageDestination = "WEB-INF/listeEncheresConnecte.jsp";
 			
 		}
 		

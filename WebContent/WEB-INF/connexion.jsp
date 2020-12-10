@@ -27,9 +27,9 @@
 
 <body>
 
-
+<section id="monprofil">
 	<div class="container-fluid">
-		<div class="logo">
+		<div class="logoProfil">
 			<%@ include file="logoTop.jsp"%>
 		</div>
 
@@ -49,9 +49,7 @@
 					<div class="form-group col form-inline">
 				</c:otherwise>
 			</c:choose>
-			<label for="identifiant"> Identifiant : </label> <input type="text"
-				name="identifiant" id="identifiant" placeholder="identifiant..."
-				class="form-control" required autofocus>
+			<label for="identifiant"> Identifiant : </label> <input type="text" name="identifiant" id="identifiant" placeholder="identifiant..." class="form-control" required autofocus>
 	</div>
 
 	<c:choose>
@@ -67,7 +65,7 @@
 		placeholder="mot de passe..." class="form-control" required>
 	</div>
 	<div class="connexionDiv ">
-		<button class="btn  btn-primary btnConnexion" type="submit">Connexion</button>
+		<button class="btn btn-primary btnConnexion" type="submit">Connexion</button>
 
 		<div class="checkBoxDiv">
 			<label class="labelCheckBox"> <input type="checkbox" name="seSouvenirDeMoi" id="seSouvenirDeMoi">Se souvenir de moi
@@ -81,18 +79,13 @@
 	</div>
 
 	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-	<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-		integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-		crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
 		
 	</script>
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-		integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-		crossorigin="anonymous">
-		
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">		
 	</script>
+	 </section>
 </body>
 
 </html>
