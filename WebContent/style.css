@@ -129,7 +129,7 @@ body {
 
 
 
-/*********style Formulaire Inscription************/
+/*********style page accueil************/
 #page_accueil * {
 	font-family: 'Chilanka';
 }
@@ -167,7 +167,7 @@ body {
 	border: 1px solid;
 	padding: 15px;
 }
-/*********fin du style Formulaire Inscription************/
+/*********fin de style page accueil************/
 
 
 /*********style Formulaire Inscription************/
@@ -398,7 +398,7 @@ body {
 
 .btnModiferProfil {
 	margin: 50px auto;
-	  width :30%;
+	width :30%;
 }
 
 .divBtnModifier {
