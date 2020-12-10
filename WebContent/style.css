@@ -20,23 +20,23 @@ body {
 /*******Style Page Connexion et page profil*******/
 
 
-.container-fluid {
+#monprofil .container-fluid {
 	width: 450px;
 }
 
-.containerProfil {
+#monprofil .containerProfil {
     width: 600px ;
     }
 
 
 
-.form-group {
+#monprofil .form-group {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 }
 
-.connexionDiv {
+#monprofil .connexionDiv {
     margin-top: 30px;
     display: flex;
     flex-direction: row;
@@ -45,14 +45,14 @@ body {
 
 }
 
-.enLigne {
+#monprofil .enLigne {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
     
 }
 
-.enLigne label {
+#monprofil .enLigne label {
 	display: flex;
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
@@ -60,54 +60,54 @@ body {
     
 }
 
-.checkBoxDiv {
+#monprofil .checkBoxDiv {
     display: inline-flex;
     flex-direction: column;
     padding: 0px;
 }
 
-.checkBoxDiv input {
+#monprofil .checkBoxDiv input {
     margin: 10px 10px 10px 0px
 }
 
-.checkBoxDiv label {
+#monprofil .checkBoxDiv label {
     margin: 0px 20px 0px 3px
 }
 
 
-.inline {
+#monprofil .inline {
 	display: inline-flex;
 }
 
-.btnCreerCompte {
+#monprofil .btnCreerCompte {
 	margin-top: 50px;
 	width: 100%;
 }
 
-.btnConnexion {
+#monprofil .btnConnexion {
 	width: 50%;
 	font-size: 18px;
 	padding: 10px 0px;
 }
 
-#identifiant {
+#monprofil #identifiant {
 	width: 250px;
 }
 
-#motDePasse {
+#monprofil #motDePasse {
 	width: 250px;
 }
 
-.btn {
+#monprofil .btn {
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
 }
 
-.logo {
+#monprofil .logo {
 	margin-bottom: 100px;
 	
 }
 
-.inputEnlectureSeul {
+#monprofil .inputEnlectureSeul {
      
         width: 60%;
         height: calc(1.5em + .75rem + 2px);
@@ -279,7 +279,6 @@ body {
 	.btnCreer {
 	text-align: center;
 	padding: 0px;
-	wi
 	}
 
 	.btnAnnuler {	
