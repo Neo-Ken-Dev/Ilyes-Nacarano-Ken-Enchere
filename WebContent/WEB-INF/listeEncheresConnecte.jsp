@@ -1,4 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -17,6 +19,8 @@
 </head>
 <body>
 <section id="enchereConnecte">
+
+
 <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Hamburger pour le format mobile -->
@@ -34,8 +38,11 @@
                 <ul class="nav navbar-nav divNavbar">
                     <li class="active"><a href="#">Enchères<span class="sr-only">(current)</span></a></li>
                     <li><a href="#">Vendre un article</a></li>
-                    <li><a href="#">Mon profil</a></li>
-                    <li><a href="#">Déconnexion</a></li>
+                    <c:if test="${!empty id }">
+                    
+                    <li><a href="${pageContext.request.contextPath}/user/monprofil?id=${id}">Mon profil</a></li>
+                    </c:if>
+                    <li><a href="${pageContext.request.contextPath}/deconnexion">Déconnexion</a></li>
                 </ul>
             </div>
         </div>
