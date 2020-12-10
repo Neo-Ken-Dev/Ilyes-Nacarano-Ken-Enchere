@@ -13,50 +13,31 @@ import fr.eni_enchere.bll.UtilisateursManager;
 import fr.eni_enchere.bo.Utilisateurs;
 
 /**
- * Servlet implementation class ServletProfilPage
- */
+* Servlet implementation class ServletProfilPage
+*/
 @WebServlet("/user/profil")
 public class ServletProfilPage extends HttpServlet {
-	private static final long serialVersionUID = 1L;
-<<<<<<< HEAD
-=======
+private static final long serialVersionUID = 1L;
+/**
+* @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+*/
+protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+UtilisateursManager utilisateursManager = new UtilisateursManager();
 
+ int id = Integer.parseInt(request.getParameter("id"));
+Utilisateurs utilisateur = UtilisateursManager.selectionnerUtilisateurParId(id);
 
->>>>>>> branch 'main' of https://github.com/Neo-Ken-Dev/Ilyes-Nacarano-Ken-Enchere.git
+request.setAttribute("utilisateur", utilisateur);
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-<<<<<<< HEAD
-			
-		UtilisateursManager utilisateursManager = new UtilisateursManager();
-		
-=======
+ RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/profil.jsp");
+rd.forward(request, response);
 
-		UtilisateursManager utilisateursManager = new UtilisateursManager();
-
->>>>>>> branch 'main' of https://github.com/Neo-Ken-Dev/Ilyes-Nacarano-Ken-Enchere.git
-		int id = Integer.parseInt(request.getParameter("id"));
-		Utilisateurs utilisateur = UtilisateursManager.selectionnerUtilisateurParId(id);
-
-
-		request.setAttribute("utilisateur", utilisateur);
-
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/profil.jsp");
-		rd.forward(request, response);
-
-	}
-
-<<<<<<< HEAD
-=======
-
->>>>>>> branch 'main' of https://github.com/Neo-Ken-Dev/Ilyes-Nacarano-Ken-Enchere.git
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doGet(request, response);
-	}
+ }
+/**
+* @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+*/
+protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+doGet(request, response);
+}
 
 }
