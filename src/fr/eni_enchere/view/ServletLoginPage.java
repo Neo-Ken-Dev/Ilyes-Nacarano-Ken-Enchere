@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import fr.eni_enchere.bll.UtilisateursManager;
 import fr.eni_enchere.bo.Utilisateurs;
@@ -16,7 +17,7 @@ import fr.eni_enchere.bo.Utilisateurs;
 /**
  * Servlet implementation class ServletLoginPage
  */
-@WebServlet("/ServletLoginPage")
+@WebServlet("/connexion")
 public class ServletLoginPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -47,7 +48,9 @@ public class ServletLoginPage extends HttpServlet {
 		
 		if (utilisateur != null) {
 			
-			request.setAttribute("utilisateur", utilisateur);
+			HttpSession session = request.getSession();
+			session.setAttribute("utilisateur", utilisateur);			
+		//	request.setAttribute("utilisateur", utilisateur);
 			pageDestination = "index.html";
 			
 		}

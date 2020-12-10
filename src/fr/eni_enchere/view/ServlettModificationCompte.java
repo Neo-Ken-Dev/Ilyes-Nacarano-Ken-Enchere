@@ -12,16 +12,24 @@ import fr.eni_enchere.bll.ValidationForm;
 import fr.eni_enchere.bo.Utilisateurs;
 /**
  * Servlet pour le formulaire d'inscription.
-
  */
-@WebServlet("/inscription")
-public class ServletFormulaireInscription extends HttpServlet {
+@WebServlet("/user/modifie_profil")
+public class ServlettModificationCompte extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * doGet récupére les info d'un User par son id et les envoie à la JSP pour les afficher.
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		this.getServletContext().getRequestDispatcher("/WEB-INF/formulaireInscription.jsp").forward(request, response);
+		
+		UtilisateursManager utilisateursManager = new UtilisateursManager();	
+		//int id = Integer.parseInt(request.getParameter("id"));
+		int id = 19;
+		Utilisateurs utilisateur = UtilisateursManager.selectionnerUtilisateurParId(id);
+	
+		request.setAttribute("utilisateur", utilisateur);
+
+		this.getServletContext().getRequestDispatcher("/WEB-INF/ModifierMonCompte.jsp").forward(request, response);
 	}
 
 	/**

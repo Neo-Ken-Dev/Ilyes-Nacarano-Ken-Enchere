@@ -33,6 +33,11 @@ public class UtilisateursManager {
 		return daoUtilisateur.verifierUtilisateur(pseudo, motDePasse);
 
 	}
+	
+	public static Utilisateurs selectionnerUtilisateurParId(int id) {
+		System.out.println(id);
+			return daoUtilisateur.selectionnerUtilisateurParId(id);
+	}
 
 	
 	

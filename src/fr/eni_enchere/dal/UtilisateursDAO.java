@@ -13,4 +13,6 @@ public interface UtilisateursDAO {
 
 	public Utilisateurs verifierUtilisateur(String pseudo, String motDePasse);
 	
+	public Utilisateurs selectionnerUtilisateurParId(int id);
+	
 }

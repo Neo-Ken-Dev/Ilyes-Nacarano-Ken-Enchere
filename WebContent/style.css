@@ -4,14 +4,6 @@ body {
 	height: 100%;
 }
 
-.container-fluid {
-	width: 450px;
-}
-
-.containerProfil {
-    width: 600px ;
-    }
-
 body {
 	/*display: flex;*/
 	align-items: center;
@@ -20,6 +12,23 @@ body {
 	padding-bottom: 80px;
 	background-color: #fcfcfc;
 }
+
+/*********end Style Global*************/
+
+
+
+/*******Style Page Connexion et page profil*******/
+
+
+.container-fluid {
+	width: 450px;
+}
+
+.containerProfil {
+    width: 600px ;
+    }
+
+
 
 .form-group {
 	display: flex;
@@ -66,7 +75,6 @@ body {
 }
 
 
-
 .inline {
 	display: inline-flex;
 }
@@ -104,16 +112,22 @@ body {
         width: 60%;
         height: calc(1.5em + .75rem + 2px);
         padding: .375rem .75rem;
-        font-size: 1rem;
+        font-size: 14px;
         font-weight: 400;
         line-height: 1.5;
         color: #495057;
         background-color: rgb(238, 238, 238);
         background-clip: padding-box;
         border: 1px solid #ced4da;
-        border-radius: .25rem;
-  
+        border-radius: .25rem; 
 }
+
+
+/*********end Style Style Page Connexion et page profil*************/
+
+
+
+
 
 /*********style Formulaire Inscription************/
 #page_accueil * {
@@ -283,3 +297,131 @@ body {
 }
 
 /*********end style Formulaire Inscription*************/
+<<<<<<< HEAD
+/*********style Formulaire Modification de profil************/
+.creditPart h2{
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.creditPart h2 span{
+	margin-left: 55px;
+}
+
+#modification-form {
+    font-size: 20px;
+}
+
+#modificationProfil .col-md-6{
+	height: 60px;
+	width: 550px;
+}
+
+#modificationProfil .col-md-12{
+	height: 60px;
+}
+
+#modificationProfil .container .heading h2{
+	text-align: center;
+	padding-bottom: 40px;
+}
+
+#modificationProfil label{
+	width: 250px;
+}
+
+
+#modificationProfil .container {
+	width: 1500px;
+}
+
+.btnEnregistrer {
+	width: 100px;
+}
+
+.divBtn {
+	margin-left: -150px;
+}
+/**********media queries ****************/
+
+@media (max-width: 1200px) {
+	
+	#modificationProfil {
+   	 margin: auto;
+   	 text-align: inherit;
+	}	
+	
+	#modification-form {
+    margin-left: 200px;
+	}
+	
+	.divBtn {
+	display: flex;
+    justify-content: space-around;
+	}
+	
+	.buttonInscription{
+	width: 200px;
+	}
+	
+	.btnEnregistrer {
+	width: 100px;
+	}
+	
+	.btnCreer {
+	text-align: center;
+	padding: 0px;
+	}
+
+	.btnAnnuler {	
+	padding: 0px;
+	}
+	
+	#modificationProfil .container {
+	width: 900px;
+	}	 
+	
+}	
+	
+@media (max-width: 436px) {
+	
+	#modificationProfil label{
+    display: block;
+    margin: 10px auto 5px;
+	}
+		
+}
+=======
+
+
+
+/*********style Page mon profil************/
+
+.btnModiferProfil {
+	margin: 50px auto;
+	  width :30%;
+}
+
+.divBtnModifier {
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> branch 'main' of https://github.com/Neo-Ken-Dev/Ilyes-Nacarano-Ken-Enchere.git
