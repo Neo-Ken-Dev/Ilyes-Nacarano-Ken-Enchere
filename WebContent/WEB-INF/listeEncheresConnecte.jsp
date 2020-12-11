@@ -16,6 +16,8 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <!--Custom Styles CSS-->
     <link rel="stylesheet" href="style.css">
+    <!--Jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
 </head>
 <body>
 <section id="enchereConnecte">
@@ -81,65 +83,67 @@
                 </div>
                 <div class="row divRadioEtCheckbox">
                     <div class="col divAchats">
-                    
-                     
-                        
-                        <div>
-  							<input type="radio" id="achat" name="typeRecherche" value="achat">
-  							<label for="achat">Achat</label>
-						</div>
-                        
+                        <div class="radio">
+                            <label>
+                                <input type="radio" name="filtering" value="0" class="rbFilter" id="filteringON" checked="true">
+                                <strong>Achats</strong>
+                            </label>
+                        </div>
                         <div class="divCheckboxAchat">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">
-                                    enchères ouvertes
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">
-                                    mes enchères
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">
-                                    mes enchères remportées
-                                </label>
+                            <div id="filterOnControls">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="achat" value="">
+                                        enchères ouvertes
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="achat" value="">
+                                        mes enchères
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="achat" value="" >
+                                        mes enchères remportées
+                                    </label>
+                                </div>
                             </div>
                         </div>
    
                     </div>
                     <div class="col divMesVentes">
-         
-                        
-                        <div>
-  							<input type="radio" id="mesVentes" name="typeRecherche" value="mesVentes">
-  							<label for="mesVentes">Mes Ventes</label>
-						</div>
-                       
-
-                        <div class="divCheckMesVentes">
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">
-                                    mes ventes en cours
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">
-                                    ventes non débutées
-                                </label>
-                            </div>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox" value="">
-                                    ventes terminées
-                                </label>
-                            </div>
+                        <div class="radio">
+                            <label>
+                                <input name="filtering" type="radio" value="1" class="rbFilter" id="filteringOff">
+                                <strong>Mes ventes</strong>
+                            </label>
                         </div>
+                        <div class="divCheckMesVentes">
+                            <div id="filterOnControls">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="mesVentes" value=""  disabled="true"  >
+                                        mes ventes en cours
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="mesVentes" value=""  disabled="true"  >
+                                        ventes non débutées
+                                    </label>
+                                </div>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" name="mesVentes" value=""  disabled="true" >
+                                        ventes terminées
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -163,6 +167,8 @@
             </div>
         </div>
     </div>
+    <!-- jQuery pour selectionner et deselectionner radioButton -->
+	<script src="script.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
     </script>
