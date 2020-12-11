@@ -19,7 +19,7 @@ public class UtilisateursManager {
 	 * @param newUtilisateur
 	 */
 	public UtilisateursManager() {
-		this.daoUtilisateur = DAOFactory.getUtilisateursDAO();
+		daoUtilisateur = DAOFactory.getUtilisateursDAO();
 	}
 	
 	public Utilisateurs addNewUser(String pseudoUser, String prenomUser, String nomUser, String emailUser, String phoneUser, String streetUser, String zipCodeUser, String cityUser, String passwordUser) {

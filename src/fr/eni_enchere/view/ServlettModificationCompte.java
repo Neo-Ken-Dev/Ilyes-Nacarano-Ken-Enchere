@@ -50,6 +50,9 @@ public class ServlettModificationCompte extends HttpServlet {
 		
 		ValidationForm formValidation = new ValidationForm();
 		
+		//vérifier que le mot de passe Actuel soit celui de l'utilisateur avant d'incrire la modification
+		
+		
 		//verifier l'email
 		if (!formValidation.verificationEmail(request)) {
 			String messageErreur = "* Vous avez du faire une erreur dans votre email.";
