@@ -71,12 +71,13 @@
                             Toutes <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu">
-                            <li>Informatique</li>
-                            <li>Ameublement</li>
-                            <li>Vêtement</li>
-                            <li>Sport&Loisirs</li>
+                            <li><a href="">Informatique</a></li>
+                            <li><a href="">Ameublement</a></li>
+                            <li><a href="">Vêtement</a></li>
+                            <li><a href="">Sport&Loisirs</a></li>
                         </ul>
                     </div>
+                   
                 </div>
                 <div class="row divRadioEtCheckbox">
                     <div class="col divAchats">
