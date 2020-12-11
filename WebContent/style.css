@@ -1,138 +1,18 @@
-/*******Style Global*******/
+@charset "UTF-8";
 
-<<<<<<< HEAD
-/*body {
-	height: 100%;
-}*/
-body {
+/*** Début du style GLOBAL ***/
+body * {
 	background-color: #fcfcfc;
-	/*display: flex;
-	align-items: center;
-	justify-content: center;
-	padding-top: 80px;
-	padding-bottom: 80px;*/
-=======
-
-
-body {
-	background-color: #fcfcfc;
->>>>>>> pageEnchereConnecte
-}
-
-/*********end Style Global*************/
-
-/*******Style Page Connexion et page profil*******/
-<<<<<<< HEAD
-=======
-
-
-#monprofil .logoProfil {
-	margin-bottom: 80px;
-}
-
->>>>>>> pageEnchereConnecte
-#monprofil .container-fluid {
-	margin-top: 150px;
-	width: 450px;
-}
-
-#monprofil .containerProfil {
-	width: 600px;
-}
-
-#monprofil .form-group {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-}
-
-#monprofil .connexionDiv {
-	margin-top: 30px;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-}
-
-#monprofil .enLigne {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 10px;
-}
-
-#monprofil .enLigne label {
-	display: flex;
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	align-items: center;
-}
-
-#monprofil .checkBoxDiv {
-	display: inline-flex;
-	flex-direction: column;
-	padding: 0px;
-}
-
-#monprofil .checkBoxDiv input {
-	margin: 10px 10px 10px 0px
-}
-
-#monprofil .checkBoxDiv label {
-	margin: 0px 20px 0px 3px
-}
-
-#monprofil .inline {
-	display: inline-flex;
-}
-
-#monprofil .btnCreerCompte {
-	margin-top: 50px;
-	width: 100%;
-}
-
-#monprofil .btnConnexion {
-	width: 50%;
-	font-size: 18px;
-	padding: 10px 0px;
-}
-
-#monprofil #identifiant {
-	width: 250px;
-}
-
-#monprofil #motDePasse {
-	width: 250px;
-}
-
-#monprofil .btn {
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
-}
-
-#monprofil .logo {
-	margin-bottom: 100px;
-}
-
-#monprofil .inputEnlectureSeul {
-	width: 60%;
-	height: calc(1.5em + .75rem + 2px);
-	padding: .375rem .75rem;
-	font-size: 14px;
-	font-weight: 400;
-	line-height: 1.5;
-	color: #495057;
-	background-color: rgb(238, 238, 238);
-	background-clip: padding-box;
-	border: 1px solid #ced4da;
-	border-radius: .25rem;
-}
-
-/*********end Style Style Page Connexion et page profil*************/
-
-/*** Début style page d'ACCUEIL ***/
-#page_accueil * {
 	font-family: 'Chilanka';
 }
 
+button * {
+	font-weight: bold;
+	box-shadow: 5px 10px;
+}
+/*** Fin du style GLOBAL ***/
+
+/*** Début page d'ACCUEIL ***/
 #page_accueil .partie_recherche {
 	padding: 0px 4%;
 }
@@ -174,6 +54,8 @@ body {
 	padding-left: 150px;
 	padding-right: 150px;
 	box-shadow: 5px 10px;
+	font-weight: bold;
+	font-size: 18px;
 }
 
 #page_accueil .resultats_encheres {
@@ -191,9 +73,120 @@ body {
 	border: 1px solid;
 	padding: 15px;
 }
-/*** Fin du style page d'ACCUEIL ***/
+/*** Fin page d'ACCUEIL ***/
 
-/*** Début style page d'ACQUISITION ***/
+/*** Début page CONNEXION & page MON PROFIL ***/
+#connexion_et_monprofil .logoProfil {
+	margin-bottom: 80px;
+}
+
+#connexion_et_monprofil .container-fluid {
+	margin-top: 150px;
+	width: 450px;
+}
+
+#connexion_et_monprofil .containerProfil {
+	width: 600px;
+}
+
+#connexion_et_monprofil .form-group {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#connexion_et_monprofil .connexionDiv {
+	margin-top: 30px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+#connexion_et_monprofil .enLigne {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+}
+
+#connexion_et_monprofil .enLigne label {
+	display: flex;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	align-items: center;
+}
+
+#connexion_et_monprofil .checkBoxDiv {
+	display: inline-flex;
+	flex-direction: column;
+	padding: 0px;
+}
+
+#connexion_et_monprofil .checkBoxDiv input {
+	margin: 10px 10px 10px 0px
+}
+
+#connexion_et_monprofil .checkBoxDiv label {
+	margin: 0px 20px 0px 3px
+}
+
+#connexion_et_monprofil .inline {
+	display: inline-flex;
+}
+
+#connexion_et_monprofil .btnCreerCompte {
+	margin-top: 50px;
+	width: 100%;
+}
+
+#connexion_et_monprofil .btnConnexion {
+	width: 50%;
+	font-size: 18px;
+	padding: 10px 0px;
+}
+
+#connexion_et_monprofil #identifiant {
+	width: 250px;
+}
+
+#connexion_et_monprofil #motDePasse {
+	width: 250px;
+}
+
+#connexion_et_monprofil .btn {
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2)
+}
+
+#connexion_et_monprofil .logo {
+	margin-bottom: 100px;
+}
+
+#connexion_et_monprofil .inputEnlectureSeul {
+	width: 60%;
+	height: calc(1.5em + .75rem + 2px);
+	padding: .375rem .75rem;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.5;
+	color: #495057;
+	background-color: rgb(238, 238, 238);
+	background-clip: padding-box;
+	border: 1px solid #ced4da;
+	border-radius: .25rem;
+}
+
+#connexion_et_monprofil .btnModiferProfil {
+	margin: 50px auto;
+	width: 30%;
+}
+
+#connexion_et_monprofil .divBtnModifier {
+	display: flex;
+	justify-content: center;
+}
+/*** Fin page CONNEXION & page MON PROFIL ***/
+
+/*** Début page d'ACQUISITION ***/
 #page_acquisition * {
 	font-family: 'Chilanka';
 }
@@ -230,6 +223,7 @@ body {
 }
 
 #page_acquisition button {
+	/*Le style du bouton est overwrite quelque part*/
 	font-weight: bold;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -244,9 +238,9 @@ body {
 	display: flex;
 	justify-content: space-around;
 }
-/*** Fin du style page d'ACQUISITION ***/
+/*** Fin page d'ACQUISITION ***/
 
-/*********style Formulaire Inscription************/
+/*** Début formulaire inscription ***/
 #inscription .container .heading h2 {
 	text-align: center;
 	padding-bottom: 40px;
@@ -261,7 +255,7 @@ body {
 	height: 60px;
 }
 
-.inscription-control {
+#inscription .inscription-control {
 	height: 34px;
 	font-size: 18px;
 	width: 250px;
@@ -278,49 +272,48 @@ body {
 	margin-top: 10px;
 }
 
-.buttonInscription {
+#inscription .buttonInscription {
 	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 	width: 200px;
 	font-size: 18px;
 	padding: 10px 0px;
 }
 
-.btnCreer {
+#inscription .btnCreer {
 	text-align: end;
 	padding-right: 30px;
 }
 
-.btnAnnuler {
+#inscription .btnAnnuler {
 	padding-left: 80px;
 }
 
-.infoUtile {
+#inscription .infoUtile {
 	margin: 5px;
 	font-size: 18px;
 }
 
-.comments {
+#inscription .comments {
 	font-style: italic;
 	font-size: 15px;
 	height: 25px;
 	color: red;
 }
 
-.glyphicon-ok {
+#inscription .glyphicon-ok {
 	margin-right: 15px;
 }
 
-.btn-success {
+#inscription .btn-success {
 	margin-bottom: 15px;
 }
 
-.sucessCreation {
+#inscription .sucessCreation {
 	border: 5px inset #16910A;
 	border-radius: 0px 40px 0px 40px;
 	box-shadow: 5px 5px 15px 0px rgba(0, 0, 0, 0.52);
 	margin-bottom: 15px;
 }
-
 /**********media queries ****************/
 @media ( max-width : 1200px) {
 	#inscription-form {
@@ -333,18 +326,18 @@ body {
 		margin: auto;
 		text-align: center;
 	}
-	.divBtn {
+	#inscription .divBtn {
 		display: flex;
 		justify-content: space-around;
 	}
-	.buttonInscription {
+	#inscription .buttonInscription {
 		width: 150px;
 	}
-	.btnCreer {
+	#inscription .btnCreer {
 		text-align: center;
 		padding: 0px;
 	}
-	.btnAnnuler {
+	#inscription .btnAnnuler {
 		padding: 0px;
 	}
 }
@@ -355,16 +348,15 @@ body {
 		margin: 10px auto 5px;
 	}
 }
+/*** Fin formulaire inscription ***/
 
-/*********end style Formulaire Inscription*************/
-
-/*********style Formulaire Modification de profil************/
-.creditPart h2{
+/*** Début formulaire modification profil ***/
+#modificationProfil .creditPart h2 {
 	font-size: 18px;
 	font-weight: 700;
 }
 
-.creditPart h2 span {
+#modificationProfil .creditPart h2 span {
 	margin-left: 55px;
 }
 
@@ -394,14 +386,14 @@ body {
 	width: 1500px;
 }
 
-.btnEnregistrer {
+#modificationProfil .btnEnregistrer {
 	width: 100px;
 }
 
-.divBtn {
+#modificationProfil .divBtn {
 	margin-left: -150px;
 }
-/**********media queries ****************/
+/*** Media Queries ***/
 @media ( max-width : 1200px) {
 	#modificationProfil {
 		margin: auto;
@@ -410,21 +402,21 @@ body {
 	#modification-form {
 		margin-left: 200px;
 	}
-	.divBtn {
+	#modificationProfil .divBtn {
 		display: flex;
 		justify-content: space-around;
 	}
-	.buttonInscription {
+	#modificationProfil .buttonInscription {
 		width: 200px;
 	}
-	.btnEnregistrer {
+	#modificationProfil .btnEnregistrer {
 		width: 100px;
 	}
-	.btnCreer {
+	#modificationProfil .btnCreer {
 		text-align: center;
 		padding: 0px;
 	}
-	.btnAnnuler {
+	#modificationProfil .btnAnnuler {
 		padding: 0px;
 	}
 	#modificationProfil .container {
@@ -438,197 +430,162 @@ body {
 		margin: 10px auto 5px;
 	}
 }
+/*** Fin formulaire modification profil ***/
 
-/*********style Page mon profil************/
-<<<<<<< HEAD
-=======
-
-
->>>>>>> pageEnchereConnecte
-.btnModiferProfil {
-	margin: 50px auto;
-	width: 30%;
-
+/*** Début page liste encheres connecte ***/
+/* NavBar*/
+#enchereConnecte .divNavbar {
+	float: right;
 }
 
-.divBtnModifier {
-	display: flex;
-	justify-content: center;
+#enchereConnecte .divNavbar {
+	float: right;
 }
 
-
-/*********style Page Liste Enchere Connecte************/
-
-
-/* NavBar*/ 
-
-#enchereConnecte .divNavbar {   
-    float: right;
-}
-
-#enchereConnecte .divNavbar {   
-    float: right;
-}
-
-
-
-/* Toutes les divs sauf le titre*/ 
+/* Toutes les divs sauf le titre*/
 #enchereConnecte .divPrincipaleAvecFiltre {
-    margin-top: 30px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
 }
 
-
-/* Colonne 1 ---> Section de recherche et filtre*/ 
+/* Colonne 1 ---> Section de recherche et filtre*/
 #enchereConnecte .colonne1 {
-    flex-grow:2;
-   width: 200px;
-  padding-right: 0;
-  margin-left: 200px;
+	flex-grow: 2;
+	width: 200px;
+	padding-right: 0;
+	margin-left: 200px;
 }
 
 #enchereConnecte .titrePage {
-    margin-top: 50px;
-    text-align: center;
-    font-size: 25px;
+	margin-top: 50px;
+	text-align: center;
+	font-size: 25px;
 }
 
 #enchereConnecte .searchPlaceHolder {
-    width: 100%;
+	width: 100%;
 }
 
 #enchereConnecte .categorieContainer {
-    display: flex;
+	display: flex;
 }
 
 #enchereConnecte .titreCategorie {
-    margin-left: 120px;
+	margin-left: 120px;
 }
 
 #enchereConnecte .btn .caret {
-    margin-left: 250px;
+	margin-left: 250px;
 }
 
 #enchereConnecte .divPrincipaleAvecFiltre h4 {
-    margin-left: 100px;
-    margin-bottom: 20px;
+	margin-left: 100px;
+	margin-bottom: 20px;
 }
 
 #enchereConnecte .divCheckboxAchat {
-   margin-left: 20px;
+	margin-left: 20px;
 }
 
-#enchereConnecte .divCheckMesVentes{
-    margin-left: 20px;
+#enchereConnecte .divCheckMesVentes {
+	margin-left: 20px;
 }
 
 #enchereConnecte .divRadioEtCheckbox {
-    margin-top: 10px;
-    display: flex;
-    justify-content: space-between;
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
 }
 
 #enchereConnecte .divDropDown {
-    margin-left: 50px;
+	margin-left: 50px;
 }
 
-
-/*Colonne 2 ----> Bouton rechercher*/ 
+/*Colonne 2 ----> Bouton rechercher*/
 #enchereConnecte .colonne2 {
-    padding-left: 0;
-    flex-grow:1 ;
-    width: 400px;
+	padding-left: 0;
+	flex-grow: 1;
+	width: 400px;
 }
 
 #enchereConnecte .btnRechercher {
-    
-    width: 250px;
-    height: 100px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3)
+	width: 250px;
+	height: 100px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3)
 }
-
 
 /*Le cadre exterieur: loupe et input search*/
 #enchereConnecte .input-group {
-    margin-left: 100px;
-    margin-bottom: 20px;
-    border: solid 1px grey;
-    border-radius: 300px;
-    width: 300px;
-    height: 35px;
-    display: flex;
-    width: 400px;
+	margin-left: 100px;
+	margin-bottom: 20px;
+	border: solid 1px grey;
+	border-radius: 300px;
+	width: 300px;
+	height: 35px;
+	display: flex;
+	width: 400px;
 }
- 
+
 /*Cadre interieur de la loupe*/
 #enchereConnecte .input-group-text {
-    background-color: transparent;
-    border-color: transparent;
-
+	background-color: transparent;
+	border-color: transparent;
 }
- 
+
 /*Cadre de l'input search seul*/
-#enchereConnecte .form-control{
-    background-color: transparent;
-    border-color: transparent;
-    width: 10px;
-    -webkit-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0) !important;
-    box-shadow: inset 0 0 0 rgba(0,0,0,0) !important;
+#enchereConnecte .form-control {
+	background-color: transparent;
+	border-color: transparent;
+	width: 10px;
+	-webkit-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0) !important;
+	box-shadow: inset 0 0 0 rgba(0, 0, 0, 0) !important;
 }
 
 #enchereConnecte .fas {
-    font-size: 15px;
-    padding-left: 13px;
-    padding-top: 9px;
-    color: grey;
+	font-size: 15px;
+	padding-left: 13px;
+	padding-top: 9px;
+	color: grey;
 }
 
-/* Vignette des produits*/ 
+/* Vignette des produits*/
 #enchereConnecte .card-product {
-  overflow: hidden;
-  height: 150px;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
-  width: 400px;
-  margin: 20px 0 10px 250px;
+	overflow: hidden;
+	height: 150px;
+	background: white;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	display: flex;
+	align-items: center;
+	width: 400px;
+	margin: 20px 0 10px 250px;
 }
 
- #enchereConnecte .card-product img {
-  height: 100%;
-  width: 130px;
-  object-fit: cover;
+#enchereConnecte .card-product img {
+	height: 100%;
+	width: 130px;
+	object-fit: cover;
 }
 
 #enchereConnecte .card-product h2 {
-  font-size: 16px;
-  font-weight: bold;
-  margin: 0;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0;
 }
 
 #enchereConnecte .card-product p {
-  font-size: 12px;
-  line-height: 1.4;
-  opacity: .7;
-  margin-bottom: 0;
-  margin-top: 8px;
+	font-size: 12px;
+	line-height: 1.4;
+	opacity: .7;
+	margin-bottom: 0;
+	margin-top: 8px;
 }
 
 #enchereConnecte .card-product .card-product-infos {
-  padding: 16px;
+	padding: 16px;
 }
 
 #enchereConnecte .card-product h2 {
-    text-decoration-line: underline;
+	text-decoration-line: underline;
 }
-
-
-
-
-
-
-
-

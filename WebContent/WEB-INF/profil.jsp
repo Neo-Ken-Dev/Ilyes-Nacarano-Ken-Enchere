@@ -20,7 +20,7 @@
 
 
 <body>
-  <section id="monprofil">
+  <section id="connexion_et_monprofil">
 	<div class="container-fluid">
 		<div class="containerProfil">
 			<div class="logo">
