@@ -128,7 +128,7 @@ body {
 
 /*********end Style Style Page Connexion et page profil*************/
 
-/*********style Page accueil************/
+/*** Début style page d'ACCUEIL ***/
 #page_accueil * {
 	font-family: 'Chilanka';
 }
@@ -138,31 +138,27 @@ body {
 }
 
 #page_accueil h1 {
-	font-weight: bold; 
+	font-weight: bold;
 	text-align: center;
 	margin-left: -200px;
 	font-size: 25px;
 }
 
 #page_accueil h2 {
-	font-weight: bold; 
+	font-weight: bold;
 }
 
 #page_accueil img {
-	max-height: 131px; 
+	max-height: 131px;
 }
 
-#page_accueil * {
-	font-family: 'Chilanka';
+#page_accueil .barre_recherche {
+	width: 450px;
+	height: 35px;
+	border-radius: 11px;
 }
 
-.barre_recherche {
-    width: 450px;
-    height: 35px;
-    border-radius: 11px;
-}
-
-.liste_categories {
+#page_accueil .liste_categories {
 	margin-top: 20px;
 }
 
@@ -172,15 +168,15 @@ body {
 	width: 350px;
 }
 
-.bouton_rechercher_accueil {
+#page_accueil .bouton_rechercher_accueil {
 	padding-top: 30px;
 	padding-bottom: 30px;
 	padding-left: 150px;
 	padding-right: 150px;
-	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+	box-shadow: 5px 10px;
 }
 
-.resultats_encheres {
+#page_accueil .resultats_encheres {
 	margin-top: 100px;
 }
 
@@ -195,8 +191,60 @@ body {
 	border: 1px solid;
 	padding: 15px;
 }
+/*** Fin du style page d'ACCUEIL ***/
 
-/*********fin du style Page accueil************/
+/*** Début style page d'ACQUISITION ***/
+#page_acquisition * {
+	font-family: 'Chilanka';
+}
+
+#page_acquisition h1 {
+	font-weight: bold;
+	text-align: center;
+	margin-top: 40px;
+	margin-left: -200px;
+	font-size: 25px;
+}
+
+#page_acquisition img {
+	height: 300px;
+	width: 300px;
+}
+
+#page_acquisition .infos_vente {
+	margin-top: 20px;
+}
+
+#page_acquisition h4 {
+	font-size: 25px;
+}
+
+#page_acquisition .texte_vente {
+	font-size: 25px;
+}
+
+#page_acquisition label {
+	font-weight: normal;
+	width: 600px;
+	margin-right: 50px;
+}
+
+#page_acquisition button {
+	font-weight: bold;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	padding-left: 30px;
+	padding-right: 30px;
+	margin-top: 100px;
+	margin-left: 400px;
+	box-shadow: 5px 10px;
+}
+
+#page_acquisition .zone_description {
+	display: flex;
+	justify-content: space-around;
+}
+/*** Fin du style page d'ACQUISITION ***/
 
 /*********style Formulaire Inscription************/
 #inscription .container .heading h2 {
