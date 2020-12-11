@@ -11,16 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 
 import fr.eni_enchere.bll.UtilisateursManager;
 import fr.eni_enchere.bo.Utilisateurs;
-
 /**
  * Servlet implementation class ServletProfilPage
  */
 @WebServlet("/user/monprofil")
 public class ServletMonProfilPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-
-
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */

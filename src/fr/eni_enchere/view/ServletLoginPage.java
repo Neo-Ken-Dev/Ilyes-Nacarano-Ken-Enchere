@@ -13,15 +13,12 @@ import javax.servlet.http.HttpSession;
 import fr.eni_enchere.bll.UtilisateursManager;
 import fr.eni_enchere.bo.Utilisateurs;
 
-
 /**
  * Servlet implementation class ServletLoginPage
  */
 @WebServlet("/connexion")
 public class ServletLoginPage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -30,7 +27,6 @@ public class ServletLoginPage extends HttpServlet {
 			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/connexion.jsp");
 			rd.forward(request, response);
 	}
-
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
