@@ -32,6 +32,8 @@ public class ServletListeEnchereConnecte extends HttpServlet {
 		session.setAttribute("id", id);
 		System.out.println(id);
 		
+		
+		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/listeEncheresConnecte.jsp");
 		rd.forward(request, response);
 		

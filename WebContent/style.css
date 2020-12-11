@@ -528,6 +528,11 @@ button * {
 	width: 400px;
 }
 
+#enchereConnecte .input-group-prepend {
+	margin-left: 20px;
+
+}
+
 /*Cadre interieur de la loupe*/
 #enchereConnecte .input-group-text {
 	background-color: transparent;
