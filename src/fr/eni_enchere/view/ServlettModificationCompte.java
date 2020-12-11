@@ -25,7 +25,7 @@ public class ServlettModificationCompte extends HttpServlet {
 		UtilisateursManager utilisateursManager = new UtilisateursManager();	
 		//int id = Integer.parseInt(request.getParameter("id"));
 		int id = 19;
-		Utilisateurs utilisateur = UtilisateursManager.selectionnerUtilisateurParId(id);
+		Utilisateurs utilisateur = utilisateursManager.selectionnerUtilisateurParId(id);
 	
 		request.setAttribute("utilisateur", utilisateur);
 

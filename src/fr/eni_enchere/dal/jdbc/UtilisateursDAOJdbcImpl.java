@@ -69,6 +69,7 @@ public class UtilisateursDAOJdbcImpl implements UtilisateursDAO {
 			
 			if(rs.next()) {
 				utilisateur = new Utilisateurs();
+				utilisateur.setNoUtilisateur(rs.getInt("no_utilisateur"));
 				utilisateur.setPseudo(pseudo);
 				utilisateur.setNom(rs.getString("nom"));
 				utilisateur.setPrenom(rs.getString("prenom"));

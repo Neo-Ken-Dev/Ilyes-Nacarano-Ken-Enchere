@@ -8,17 +8,17 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import fr.eni_enchere.bll.UtilisateursManager;
 import fr.eni_enchere.bo.Utilisateurs;
 
 /**
- * Servlet implementation class ServletProfilPage
+ * Servlet implementation class ServletDeconnexion
  */
-@WebServlet("/user/monprofil")
-public class ServletMonProfilPage extends HttpServlet {
+@WebServlet("/deconnexion")
+public class ServletDeconnexion extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
+       
 
 
 	/**
@@ -26,20 +26,13 @@ public class ServletMonProfilPage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		UtilisateursManager utilisateursManager = new UtilisateursManager();
-
-		int id = Integer.parseInt(request.getParameter("id"));
-		
-		Utilisateurs utilisateur = utilisateursManager.selectionnerUtilisateurParId(id);
-
-
-		request.setAttribute("utilisateur", utilisateur);
-
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/monprofil.jsp");
-		rd.forward(request, response);
-
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			session.removeAttribute("utilisateur");		
+			RequestDispatcher rd = request.getRequestDispatcher("index.html");
+			rd.forward(request, response);
+		}
 	}
-
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
