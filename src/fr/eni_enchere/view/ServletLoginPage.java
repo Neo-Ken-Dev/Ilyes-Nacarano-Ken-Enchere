@@ -42,7 +42,7 @@ public class ServletLoginPage extends HttpServlet {
 		
 		UtilisateursManager utilisateurManager = new UtilisateursManager();
 		
-		Utilisateurs utilisateur = UtilisateursManager.verifierUtilisateur(pseudo, motDePasse);
+		Utilisateurs utilisateur = utilisateurManager.verifierUtilisateur(pseudo, motDePasse);
 		
 		System.out.println(utilisateur);
 		
@@ -51,7 +51,7 @@ public class ServletLoginPage extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setAttribute("utilisateur", utilisateur);			
 		//	request.setAttribute("utilisateur", utilisateur);
-			pageDestination = "index.html";
+			pageDestination = "user/accueil";
 			
 		}
 		

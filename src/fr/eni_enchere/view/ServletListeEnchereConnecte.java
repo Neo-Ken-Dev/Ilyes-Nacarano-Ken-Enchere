@@ -8,38 +8,34 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
-import fr.eni_enchere.bll.UtilisateursManager;
 import fr.eni_enchere.bo.Utilisateurs;
 
 /**
- * Servlet implementation class ServletProfilPage
+ * Servlet implementation class ServletListeEnchereConnecte
  */
-@WebServlet("/user/monprofil")
-public class ServletMonProfilPage extends HttpServlet {
+@WebServlet("/user/accueil")
+public class ServletListeEnchereConnecte extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-
-
+       
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		UtilisateursManager utilisateursManager = new UtilisateursManager();
-
-		int id = Integer.parseInt(request.getParameter("id"));
 		
-		Utilisateurs utilisateur = utilisateursManager.selectionnerUtilisateurParId(id);
-
-
-		request.setAttribute("utilisateur", utilisateur);
-
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/monprofil.jsp");
+		HttpSession session = request.getSession();
+		
+		Utilisateurs utilisateur = (Utilisateurs) session.getAttribute("utilisateur");
+		int id = utilisateur.getNoUtilisateur();
+		session.setAttribute("id", id);
+		System.out.println(id);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/listeEncheresConnecte.jsp");
 		rd.forward(request, response);
-
+		
 	}
-
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
