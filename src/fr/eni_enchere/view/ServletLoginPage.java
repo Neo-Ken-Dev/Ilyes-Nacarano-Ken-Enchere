@@ -42,7 +42,7 @@ public class ServletLoginPage extends HttpServlet {
 		
 		UtilisateursManager utilisateurManager = new UtilisateursManager();
 		
-		Utilisateurs utilisateur = UtilisateursManager.verifierUtilisateur(pseudo, motDePasse);
+		Utilisateurs utilisateur = utilisateurManager.verifierUtilisateur(pseudo, motDePasse);
 		
 		System.out.println(utilisateur);
 		

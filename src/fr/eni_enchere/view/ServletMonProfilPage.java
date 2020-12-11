@@ -29,7 +29,8 @@ public class ServletMonProfilPage extends HttpServlet {
 		UtilisateursManager utilisateursManager = new UtilisateursManager();
 
 		int id = Integer.parseInt(request.getParameter("id"));
-		Utilisateurs utilisateur = UtilisateursManager.selectionnerUtilisateurParId(id);
+		
+		Utilisateurs utilisateur = utilisateursManager.selectionnerUtilisateurParId(id);
 
 
 		request.setAttribute("utilisateur", utilisateur);

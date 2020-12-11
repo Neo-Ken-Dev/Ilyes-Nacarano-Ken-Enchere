@@ -11,7 +11,7 @@ Manager de Utilisateurs
 
 public class UtilisateursManager {
 	
-	private static UtilisateursDAO daoUtilisateur;
+	private  UtilisateursDAO daoUtilisateur;
 	/**
 	 *  Constructeur de UtilisateursManager qui retourne une instance de UtilisateursDAOJdbcImpl
 	 * afin de ne pas créer une instance à chaque appel de méthode mais uniquement au moment de l'intanciation
@@ -28,13 +28,13 @@ public class UtilisateursManager {
 		return utilisateur;
 	}
 
-	public static  Utilisateurs verifierUtilisateur(String pseudo, String motDePasse) {
+	public Utilisateurs verifierUtilisateur(String pseudo, String motDePasse) {
 			
 		return daoUtilisateur.verifierUtilisateur(pseudo, motDePasse);
 
 	}
 	
-	public static Utilisateurs selectionnerUtilisateurParId(int id) {
+	public  Utilisateurs selectionnerUtilisateurParId(int id) {
 		System.out.println(id);
 			return daoUtilisateur.selectionnerUtilisateurParId(id);
 	}
