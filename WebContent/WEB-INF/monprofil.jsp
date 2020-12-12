@@ -57,7 +57,7 @@
 				<label class="labelProfil" for="ville">Ville : </label> <input class="form-control inputEnlectureSeul" type="text" placeholder="${utilisateur.ville}" readonly name="ville" id="ville">
 			</div>
 			<div class="divBtnModifier">
-				<a href="${pageContext.request.contextPath}/modifie-profil"	class="btn btn-lg btn-primary btnModiferProfil" role="button">Modifier</a>
+				<a href="${pageContext.request.contextPath}/user/modifie_profil"	class="btn btn-lg btn-primary btnModiferProfil" role="button">Modifier</a>
 			</div>
 		</div>
 	</div>

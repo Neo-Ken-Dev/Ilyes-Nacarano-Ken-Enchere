@@ -128,9 +128,9 @@
                                 <h2>Crédit:<span>${utilisateur.credit}</span></h2>                               
                             </div>                         
                             
-                            <c:if test="${!empty utilisatur }">
-                            	<button type="button" class="col-md-12 btn-labeled btn-success">
-                					<span class="btn-label"><i class="glyphicon glyphicon-ok"></i></span>Votre compte a été créé modifier succès</button>
+                            <c:if test="${!empty infoUpdate }">
+             
+                					<a href="http://localhost:8080/lesObjectsSontNosAmis/connexion" class="col-md-12 btn-labeled btn-success"><i class="glyphicon glyphicon-ok"></i>Votre compte a été créé modifier succès - cliquez ici pour retourner sur la page d'accueil</a>
                                                         
                             </c:if>
                             
