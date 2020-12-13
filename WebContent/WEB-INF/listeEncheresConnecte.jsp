@@ -156,15 +156,18 @@
                 </div>
             </div>
         </div>
+        <c:forEach items="${listeArticlesVendus}" var="articleVendu">     
         <div class="container-fluid card-product">
             <img src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg" />
-            <div class="card-product-infos">
-                <h2>PC Gamer pour travailler</h2>
-                <p>Prix : 210 points</p>
-                <p> Fin de l'enchère : 10/08/2018</p>
-                <p>Vendeur: jojo44</p>
-            </div>
+                              	
+				  <div class="card-product-infos">
+                		<h2>${articleVendu.nomArticle}</h2>
+                		<p>Prix : ${articleVendu.prixVente} points</p>
+                		<p> Fin de l'enchère : ${articleVendu.dateFinEncheres}</p>
+                		<p>Vendeur: ${utilisateur.pseudo}</p>
+            	</div>
         </div>
+        </c:forEach>
     </div>
     <!-- jQuery pour selectionner et deselectionner radioButton -->
 	<script src="script.js"></script>
