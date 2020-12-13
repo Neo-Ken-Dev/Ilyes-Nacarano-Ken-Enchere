@@ -69,14 +69,13 @@
                         <p>Catégorie : </p>
                     </div>
                     <div class="btn-group divDropDown">
-                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="deviceSelector">
                             Toutes <span class="caret"></span>
                         </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="">Informatique</a></li>
-                            <li><a href="">Ameublement</a></li>
-                            <li><a href="">Vêtement</a></li>
-                            <li><a href="">Sport&Loisirs</a></li>
+                        <ul class="dropdown-menu" aria-labelled-by="dropdownMenu">
+                        	<c:forEach items="${listeCategories}" var="categorie">                    	
+                        	<li><a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">${categorie.libelle}</a> </li>
+                        	</c:forEach>
                         </ul>
                     </div>
                    
