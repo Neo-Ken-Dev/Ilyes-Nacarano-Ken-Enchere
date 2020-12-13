@@ -35,7 +35,7 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 			ResultSet rs = pstmt.executeQuery();
 			
 			while(rs.next()) {			
-				listeArticles.add(new ArticleVendus(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres"), rs.getDate("date_fin_encheres"), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_utilisateur"), rs.getInt("no_categorie")));
+				listeArticles.add(new ArticleVendus(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres"), rs.getDate("date_fin_encheres"), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_utilisateur"), rs.getInt("no_categorie"), rs.getBytes("photo")));
 			}
 			
 		} catch (SQLException e) {

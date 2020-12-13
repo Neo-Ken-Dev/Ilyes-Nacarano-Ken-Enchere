@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.websocket.Decoder.BinaryStream;
+
 public class ArticleVendus {
 	
 	private int noArticle;
@@ -16,6 +18,7 @@ public class ArticleVendus {
 	private int noUtilisateur;
 	private int noCategorie;
 	private List<ArticleVendus> articles = new ArrayList<>();
+	private byte[] rawBytes;
 	
 	
 	//CONSTRUCTORS -----------------------------------------
@@ -56,7 +59,28 @@ public class ArticleVendus {
 	
 	
 	
+	public ArticleVendus(int noArticle, String nomArticle, String description, Date dateDebutEncheres,
+			Date dateFinEncheres, int prixInitial, int prixVente, int noUtilisateur, int noCategorie, byte[] rawBytes) {
+		super();
+		this.noArticle = noArticle;
+		this.nomArticle = nomArticle;
+		this.description = description;
+		this.dateDebutEncheres = dateDebutEncheres;
+		this.dateFinEncheres = dateFinEncheres;
+		this.prixInitial = prixInitial;
+		this.prixVente = prixVente;
+		this.noUtilisateur = noUtilisateur;
+		this.noCategorie = noCategorie;
+		this.articles = articles;
+		this.rawBytes = rawBytes;
+	}
+	
+	
+
 	//GETTERS ET SETTERS -----------------------------------------
+
+
+
 
 
 
