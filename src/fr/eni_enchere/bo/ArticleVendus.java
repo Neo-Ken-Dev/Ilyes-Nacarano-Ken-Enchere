@@ -1,6 +1,8 @@
 package fr.eni_enchere.bo;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class ArticleVendus {
 	
@@ -13,6 +15,7 @@ public class ArticleVendus {
 	private int prixVente;
 	private int noUtilisateur;
 	private int noCategorie;
+	private List<ArticleVendus> articles = new ArrayList<>();
 	
 	
 	//CONSTRUCTORS -----------------------------------------
@@ -145,6 +148,17 @@ public class ArticleVendus {
 	public void setNoCategorie(int noCategorie) {
 		this.noCategorie = noCategorie;
 	}
+	
+	
+	
+	public List<ArticleVendus> getArticles() {
+		return articles;
+	}
+	
+	
+	public void setArticles(List<ArticleVendus> articles) {
+		this.articles = articles;
+	}
 
 	
 	//Méthode to String -----------------------------------------
@@ -155,9 +169,10 @@ public class ArticleVendus {
 		return "ArticleVendus [noArticle=" + noArticle + ", nomArticle=" + nomArticle + ", description=" + description
 				+ ", dateDebutEncheres=" + dateDebutEncheres + ", dateFinEncheres=" + dateFinEncheres + ", prixInitial="
 				+ prixInitial + ", prixVente=" + prixVente + ", noUtilisateur=" + noUtilisateur + ", noCategorie="
-				+ noCategorie + "]";
+				+ noCategorie + ", articles=" + articles + "]";
 	}
-	
+
+
 
 		
 	
