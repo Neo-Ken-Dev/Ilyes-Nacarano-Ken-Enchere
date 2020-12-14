@@ -2,6 +2,7 @@ package fr.eni_enchere.dal;
 
 import fr.eni_enchere.dal.jdbc.ArticlesVendusDAOJdbcImpl;
 import fr.eni_enchere.dal.jdbc.CategoriesDAOJdbcImpl;
+import fr.eni_enchere.dal.jdbc.RetraitDAOJdbcImpl;
 import fr.eni_enchere.dal.jdbc.UtilisateursDAOJdbcImpl;
 /**
  * @author ken
@@ -21,9 +22,12 @@ public abstract class DAOFactory {
 		return new CategoriesDAOJdbcImpl();
 	}
 
-	public static ArticlesVendusDAO getArticleVendusDAO() {
-		
+	public static ArticlesVendusDAO getArticleVendusDAO() {		
 		return new ArticlesVendusDAOJdbcImpl();
+	}
+	
+	public static RetraitDAO getRetraitDAO() {		
+		return new RetraitDAOJdbcImpl();
 	}
 	
 	

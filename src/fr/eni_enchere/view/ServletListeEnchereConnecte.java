@@ -48,10 +48,7 @@ public class ServletListeEnchereConnecte extends HttpServlet {
 		//Peut être supprimé, me sert de test
 		session.setAttribute("id", id);
 		System.out.println(id);
-		
-<<<<<<< HEAD
-		
-=======
+
 		CategoriesManager categoriesManager = new CategoriesManager();
 		List<Categories> listeCategories =  categoriesManager.selectionCategories();
 		request.setAttribute("listeCategories", listeCategories);
@@ -61,9 +58,6 @@ public class ServletListeEnchereConnecte extends HttpServlet {
 		List<ArticleVendus> listeArticlesVendus = articlesVendusManager.selectionArticlesVendus();
 		request.setAttribute("listeArticlesVendus", listeArticlesVendus);
 		System.out.println("Dans la servlet liste articles vendus : " + listeArticlesVendus);
-		
-
->>>>>>> enchereConnecteDAO
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/listeEncheresConnecte.jsp");
 		rd.forward(request, response);
