@@ -166,7 +166,7 @@
         <div class="container-fluid card-product   ">
             <img src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg" class="filterDiv ${articleVendu.noCategorie}"/>                           	
 				  <div class="card-product-infos filterDiv ${articleVendu.noCategorie}">
-                		<h2class="filterDiv ${articleVendu.noCategorie}">${articleVendu.nomArticle}</h2>
+                		<h2 class="filterDiv ${articleVendu.noCategorie}">${articleVendu.nomArticle}</h2>
                 		<p class="filterDiv ${articleVendu.noCategorie}">Prix : ${articleVendu.prixVente} points</p>
                 		<p class="filterDiv ${articleVendu.noCategorie}"> Fin de l'enchère : ${articleVendu.dateFinEncheres}</p>
                 		<p class="filterDiv ${articleVendu.noCategorie}" >Vendeur: ${utilisateur.pseudo}</p>

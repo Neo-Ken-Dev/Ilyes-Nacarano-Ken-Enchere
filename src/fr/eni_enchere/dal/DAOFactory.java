@@ -30,5 +30,9 @@ public abstract class DAOFactory {
 		return new RetraitDAOJdbcImpl();
 	}
 	
+	public static EnchereDAO getEnchereDAO() {		
+		return new EnchereDAOJdbcImpl();
+	}
+	
 	
 }
