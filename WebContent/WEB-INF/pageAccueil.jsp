@@ -19,7 +19,7 @@
 <title>Accueil</title>
 </head>
 <body>
-	<section id=page_accueil>
+	<section id=page_accueil> 
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">

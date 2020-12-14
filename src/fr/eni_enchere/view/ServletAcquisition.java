@@ -25,4 +25,4 @@ public class ServletAcquisition extends HttpServlet {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
-}
+} 

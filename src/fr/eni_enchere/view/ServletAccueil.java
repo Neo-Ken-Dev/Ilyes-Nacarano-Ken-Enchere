@@ -26,3 +26,4 @@ public class ServletAccueil extends HttpServlet {
 		doGet(request, response);
 	}
 }
+ 
