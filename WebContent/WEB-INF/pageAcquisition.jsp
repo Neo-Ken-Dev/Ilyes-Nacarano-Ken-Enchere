@@ -18,7 +18,7 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <title>Acquisition</title>
 </head>
-<body>
+<body> 
 	<section id=page_acquisition>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">

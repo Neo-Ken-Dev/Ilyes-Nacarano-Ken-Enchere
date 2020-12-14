@@ -8,21 +8,18 @@
 	charset="UTF-8">
 <!-- Lien au .css -->
 <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
-
 <!-- CDN Google font "Chilanka" -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
 	rel="stylesheet">
-
 <!-- CDN Bootstrap 3 -->
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-
 <title>Accueil</title>
 </head>
 <body>
-	<section id=page_accueil>
+	<section id=page_accueil> 
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
