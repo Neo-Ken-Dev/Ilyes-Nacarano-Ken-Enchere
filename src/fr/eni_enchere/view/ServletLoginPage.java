@@ -94,7 +94,9 @@ public class ServletLoginPage extends HttpServlet {
 			session.setMaxInactiveInterval(10);
 			session.setAttribute("utilisateur", utilisateur);			
 		//	request.setAttribute("utilisateur", utilisateur);
-			pageDestination = "user/accueil";
+
+			pageDestination = "/user/accueil";
+			response.sendRedirect(request.getContextPath()+ pageDestination);
 			
 			if(seSouvenirDeMoi != null) {
 				Cookie cookieUtilisateurPseudo = new Cookie("pseudo", pseudo);
@@ -107,16 +109,17 @@ public class ServletLoginPage extends HttpServlet {
 				
 			}
 			
+
 		}
 		
 		else {
 			String messageErreur = "Oops!! Pseudo/Mot de passe invalide";
 			request.setAttribute("messageErreur", messageErreur);
 			pageDestination = "WEB-INF/connexion.jsp";
+			RequestDispatcher rd = request.getRequestDispatcher(pageDestination);
+			rd.forward(request, response);
 		}
 		
-		RequestDispatcher rd = request.getRequestDispatcher(pageDestination);
-		rd.forward(request, response);
 	
 	}
 

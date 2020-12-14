@@ -28,7 +28,6 @@ import fr.eni_enchere.dal.ConnectionProvider;
  * Servlet implementation class ServletListeEnchereConnecte
  */
 @WebServlet("/user/accueil")
-@MultipartConfig(maxFileSize = 16177215)    // taille max de l'image 16MB
 
 public class ServletListeEnchereConnecte extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -39,16 +38,21 @@ public class ServletListeEnchereConnecte extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		
-		HttpSession session = request.getSession();
-		
+		HttpSession session = request.getSession();	
 		Utilisateurs utilisateur = (Utilisateurs) session.getAttribute("utilisateur");
+		
+		//int id = (int) session.getAttribute("id");	
+		
 		int id = utilisateur.getNoUtilisateur();
+		System.out.println("noUtilisateur :" + id);
 		
 		request.setAttribute("utilisateur", utilisateur);
 		//Peut être supprimé, me sert de test
 		session.setAttribute("id", id);
+
 		System.out.println(id);
 		
+
 
 		CategoriesManager categoriesManager = new CategoriesManager();
 		List<Categories> listeCategories =  categoriesManager.selectionCategories();
@@ -59,7 +63,6 @@ public class ServletListeEnchereConnecte extends HttpServlet {
 		List<ArticleVendus> listeArticlesVendus = articlesVendusManager.selectionArticlesVendus();
 		request.setAttribute("listeArticlesVendus", listeArticlesVendus);
 		System.out.println("Dans la servlet liste articles vendus : " + listeArticlesVendus);
-		
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/listeEncheresConnecte.jsp");
 		rd.forward(request, response);
