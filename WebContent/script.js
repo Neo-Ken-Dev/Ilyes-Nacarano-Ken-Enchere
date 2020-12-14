@@ -16,33 +16,38 @@ $("input[value='0']").change(function() {
     $("input[name='mesVentes']").prop('disabled', false);
   });
   
-  $(function () {
-	$('#search').on('input', function () {
-		searchRow();
-	});
-})
-
-function searchRow() {
-	var $rows = $('#table > tbody > tr').not(".header");
-	var val1 = $.trim($('#search').val()).replace(/ +/g, ' ').toLowerCase();
-	var val2 = $.trim($("#deviceSelector").text()).toLowerCase();
-	val2 = (val2 === "devices") ? "" : val2;
-
-	$rows.show().filter(function () {
-		var text1 = $(this).find('td:nth-child(1)').text().replace(/\s+/g, ' ').toLowerCase();
-		var text2 = $(this).find('td:nth-child(2)').text().replace(/\s+/g, ' ').toLowerCase();
-		return !~text1.indexOf(val1) || !~text2.indexOf(val2);
-	}).hide();
+  function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("filterDiv");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
 }
 
-function searchTableDevice(device) {
-	var filter, table, tr, td, i;
+// Show filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
 
-	$("#deviceSelector").html(device);
-
-	if (device == "all") {
-		$("#deviceSelector").html("Devices");
-	}
-
-	searchRow();
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
 }
