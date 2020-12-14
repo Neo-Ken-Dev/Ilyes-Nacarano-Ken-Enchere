@@ -159,7 +159,7 @@
         <c:forEach items="${listeArticlesVendus}" var="articleVendu">     
         <div class="container-fluid card-product">
             <img src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg" />
-            <img src="${articleVendu.rawBytes }" />
+            
                               	
 				  <div class="card-product-infos">
                 		<h2>${articleVendu.nomArticle}</h2>
