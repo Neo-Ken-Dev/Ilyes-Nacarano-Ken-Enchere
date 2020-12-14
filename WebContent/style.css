@@ -473,11 +473,12 @@ button * {
 }
 
 #enchereConnecte .titreCategorie {
+	margin-top: 10px;
 	margin-left: 120px;
 }
 
 #enchereConnecte .btn .caret {
-	margin-left: 250px;
+	margin-left: 100px;
 }
 
 #enchereConnecte .divPrincipaleAvecFiltre h4 {
@@ -500,7 +501,7 @@ button * {
 }
 
 #enchereConnecte .divDropDown {
-	margin-left: 50px;
+	margin-left: 30px;
 }
 
 /*Colonne 2 ----> Bouton rechercher*/
@@ -568,21 +569,26 @@ button * {
 
 
 #enchereConnecte .card-product {
-	overflow: hidden;
+	
 	height: 150px;
 	background: white;
 	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-	display: flex;
-	
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
 	align-items: center;
 	width: 400px;
 	margin: 20px 0 10px 250px;
 }
 
+#enchereConnecte .card-product-bis {	
+	height: 150px;	
+	width: 400px;
+}
 #enchereConnecte .card-product img {
-	height: 100%;
-	width: 130px;
-	object-fit: cover;
+  height: 100%;
+  width: 130px;
+  object-fit: cover;
 }
 
 #enchereConnecte .card-product h2 {
@@ -597,6 +603,7 @@ button * {
 	opacity: .7;
 	margin-bottom: 0;
 	margin-top: 8px;
+	
 }
 
 #enchereConnecte .card-product .card-product-infos {
@@ -609,10 +616,16 @@ button * {
 
 #enchereConnecte .filterDiv {
 
-  display: none; /* Hidden by default */
+  display: none; /* caché par défaut */
 }
 
-/* The "show" class is added to the filtered elements */
+/* "show" qui se rajoute aux elements pour afficher grace à javascript */
 .show {
-  display: block;
+	
+  display: flex !important;
 }
+.card-product-infos .show {
+	background-color: red;
+	z-index: 10;
+}
+

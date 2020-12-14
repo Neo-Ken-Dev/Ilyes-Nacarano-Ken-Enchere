@@ -31,7 +31,7 @@ $("input[value='0']").change(function() {
   }
 }
 
-// Show filtered elements
+// show filtered elements
 function w3AddClass(element, name) {
   var i, arr1, arr2;
   arr1 = element.className.split(" ");

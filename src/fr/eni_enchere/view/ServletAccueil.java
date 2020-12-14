@@ -4,9 +4,14 @@ import java.io.IOException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import fr.eni_enchere.bll.UtilisateursManager;
+import fr.eni_enchere.bo.Utilisateurs;
 /**
  * Servlet implementation class ServletAccueil
  */
@@ -17,9 +22,54 @@ public class ServletAccueil extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/pageAccueil.jsp");
-		System.out.println("hola");
-		rd.forward(request, response);	
+		//RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/pageAccueil.jsp");
+		//System.out.println("hola");
+		//rd.forward(request, response);	
+		
+		Cookie[] cookies = request.getCookies();
+		Cookie cookieUtilisateurPseudo = null;
+		Cookie cookieUtilisateurMotDePasse = null;
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if(cookie.getName().equals("pseudo")) {
+					cookieUtilisateurPseudo = cookie;
+				};			
+				if(cookie.getName().equals("motDePasse")) {
+					cookieUtilisateurMotDePasse = cookie;
+				};	
+			}
+		}
+		
+		if(cookieUtilisateurPseudo != null) {
+			String pageDestination;
+			UtilisateursManager utilisateurManager = new UtilisateursManager();	
+			Utilisateurs utilisateur = utilisateurManager.verifierUtilisateur(cookieUtilisateurPseudo.getValue(), cookieUtilisateurMotDePasse.getValue());
+
+			HttpSession session = request.getSession();
+			session.setMaxInactiveInterval(60*5);
+			session.setAttribute("utilisateur", utilisateur);
+			
+			
+			System.out.println(cookieUtilisateurPseudo.getName());
+			System.out.println(cookieUtilisateurPseudo.getValue());
+			System.out.println(cookieUtilisateurMotDePasse.getName());
+			System.out.println(cookieUtilisateurMotDePasse.getValue());
+			
+			
+			pageDestination = "/user/accueil";
+			response.sendRedirect(request.getContextPath()+ pageDestination);
+			
+			//RequestDispatcher rd = request.getRequestDispatcher("user/accueil");
+			//rd.forward(request, response);
+			
+		} else {
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/pageAccueil.jsp");
+			rd.forward(request, response);
+		}
+	
+		//RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/connexion.jsp");
+		//rd.forward(request, response);
+		
 		
 	}
 	/**
