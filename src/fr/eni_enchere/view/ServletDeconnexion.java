@@ -50,7 +50,7 @@ public class ServletDeconnexion extends HttpServlet {
 		            }	           
 		         }
 			}
-			RequestDispatcher rd = request.getRequestDispatcher("index.html");
+			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
 			rd.forward(request, response);
 		}
 	}
