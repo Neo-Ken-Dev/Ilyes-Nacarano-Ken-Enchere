@@ -1,5 +1,8 @@
 package fr.eni_enchere.bo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @author mak_t
  *
@@ -8,6 +11,7 @@ public class Categories {
 	
 	private int noCategorie;
 	private String libelle;
+	private List<Categories> categories = new ArrayList<Categories>();
 	
 	
 	public Categories() {
@@ -28,16 +32,6 @@ public class Categories {
 	}
 
 
-	public int getNo_categorie() {
-		return noCategorie;
-	}
-
-
-	public void setNo_categorie(int no_categorie) {
-		this.noCategorie = no_categorie;
-	}
-
-
 	public String getLibelle() {
 		return libelle;
 	}
@@ -45,6 +39,28 @@ public class Categories {
 
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
+	}
+	
+	
+
+
+	public int getNoCategorie() {
+		return noCategorie;
+	}
+
+
+	public void setNoCategorie(int noCategorie) {
+		this.noCategorie = noCategorie;
+	}
+
+
+	public List<Categories> getCategories() {
+		return categories;
+	}
+
+
+	public void setCategories(List<Categories> categories) {
+		this.categories = categories;
 	}
 
 

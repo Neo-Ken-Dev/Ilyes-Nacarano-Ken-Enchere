@@ -69,14 +69,13 @@
                         <p>Catégorie : </p>
                     </div>
                     <div class="btn-group divDropDown">
-                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <button class="btn btn-default btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="deviceSelector">
                             Toutes <span class="caret"></span>
                         </button>
-                        <ul class="dropdown-menu">
-                            <li><a href="">Informatique</a></li>
-                            <li><a href="">Ameublement</a></li>
-                            <li><a href="">Vêtement</a></li>
-                            <li><a href="">Sport&Loisirs</a></li>
+                        <ul class="dropdown-menu" aria-labelled-by="dropdownMenu">
+                        	<c:forEach items="${listeCategories}" var="categorie">                    	
+                        	<li><a class="dropdown-item" href="javascript:void(0)" onclick="searchTableDevice(this.innerHTML)">${categorie.libelle}</a> </li>
+                        	</c:forEach>
                         </ul>
                     </div>
                    
@@ -157,15 +156,19 @@
                 </div>
             </div>
         </div>
+        <c:forEach items="${listeArticlesVendus}" var="articleVendu">     
         <div class="container-fluid card-product">
             <img src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg" />
-            <div class="card-product-infos">
-                <h2>PC Gamer pour travailler</h2>
-                <p>Prix : 210 points</p>
-                <p> Fin de l'enchère : 10/08/2018</p>
-                <p>Vendeur: jojo44</p>
-            </div>
+            
+                              	
+				  <div class="card-product-infos">
+                		<h2>${articleVendu.nomArticle}</h2>
+                		<p>Prix : ${articleVendu.prixVente} points</p>
+                		<p> Fin de l'enchère : ${articleVendu.dateFinEncheres}</p>
+                		<p>Vendeur: ${utilisateur.pseudo}</p>
+            	</div>
         </div>
+        </c:forEach>
     </div>
     <!-- jQuery pour selectionner et deselectionner radioButton -->
 	<script src="script.js"></script>

@@ -58,6 +58,7 @@
 			</div>
 			<div class="divBtnModifier">
 				<a href="${pageContext.request.contextPath}/user/modifie_profil"	class="btn btn-lg btn-primary btnModiferProfil" role="button">Modifier</a>
+
 			</div>
 		</div>
 	</div>
