@@ -5,7 +5,6 @@ import java.sql.Date;
 import java.util.List;
 
 import fr.eni_enchere.bo.ArticleVendus;
-import fr.eni_enchere.bo.Utilisateurs;
 import fr.eni_enchere.dal.ArticlesVendusDAO;
 import fr.eni_enchere.dal.DAOFactory;
 

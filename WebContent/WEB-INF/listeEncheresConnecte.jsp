@@ -15,7 +15,7 @@
     <!--Pour icone-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
     <!--Custom Styles CSS-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <!--Jquery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
 </head>
@@ -39,7 +39,7 @@
             <div class="collapse navbar-collapse navbarDiv" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav divNavbar">
                     <li class="active"><a href="#">Enchères<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">Vendre un article</a></li>
+                    <li><a href="${pageContext.request.contextPath}/user/mettre_en_vente">Vendre un article</a></li>
                     <c:if test="${!empty id }">
                     
                     <li><a href="${pageContext.request.contextPath}/user/monprofil?id=${id}">Mon profil</a></li>

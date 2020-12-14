@@ -41,9 +41,7 @@ public class ServletAjoutProduit extends HttpServlet {
 		int noUtilisateur = (int) session.getAttribute("id");	
 		//test pour voir quel id on recupere
 		System.out.println("verifier qu'on a une id : " + noUtilisateur);
-		
-		//int noUtilisateur = 38;
-				
+			
 		String nomArticle = request.getParameter("article");
 		String description = request.getParameter("description");
 		
@@ -112,7 +110,8 @@ public class ServletAjoutProduit extends HttpServlet {
 		}
 	
 		//renvoyer la réponse sur la page enchere connecte	
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/listeEncheresConnecte.jsp");
+		RequestDispatcher rd = request.getRequestDispatcher("/user/accueil");
+		System.out.println("renvoie vers listenechereconnecter");
 		rd.forward(request, response);	
 		
 	}

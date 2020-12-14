@@ -3,16 +3,6 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>EniEnchere</display-name>
   <welcome-file-list>
-    <welcome-file>page_accueil.html</welcome-file>
+    <welcome-file>accueil</welcome-file>
   </welcome-file-list>
- 
-  <!-- 
-    On configure nos Servlet pour les associer à une ou plusieurs URL
-    Pour cela on utilise dans un premier temps la balise <servlet> pour la déclarer
-    Puis dans <servlet-mapping> on associe les URL
-   -->
-  
-  
-
-  
 </web-app>
