@@ -1,9 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <!-- meta de base pour du bootstrap -->
 <meta name="viewport" content="width=device-width, initial-scale=1"
-    charset="UTF-8">
+	charset="UTF-8">
 <!-- Lien au .css -->
 <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
 
@@ -15,7 +17,7 @@
 
 <!-- CDN Bootstrap 3 -->
 <link rel="stylesheet"
-    href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 
 <title>Accueil</title>
 </head>
@@ -28,7 +30,7 @@
 				</div>
 				<div>
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">S'inscrire</a></li> 
+						<li><a href="#">S'inscrire</a></li>
 						<li><a href="#">Se connecter</a></li>
 					</ul>
 				</div>
