@@ -81,11 +81,7 @@
 									<option onclick="filterSelection(${categorie.noCategorie})">${categorie.libelle}</option>
                         	</c:forEach>
  						 </ul>
-					</div>
-					
-					
-					
-					             
+					</div>				             
                 </div>
                 <div class="row divRadioEtCheckbox">
                     <div class="col divAchats">
@@ -175,6 +171,7 @@
                 			<p class="" >Vendeur: ${utilisateur.pseudo}</p>         	    
                 		</div>
                		</div>        
+
         </c:forEach>
         </div>
         

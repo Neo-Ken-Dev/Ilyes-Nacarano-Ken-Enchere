@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.eni_enchere.bo.ArticleVendus;
+import fr.eni_enchere.bo.Utilisateurs;
 import fr.eni_enchere.dal.ArticlesVendusDAO;
 import fr.eni_enchere.dal.ConnectionProvider;
 
@@ -17,6 +18,7 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 	
 	private  Connection connection;
 	private static final String SELECT_ALL = "SELECT * FROM articles_vendus";
+	private static final String SELECT_BY_ID = "SELECT * FROM articles_vendus WHERE no_article= ?";
 	private static final String INSERT_PRODUCT = "INSERT INTO ARTICLES_VENDUS (nom_article,description,date_debut_encheres,date_fin_encheres,prix_initial,no_utilisateur,no_categorie) VALUES (?,?,?,?,?,?,?)";
 	
 	private void loadDatabase() {		
@@ -77,6 +79,34 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 		return newArticle;
 		
 
+	}
+
+	@Override
+	public ArticleVendus selectById(int id) {
+		loadDatabase();
+		
+		ArticleVendus ArticleVendus = null;
+		
+		try {
+			PreparedStatement pstmt = connection.prepareStatement(SELECT_BY_ID);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ArticleVendus = new ArticleVendus();
+				ArticleVendus.setNoArticle(id);
+				ArticleVendus.setNomArticle(rs.getString("nom_article"));
+				ArticleVendus.setDescription(rs.getString("description"));
+				ArticleVendus.setDateDebutEncheres(Date.valueOf(rs.getString("date_debut_encheres")));
+				ArticleVendus.setDateFinEncheres(Date.valueOf(rs.getString("date_fin_encheres")));
+				ArticleVendus.setPrixInitial(Integer.parseInt(rs.getString("prix_initial")));
+				ArticleVendus.setNoCategorie(Integer.parseInt(rs.getString("no_categorie")));
+							
+			}			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
+		return ArticleVendus;
 	}
 
 }

@@ -9,5 +9,7 @@ public interface ArticlesVendusDAO {
 	public List<ArticleVendus> selectAll();
 
 	public ArticleVendus ajouterProduit(ArticleVendus newArticle);
+	
+    ArticleVendus selectById(int id);
 
 }

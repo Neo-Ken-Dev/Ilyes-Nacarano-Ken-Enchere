@@ -24,9 +24,12 @@ public class ArticlesVendusManager {
 	   return newArticleAjouterAvecID;	   
    }
 
-
 	public List<ArticleVendus> selectionArticlesVendus() {
 		return daoArticleVendus.selectAll();
+	}
+	
+	public ArticleVendus selectionArticlesVendusById(int id) {
+		return daoArticleVendus.selectById(id);
 	}
 	
 
