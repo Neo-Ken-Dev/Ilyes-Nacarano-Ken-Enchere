@@ -32,5 +32,8 @@ public class ArticlesVendusManager {
 		return daoArticleVendus.selectById(id);
 	}
 	
+	public List<ArticleVendus> selectionArticlesFiltreAchats() {
+		return daoArticleVendus.selectByFilter();
+	}
 
 }

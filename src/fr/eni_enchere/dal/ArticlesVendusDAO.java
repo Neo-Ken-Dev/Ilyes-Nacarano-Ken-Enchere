@@ -12,4 +12,6 @@ public interface ArticlesVendusDAO {
 	
     ArticleVendus selectById(int id);
 
+	public List<ArticleVendus> selectByFilter();
+
 }

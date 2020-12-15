@@ -27,7 +27,7 @@ public class ServletAjoutProduit extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/AjoutProduit.jsp").forward(request, response);
 	}
 
@@ -40,7 +40,6 @@ public class ServletAjoutProduit extends HttpServlet {
 		HttpSession session = request.getSession();		
 		int noUtilisateur = (int) session.getAttribute("id");
 		//test pour voir quel id on recupere
-		System.out.println(noUtilisateur);
 		System.out.println("verifier qu'on a une id : " + noUtilisateur);
 			
 		String nomArticle = request.getParameter("article");

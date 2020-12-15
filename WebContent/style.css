@@ -2,7 +2,7 @@
 
 /*** Début du style GLOBAL ***/
 body * {
-	background-color: #fcfcfc;
+	/*background-color: #fcfcfc;*/
 	font-family: 'Chilanka';
 }
 
@@ -563,7 +563,6 @@ button * {
 	display: flex;
 	flex-direction: row;
 	flex-wrap:wrap;
-	border: solid 1px red;
 
 }
 
@@ -625,7 +624,12 @@ button * {
   display: flex !important;
 }
 .card-product-infos .show {
-	background-color: red;
 	z-index: 10;
 }
 
+/*** Début page mot de passe ***/
+
+#password .container {
+	margin-top: 200px;
+	
+}
