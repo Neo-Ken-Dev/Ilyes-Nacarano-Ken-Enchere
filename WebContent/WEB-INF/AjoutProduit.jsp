@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-  <section id=ajout-produit>
+  <section id="ajout-produit">
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">

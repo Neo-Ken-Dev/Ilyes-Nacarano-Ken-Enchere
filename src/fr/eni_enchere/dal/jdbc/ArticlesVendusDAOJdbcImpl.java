@@ -20,6 +20,11 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 	private static final String SELECT_ALL = "SELECT * FROM articles_vendus";
 	private static final String SELECT_BY_ID = "SELECT * FROM articles_vendus WHERE no_article= ?";
 	private static final String INSERT_PRODUCT = "INSERT INTO ARTICLES_VENDUS (nom_article,description,date_debut_encheres,date_fin_encheres,prix_initial,no_utilisateur,no_categorie) VALUES (?,?,?,?,?,?,?)";
+	private static final String SELECT_BY_ID_JOIN_ALL_TABLE ="SELECT * FROM ARTICLES_VENDUS \r\n" + 
+			"   JOIN CATEGORIES ON ARTICLES_VENDUS.no_categorie = CATEGORIES.no_categorie\r\n" + 
+			"   JOIN RETRAITS ON ARTICLES_VENDUS.no_article = RETRAITS.no_article\r\n" + 
+			"     WHERE ARTICLES_VENDUS.no_article = ?";
+	
 	
 	private void loadDatabase() {		
 		try {
@@ -107,6 +112,40 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 			e.printStackTrace();
 		}		
 		return ArticleVendus;
+	}
+
+	@Override
+	public ArticleVendus selectByIdWithInfoFromOtherTable(int id) {
+		
+		loadDatabase();
+		
+		ArticleVendus ArticleVendusWithAllInfo = null;
+		
+		try {
+			PreparedStatement pstmt = connection.prepareStatement(SELECT_BY_ID_JOIN_ALL_TABLE);
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				ArticleVendusWithAllInfo = new ArticleVendus();
+				ArticleVendusWithAllInfo.setNoArticle(id);
+				ArticleVendusWithAllInfo.setNomArticle(rs.getString("nom_article"));
+				ArticleVendusWithAllInfo.setDescription(rs.getString("description"));
+				ArticleVendusWithAllInfo.setDateDebutEncheres(Date.valueOf(rs.getString("date_debut_encheres")));
+				ArticleVendusWithAllInfo.setDateFinEncheres(Date.valueOf(rs.getString("date_fin_encheres")));
+				ArticleVendusWithAllInfo.setPrixInitial(Integer.parseInt(rs.getString("prix_initial")));
+				ArticleVendusWithAllInfo.setNoUtilisateur(Integer.parseInt(rs.getString("no_utilisateur")));
+				
+				ArticleVendusWithAllInfo.setLibelleCategorie(rs.getString("libelle"));
+				ArticleVendusWithAllInfo.setRue(rs.getString("rue"));
+				ArticleVendusWithAllInfo.setCode_postal(rs.getString("code_postal"));
+				ArticleVendusWithAllInfo.setVille(rs.getString("ville"));						
+			}			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
+		return ArticleVendusWithAllInfo;
+
 	}
 
 }

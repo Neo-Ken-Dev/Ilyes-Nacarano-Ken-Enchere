@@ -32,5 +32,9 @@ public class ArticlesVendusManager {
 		return daoArticleVendus.selectById(id);
 	}
 	
+	public ArticleVendus articleVendusWithAllInfo(int id) {
+		return daoArticleVendus.selectByIdWithInfoFromOtherTable(id);
+	}
+	
 
 }

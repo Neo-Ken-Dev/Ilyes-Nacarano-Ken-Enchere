@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 
 <!DOCTYPE html>
@@ -21,10 +20,10 @@
 	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
 	rel="stylesheet">
 <!--Custom Styles CSS-->
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <section id=ajout-produit>
+  <section id="page_encherir">
 	<nav class="navbar navbar-default">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -37,55 +36,55 @@
 	
 	<div class="">
 
-	    <div class="col-lg-12">
-	      <h1>Nouvelle vente</h1>
+	    <div class="col-lg-12 titre">
+	      <h1>Détail vente</h1>
 		</div>	
 		
-		<div class="col-lg-5">
-			<img class="img-responsive" src="../exemple_image.jpg">
+		<div class="col-lg-3">
+			<img class="img-responsive" src="exemple_image.jpg">
 		</div>
 	
-	  <div class="container">
+	  <div class="container-fluid">
 	   <div class="row">	
-		<div class="col-lg-6">	
+		<div class="col-lg-8 col-sm-12 col-xs-12">	
 
 			<div class="col-lg-12">
-			  <h3>titre Article :</h3> 			  
+			  <h3>${ArticleAEncherir.nomArticle }</h3> 			  
 			</div>
 						
-			<div class="col-lg-12">
-               <h3>Description :</h3>
-               <p> description de l'article</p>                             
+			<div class="col-lg-12 ">
+               <h3 class="col-lg-5 ">Description :</h3>
+               <p class="col-lg-7 ">${ArticleAEncherir.description }</p>                             
             </div>
             
             <div class="col-lg-12">
-			  <h3>Catégorie</h3> 
-			  <h3>Catégorie</h3> 
+			  <h3 class="col-lg-5">Catégorie</h3> 
+			  <h3 class="col-lg-7">${ArticleAEncherir.libelleCategorie }</h3> 
 			</div>
             
             <div class="col-lg-12">
-              <h3>Meilleur offre :</h3>
-              <h3>210 point par bob</h3>
+              <h3 class="col-lg-5">Meilleur offre :</h3>
+              <h3 class="col-lg-7">210 point par bob</h3>
             </div>
             
             <div class="col-lg-12">
-              <h3>Mise à prix : </h3>
-              <h3>185 points</h3>
+              <h3 class="col-lg-5">Mise à prix : </h3>
+              <h3 class="col-lg-7">${ArticleAEncherir.prixInitial }  points</h3>
             </div>
             
             <div class="col-lg-12">
-              <h3>Fin de l'enchère : </h3>
-              <h3>09/10/2018 </h3>
+              <h3 class="col-lg-5">Fin de l'enchère : </h3>
+              <h3 class="col-lg-7">${ArticleAEncherir.dateFinEncheres } </h3>
             </div>
                             
             <div class="col-lg-12">
-              <h3>Retrait : </h3>
-               <p> Adresse de retrait<br> de l'article</p>       
+              <h3 class="col-lg-5">Retrait : </h3>
+              <p class="col-lg-7">${ArticleAEncherir.rue}<br>${ArticleAEncherir.code_postal} ${ArticleAEncherir.ville}</p>       
             </div>
             
            <div class="col-lg-12">                 
-            <h3>Vendeur : </h3>
-            <h3>pseudo vendeur </h3>
+            <h3 class="col-lg-5">Vendeur : </h3>
+            <h3 class="col-lg-7">pseudo vendeur </h3>
            </div>  
            
            <div class="col-lg-12">

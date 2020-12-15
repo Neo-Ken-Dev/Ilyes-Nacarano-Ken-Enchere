@@ -2,6 +2,7 @@ package fr.eni_enchere.dal;
 
 import fr.eni_enchere.dal.jdbc.ArticlesVendusDAOJdbcImpl;
 import fr.eni_enchere.dal.jdbc.CategoriesDAOJdbcImpl;
+import fr.eni_enchere.dal.jdbc.EnchereDAOJdbcImpl;
 import fr.eni_enchere.dal.jdbc.RetraitDAOJdbcImpl;
 import fr.eni_enchere.dal.jdbc.UtilisateursDAOJdbcImpl;
 /**

@@ -615,7 +615,6 @@ button * {
 }
 
 #enchereConnecte .filterDiv {
-
   display: none; /* caché par défaut */
 }
 
@@ -628,4 +627,15 @@ button * {
 	background-color: red;
 	z-index: 10;
 }
+
+/*** Début page ENCHERIR ***/
+
+#page_encherir .titre {
+	color: red;
+	text-align: center;
+}
+
+
+
+
 

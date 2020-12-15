@@ -17,9 +17,13 @@ public class ArticleVendus {
 	private int noCategorie;
 	private List<ArticleVendus> articles = new ArrayList<>();
 	
-	//CONSTRUCTORS -----------------------------------------
-
+	//ajout d'attribut pour créer un objet regroupant les table ARTICLES_VENDUS / CATEGORIES et RETRAITS => voire constructeur Constructeur table réunie
+	private String libelleCategorie;
+	private String rue;
+	private String code_postal;
+	private String ville;
 	
+	//CONSTRUCTORS -----------------------------------------
 	public ArticleVendus() {
 		super();
 	}
@@ -66,12 +70,26 @@ public class ArticleVendus {
 		this.noCategorie = noCategorie;
 	}
 	
+	//Constructeur table réunie  pour créer un objet regroupant les table ARTICLES_VENDUS / CATEGORIES et RETRAITS
+	public ArticleVendus(int noArticle, String nomArticle, String description, Date dateDebutEncheres,
+			Date dateFinEncheres, int prixInitial, int noUtilisateur, String libelleCategorie, String rue, String code_postal, String ville) {
+		this.noArticle = noArticle;
+		this.nomArticle = nomArticle;
+		this.description = description;
+		this.dateDebutEncheres = dateDebutEncheres;
+		this.dateFinEncheres = dateFinEncheres;
+		this.prixInitial = prixInitial;
+		this.noUtilisateur = noUtilisateur;
+		
+		this.libelleCategorie = libelleCategorie;
+		this.rue = rue;
+		this.code_postal = code_postal;
+		this.ville = ville;
+
+	}
+	
+
 	//GETTERS ET SETTERS -----------------------------------------
-
-
-
-
-
 
 	public int getNoArticle() {
 		return noArticle;
@@ -172,6 +190,41 @@ public class ArticleVendus {
 	public void setArticles(List<ArticleVendus> articles) {
 		this.articles = articles;
 	}
+	
+
+	public String getLibelleCategorie() {
+		return libelleCategorie;
+	}
+
+	public void setLibelleCategorie(String libelleCategorie) {
+		this.libelleCategorie = libelleCategorie;
+	}
+
+	public String getRue() {
+		return rue;
+	}
+
+	public void setRue(String rue) {
+		this.rue = rue;
+	}
+
+	public String getCode_postal() {
+		return code_postal;
+	}
+
+	public void setCode_postal(String code_postal) {
+		this.code_postal = code_postal;
+	}
+
+	public String getVille() {
+		return ville;
+	}
+
+	public void setVille(String ville) {
+		this.ville = ville;
+	}
+
+
 
 	
 	//Méthode to String -----------------------------------------

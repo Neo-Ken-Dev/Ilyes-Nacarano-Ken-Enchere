@@ -11,5 +11,7 @@ public interface ArticlesVendusDAO {
 	public ArticleVendus ajouterProduit(ArticleVendus newArticle);
 	
     ArticleVendus selectById(int id);
+    
+    ArticleVendus selectByIdWithInfoFromOtherTable(int id);
 
 }
