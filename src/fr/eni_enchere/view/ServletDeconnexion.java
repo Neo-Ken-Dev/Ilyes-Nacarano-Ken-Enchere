@@ -42,7 +42,7 @@ public class ServletDeconnexion extends HttpServlet {
 		            if((cookie.getName( )).compareTo("pseudo") == 0 ) {
 		               cookie.setMaxAge(0);
 		               response.addCookie(cookie);
-		               
+		            }
 		               if((cookie.getName( )).compareTo("motDePasse") == 0 ) {
 			               cookie.setMaxAge(0);
 			               response.addCookie(cookie);
@@ -50,10 +50,10 @@ public class ServletDeconnexion extends HttpServlet {
 		            }	           
 		         }
 			}
-			RequestDispatcher rd = request.getRequestDispatcher("index.jsp");
+			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/pageAccueil.jsp");
 			rd.forward(request, response);
 		}
-	}
+	
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

@@ -53,6 +53,7 @@
         <div class="row titrePage">
             <p>Liste des enchères</p>
         </div>
+        <form action="${pageContext.request.contextPath}/ServletFiltre">
         <div class="row divPrincipaleAvecFiltre">
             <div class="col-lg-6 col-md-6 colonne1">
                 <div class="row ">
@@ -68,21 +69,19 @@
                     <div class="titreCategorie">
                         <label for="categories">Catégorie :</label>
                     </div>
-                    						<div id="myBtnContainer">
-  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-  <button class="btn" onclick="filterSelection(1)"> Cars</button>
-  <button class="btn" onclick="filterSelection(2)"> Animals</button>
-  <button class="btn" onclick="filterSelection(3)"> Fruits</button>
-  <button class="btn" onclick="filterSelection(4)"> Colors</button>
-</div>
-                     <div class="liste_categories">
-						<select name="derouleur_categories" id="categories">
 
-                        	<c:forEach items="${listeCategories}" var="categorie">  
+					
+					
+					<div class="btn-group divDropDown">
+  						<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    						Choisissez votre catégorie... <span class="caret"></span>
+  						</button>
+  						<ul class="dropdown-menu divDropDown">
+    						<c:forEach items="${listeCategories}" var="categorie">  
 									<option onclick="filterSelection(${categorie.noCategorie})">${categorie.libelle}</option>
                         	</c:forEach>
-						</select>
-					</div>              
+ 						 </ul>
+					</div>				             
                 </div>
                 <div class="row divRadioEtCheckbox">
                     <div class="col divAchats">
@@ -96,19 +95,19 @@
                             <div id="filterOnControls">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="achat" value="">
+                                        <input type="checkbox" name="encheresOuvertes" value="encheresOuvertes">
                                         enchères ouvertes
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="achat" value="">
+                                        <input type="checkbox" name="mesEncheres" value="mesEncheres">
                                         mes enchères
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="achat" value="" >
+                                        <input type="checkbox" name="mesEncheresRemportees" value="mesEncheresRemportees" >
                                         mes enchères remportées
                                     </label>
                                 </div>
@@ -127,19 +126,19 @@
                             <div id="filterOnControls">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="mesVentes" value=""  disabled="true"  >
+                                        <input type="checkbox" name="mesVentes" value="mesVentesEnCours"  disabled="true"  >
                                         mes ventes en cours
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="mesVentes" value=""  disabled="true"  >
+                                        <input type="checkbox" name="mesVentes" value="ventesNonDebutees"  disabled="true"  >
                                         ventes non débutées
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="mesVentes" value=""  disabled="true" >
+                                        <input type="checkbox" name="mesVentes" value="ventesTerminees"  disabled="true" >
                                         ventes terminées
                                     </label>
                                 </div>
@@ -153,31 +152,32 @@
             <div class="col-lg-6 col-md-6 colonne2">
                 <div class="col btnRechercherConnecte">
                     <div>
-                        <button class="btn btn-lg btn-primary btnRechercher shadow p-3 mb-5 ">
+                        <button type="submit" class="btn btn-lg btn-primary btnRechercher shadow p-3 mb-5 ">
                             Rechercher
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-               
+       </form>        
         <div class="alignerCarteProduit ">   
         <c:forEach items="${listeArticlesVendus}" var="articleVendu">   
-        <div class="container-fluid card-product   ">
-            <img src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg" class="filterDiv ${articleVendu.noCategorie}"/>                           	
-				  <div class="card-product-infos filterDiv ${articleVendu.noCategorie}">
-                		<h2 class="filterDiv ${articleVendu.noCategorie}">${articleVendu.nomArticle}</h2>
-                		<p class="filterDiv ${articleVendu.noCategorie}">Prix : ${articleVendu.prixVente} points</p>
-                		<p class="filterDiv ${articleVendu.noCategorie}"> Fin de l'enchère : ${articleVendu.dateFinEncheres}</p>
-                		<p class="filterDiv ${articleVendu.noCategorie}" >Vendeur: ${utilisateur.pseudo}</p>
-            	</div>
-        </div>
+               		<div class="card-product filterDiv ${articleVendu.noCategorie}">               		
+            			<img src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg"  class=""/>                           				 
+                		<div class="">                		
+                			<h2 class="">${articleVendu.nomArticle}</h2>
+                			<p class="">Prix : ${articleVendu.prixVente} points</p>
+                			<p class=""> Fin de l'enchère : ${articleVendu.dateFinEncheres}</p>
+                			<p class="" >Vendeur: ${utilisateur.pseudo}</p>         	    
+                		</div>
+               		</div>        
+
         </c:forEach>
         </div>
         
     </div>
     <!-- jQuery pour selectionner et deselectionner radioButton -->
-	<script src="script.js"></script>
+	<script src="../script.js"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
     </script>

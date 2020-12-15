@@ -38,7 +38,7 @@ public class ServletAjoutProduit extends HttpServlet {
 		
 		//recup id utilisateur connecter
 		HttpSession session = request.getSession();		
-		int noUtilisateur = (int) session.getAttribute("id");	
+		int noUtilisateur = (int) session.getAttribute("id");
 		//test pour voir quel id on recupere
 		System.out.println("verifier qu'on a une id : " + noUtilisateur);
 			
