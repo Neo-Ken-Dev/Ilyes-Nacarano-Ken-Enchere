@@ -108,7 +108,9 @@ public class ServletAjoutProduit extends HttpServlet {
 			RetraitManager ajouterRetrait = new RetraitManager();
 			ajouterRetrait.ajouterRetrait(idProduit, streetUser, zipCodeUser, cityUser);
 		}
-	
+		
+		request.setAttribute("articleMisEnVente", "ok");
+		request.setAttribute("nomArticle", nomArticle);
 		//renvoyer la réponse sur la page enchere connecte	
 		RequestDispatcher rd = request.getRequestDispatcher("/user/accueil");
 		System.out.println("renvoie vers listenechereconnecter");

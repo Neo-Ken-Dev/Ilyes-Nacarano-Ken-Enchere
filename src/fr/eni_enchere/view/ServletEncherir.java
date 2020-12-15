@@ -47,15 +47,14 @@ public class ServletEncherir extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
-		
 		//recup des info pour ajouter a la table encheres	
-			//recup id utilisateur connecter
+		//recup id utilisateur connecter
 		HttpSession session = request.getSession();		
 		int noUtilisateur = (int) session.getAttribute("id");
-		//int noUtilisateur = 39;
 		//test pour voir quel id on recupere
-	    System.out.println("verifier qu'on a une id : " + noUtilisateur);
-	    
+		System.out.println("verifier qu'on a une id : " + noUtilisateur);
+		
+	
 	    	//recu no_produit
 	    //int idProduit = 5;
 	    int idArticle = Integer.parseInt(request.getParameter("idArticle")) ;
@@ -68,12 +67,24 @@ public class ServletEncherir extends HttpServlet {
 	    
 	      //recup montant
 	    int montant_enchere = Integer.parseInt(request.getParameter("price"));
+	    int montant_vente = Integer.parseInt(request.getParameter("prixVente"));
+	    System.out.println("Le prix de vente est de : " + montant_vente);
 	   
 	    //ajout dans la BDD
 	    
 	    EnchereManager enchereManager = new EnchereManager();
 	    enchereManager.ajouterUneEnchere(sqlDateDebut, montant_enchere, idArticle, noUtilisateur);
+
 	    
+	    //Update de l'article
+	    ArticlesVendusManager articlesVendusManager = new ArticlesVendusManager();
+	    ArticleVendus article = null;
+	    article = articlesVendusManager.selectionArticlesVendusById(idArticle);
+	    System.out.println("L'article selectionne avec l'id est : " + article);
+	    article.setPrixVente(montant_enchere);
+	    System.out.println("L'article avec le prix de vente à jour : " + article);
+	    articlesVendusManager.update(article);
+	   
 	    response.sendRedirect(request.getContextPath()+ "/user/accueil");
 	    
 	    
