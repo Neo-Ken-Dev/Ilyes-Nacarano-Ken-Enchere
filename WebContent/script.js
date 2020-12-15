@@ -6,13 +6,23 @@
 $("input[value='0']").change(function() {
     $("input[name='mesVentes']").prop('disabled', true);
     $("input[name='mesVentes']").prop('checked', false);
-    $("input[name='achat']").prop('disabled', false);
+    $("input[name='encheresOuvertes']").prop('disabled', false);
+    $("input[name='mesEncheres']").prop('disabled', false);
+    $("input[name='mesEncheresRemportees']").prop('disabled', false);
   });
   
   // Enable checkbox
   $("input[value='1']").change(function() {
-    $("input[name='achat']").prop('disabled', true);
-    $("input[name='achat']").prop('checked', false);
+    $("input[name='encheresOuvertes']").prop('disabled', true);
+    $("input[name='encheresOuvertes']").prop('checked', false);
+    $("input[name='mesEncheres']").prop('disabled', true);
+    $("input[name='mesEncheres']").prop('checked', false);
+    $("input[name='mesEncheresRemportees']").prop('checked', false);
+    $("input[name='mesEncheresRemportees']").prop('checked', false);
+    
+    
+    
+    
     $("input[name='mesVentes']").prop('disabled', false);
   });
   

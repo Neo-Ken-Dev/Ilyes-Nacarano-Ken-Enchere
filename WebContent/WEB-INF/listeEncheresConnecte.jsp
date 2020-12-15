@@ -53,6 +53,7 @@
         <div class="row titrePage">
             <p>Liste des enchères</p>
         </div>
+        <form action="${pageContext.request.contextPath}/ServletFiltre">
         <div class="row divPrincipaleAvecFiltre">
             <div class="col-lg-6 col-md-6 colonne1">
                 <div class="row ">
@@ -98,19 +99,19 @@
                             <div id="filterOnControls">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="achat" value="">
+                                        <input type="checkbox" name="encheresOuvertes" value="encheresOuvertes">
                                         enchères ouvertes
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="achat" value="">
+                                        <input type="checkbox" name="mesEncheres" value="mesEncheres">
                                         mes enchères
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="achat" value="" >
+                                        <input type="checkbox" name="mesEncheresRemportees" value="mesEncheresRemportees" >
                                         mes enchères remportées
                                     </label>
                                 </div>
@@ -129,19 +130,19 @@
                             <div id="filterOnControls">
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="mesVentes" value=""  disabled="true"  >
+                                        <input type="checkbox" name="mesVentes" value="mesVentesEnCours"  disabled="true"  >
                                         mes ventes en cours
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="mesVentes" value=""  disabled="true"  >
+                                        <input type="checkbox" name="mesVentes" value="ventesNonDebutees"  disabled="true"  >
                                         ventes non débutées
                                     </label>
                                 </div>
                                 <div class="checkbox">
                                     <label>
-                                        <input type="checkbox" name="mesVentes" value=""  disabled="true" >
+                                        <input type="checkbox" name="mesVentes" value="ventesTerminees"  disabled="true" >
                                         ventes terminées
                                     </label>
                                 </div>
@@ -155,14 +156,14 @@
             <div class="col-lg-6 col-md-6 colonne2">
                 <div class="col btnRechercherConnecte">
                     <div>
-                        <button class="btn btn-lg btn-primary btnRechercher shadow p-3 mb-5 ">
+                        <button type="submit" class="btn btn-lg btn-primary btnRechercher shadow p-3 mb-5 ">
                             Rechercher
                         </button>
                     </div>
                 </div>
             </div>
         </div>
-               
+       </form>        
         <div class="alignerCarteProduit ">   
         <c:forEach items="${listeArticlesVendus}" var="articleVendu">   
                		<div class="card-product filterDiv ${articleVendu.noCategorie}">               		
