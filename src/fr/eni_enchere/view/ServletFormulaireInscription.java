@@ -7,6 +7,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
 import fr.eni_enchere.bll.UtilisateursManager;
 import fr.eni_enchere.bll.ValidationForm;
 import fr.eni_enchere.bo.Utilisateurs;
@@ -110,6 +112,7 @@ public class ServletFormulaireInscription extends HttpServlet {
 			UtilisateursManager newUser = new UtilisateursManager();
 			Utilisateurs utilisateur = newUser.addNewUser(pseudoUser, prenomUser, nomUser, emailUser, phoneUser, streetUser, zipCodeUser, cityUser, passwordUser);					
 			request.setAttribute("utilisateur", utilisateur);
+			
 		}
 		
 		//renvoyer la réponse sur la page de formulaire

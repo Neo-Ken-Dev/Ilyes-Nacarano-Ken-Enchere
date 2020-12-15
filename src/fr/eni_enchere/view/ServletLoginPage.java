@@ -94,7 +94,6 @@ public class ServletLoginPage extends HttpServlet {
 			HttpSession session = request.getSession();
 			session.setMaxInactiveInterval(10);
 			session.setAttribute("utilisateur", utilisateur);			
-		
 			pageDestination = "/user/accueil";
 			
 			
