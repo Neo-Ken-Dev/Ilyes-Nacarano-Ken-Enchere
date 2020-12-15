@@ -187,7 +187,10 @@
 							src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg"
 							class="" />
 						<div class="">
-							<h2 class="">${articleVendu.nomArticle}</h2>
+						
+							<h2 class="">
+							<a href="${pageContext.request.contextPath}/encherir?idArticle=${articleVendu.noArticle}">${articleVendu.nomArticle}</a>
+							</h2>
 							<p class="">Prix : ${articleVendu.prixVente} points</p>
 							<p class="">Fin de l'enchère :
 								${articleVendu.dateFinEncheres}</p>

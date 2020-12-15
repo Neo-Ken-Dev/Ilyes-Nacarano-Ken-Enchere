@@ -40,18 +40,15 @@ public class ServletListeEnchereConnecte extends HttpServlet {
 		
 		HttpSession session = request.getSession();	
 		Utilisateurs utilisateur = (Utilisateurs) session.getAttribute("utilisateur");
-		
+		System.out.println("TEST UTILISATEUR 2 : " + utilisateur);
 		//int id = (int) session.getAttribute("id");	
 		
 		int id = utilisateur.getNoUtilisateur();
 		System.out.println("noUtilisateur :" + id);
 		
-		request.setAttribute("utilisateur", utilisateur);
+		//request.setAttribute("utilisateur", utilisateur);
 		//Peut être supprimé, me sert de test
 		session.setAttribute("id", id);
-
-		System.out.println(id);
-		
 
 
 		CategoriesManager categoriesManager = new CategoriesManager();
@@ -67,67 +64,13 @@ public class ServletListeEnchereConnecte extends HttpServlet {
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/listeEncheresConnecte.jsp");
 		rd.forward(request, response);
 		
-		
-		
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//Test pour image
-		/*
-		Connection connection;
-		final String SELECT_ALL = "SELECT * FROM categories";
-		 String message = null;  // message will be sent back to client
-		
-		InputStream inputStream = null; // input stream of the upload file
 
-		
-		
-		// obtains the upload file part in this multipart request
-        Part filePart = request.getPart("photo");
-        if (filePart != null) {
-            // prints out some information for debugging
-            System.out.println(filePart.getName());
-            System.out.println(filePart.getSize());
-            System.out.println(filePart.getContentType());
-             
-            // obtains input stream of the upload file
-            inputStream = filePart.getInputStream();
-        }
-        
-        try {
-			connection = ConnectionProvider.getConnection();
-			
-			String sql = "INSERT INTO articles_vendus (nom_article,description, date_debut_encheres, date_fin_encheres, prix_initial, prix_vente, no_utilisateur, no_categorie, photo) values (?,?,?,?,?,?,?,?,?)";
-            PreparedStatement statement = connection.prepareStatement(sql);
- 
-            statement.setString(1, "Cours de math");
-            statement.setString(2, "bla bla bla");
-            statement.setDate(3, java.sql.Date.valueOf(java.time.LocalDate.now()));
-            statement.setDate(4, java.sql.Date.valueOf(java.time.LocalDate.now()));
-            statement.setInt(5, 200);
-            statement.setInt(6, 300);
-            statement.setInt(7, 2);
-            statement.setInt(8, 2);
-            if (inputStream != null) {
-                // fetches input stream of the upload file for the blob column
-                statement.setBinaryStream(9, inputStream);
-            }
-            
-            // sends the statement to the database server
-            int row = statement.executeUpdate();
-            if (row > 0) {
-                message = "File uploaded and saved into database";
-            }
-			
-			
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}	
-		
-		*/
 		doGet(request, response);
 		
 	}

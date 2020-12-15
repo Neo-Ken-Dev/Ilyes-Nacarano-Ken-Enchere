@@ -31,9 +31,12 @@ public class ServletEncherir extends HttpServlet {
 	
 		//recup info produit par id avec toutes les infos des autres table du sql
 		//pour tester id en dure
-		int id = 5; 
+		//int idArticle = 1; 
+		int idArticle = Integer.parseInt(request.getParameter("idArticle")) ;
+		System.out.println(idArticle);
 		ArticlesVendusManager articleManager = new ArticlesVendusManager();	
-		ArticleVendus infoArticleAEncherir = articleManager.articleVendusWithAllInfo(id);
+		ArticleVendus infoArticleAEncherir = articleManager.articleVendusWithAllInfo(idArticle);
+		System.out.println(infoArticleAEncherir);
 
 		request.setAttribute("ArticleAEncherir", infoArticleAEncherir);
 
@@ -47,15 +50,16 @@ public class ServletEncherir extends HttpServlet {
 		
 		//recup des info pour ajouter a la table encheres	
 			//recup id utilisateur connecter
-		/*HttpSession session = request.getSession();		
-		int noUtilisateur = (int) session.getAttribute("id");*/
-		int noUtilisateur = 39;
+		HttpSession session = request.getSession();		
+		int noUtilisateur = (int) session.getAttribute("id");
+		//int noUtilisateur = 39;
 		//test pour voir quel id on recupere
 	    System.out.println("verifier qu'on a une id : " + noUtilisateur);
 	    
 	    	//recu no_produit
-	    int idProduit = 5;
-	    
+	    //int idProduit = 5;
+	    int idArticle = Integer.parseInt(request.getParameter("idArticle")) ;
+	    System.out.println("je test l'id" + idArticle);
 	    	//recu date enchere => date du jour
 	    Date dateEnchere = new Date();
 	    java.sql.Date sqlDateDebut = new java.sql.Date(dateEnchere.getTime()); 
@@ -68,8 +72,9 @@ public class ServletEncherir extends HttpServlet {
 	    //ajout dans la BDD
 	    
 	    EnchereManager enchereManager = new EnchereManager();
-	    enchereManager.ajouterUneEnchere(sqlDateDebut, montant_enchere, idProduit, noUtilisateur);
+	    enchereManager.ajouterUneEnchere(sqlDateDebut, montant_enchere, idArticle, noUtilisateur);
 	    
+	    response.sendRedirect(request.getContextPath()+ "/user/accueil");
 	    
 	    
 	}

@@ -39,7 +39,6 @@ public class ServletAjoutProduit extends HttpServlet {
 		//recup id utilisateur connecter
 		HttpSession session = request.getSession();		
 		int noUtilisateur = (int) session.getAttribute("id");
-		System.out.println(noUtilisateur);
 		//test pour voir quel id on recupere
 		System.out.println("verifier qu'on a une id : " + noUtilisateur);
 			
@@ -60,7 +59,7 @@ public class ServletAjoutProduit extends HttpServlet {
 			categorie = 3;
 		}else if (request.getParameter("derouleur_categories").equals("Sport & Loisirs")){
 			System.out.println("Sport & Loisirs");
-			categorie = 1;
+			categorie = 4;
 		}else {
 			System.out.println("erreur pas de num de categorie");
 		}

@@ -109,14 +109,22 @@ public class ServletFormulaireInscription extends HttpServlet {
 			
 		//Valider l'ensemble du form
 		if (isFormValid) {
+			
+			HttpSession session = request.getSession();	
+			//Utilisateurs utilisateur = (Utilisateurs) session.getAttribute("utilisateur");
 			UtilisateursManager newUser = new UtilisateursManager();
 			Utilisateurs utilisateur = newUser.addNewUser(pseudoUser, prenomUser, nomUser, emailUser, phoneUser, streetUser, zipCodeUser, cityUser, passwordUser);					
-			request.setAttribute("utilisateur", utilisateur);
+			session.setAttribute("utilisateur", utilisateur);
+			
+			System.out.println("je crée cet utilisateur dans ma servletFormulaireInscription : " + utilisateur);
+			//request.setAttribute("utilisateur", utilisateur);
 			
 		}
 		
 		//renvoyer la réponse sur la page de formulaire
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/formulaireInscription.jsp");
-		rd.forward(request, response);		
+		//RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/formulaireInscription.jsp");
+		//rd.forward(request, response);		
+	    response.sendRedirect(request.getContextPath()+ "/user/accueil");
+
 	}
 }

@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 
 import fr.eni_enchere.bo.Utilisateurs;
 import fr.eni_enchere.dal.ConnectionProvider;
@@ -37,7 +38,7 @@ public class UtilisateursDAOJdbcImpl implements UtilisateursDAO {
 		loadDatabase();
 		
 		try {
-			PreparedStatement preparedStmtInsert = connection.prepareStatement(INSERT_USER);
+			PreparedStatement preparedStmtInsert = connection.prepareStatement(INSERT_USER, Statement.RETURN_GENERATED_KEYS);
 			preparedStmtInsert.setString(1, utilisateur.getPseudo());
 			preparedStmtInsert.setString(2, utilisateur.getNom());
 			preparedStmtInsert.setString(3, utilisateur.getPrenom());
@@ -51,6 +52,11 @@ public class UtilisateursDAOJdbcImpl implements UtilisateursDAO {
 			preparedStmtInsert.setInt(11, utilisateur.getAdministrateur());
 			
 			preparedStmtInsert.executeUpdate();
+			
+			ResultSet rs = preparedStmtInsert.getGeneratedKeys();
+			if(rs.next()) {
+				utilisateur.setNoUtilisateur(rs.getInt(1));
+			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

@@ -90,10 +90,10 @@ public class ServletLoginPage extends HttpServlet {
 		if (utilisateur != null) {
 			
 			HttpSession session = request.getSession();
-			session.setMaxInactiveInterval(10);
+			session.setMaxInactiveInterval(5*60);
 			session.setAttribute("utilisateur", utilisateur);
-			session.setAttribute("id", utilisateur.getNoUtilisateur());
-			System.out.println(utilisateur.getNoUtilisateur());
+			//session.setAttribute("id", utilisateur.getNoUtilisateur());
+			System.out.println("ID de la methode DOPost ServletLogin : " + utilisateur.getNoUtilisateur());
 			pageDestination = "/user/accueil";
 			
 			
