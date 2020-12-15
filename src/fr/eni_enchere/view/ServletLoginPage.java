@@ -110,17 +110,13 @@ public class ServletLoginPage extends HttpServlet {
 				System.out.println(cookieUtilisateurMotDePasse);
 			}
 			response.sendRedirect(request.getContextPath()+ pageDestination);
-		}
-		
-		
+		}else {
 			String messageErreur = "Oops!! Pseudo/Mot de passe invalide";
 			request.setAttribute("messageErreur", messageErreur);
 			pageDestination = "WEB-INF/connexion.jsp";
 			RequestDispatcher rd = request.getRequestDispatcher(pageDestination);
-			rd.forward(request, response);
-		
-		
-	
+			rd.forward(request, response);		
+		}
 	}
 
 }
