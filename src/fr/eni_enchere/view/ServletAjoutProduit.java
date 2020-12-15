@@ -54,10 +54,10 @@ public class ServletAjoutProduit extends HttpServlet {
 		}else if (request.getParameter("derouleur_categories").equals("Ameublement")){
 			System.out.println("Ameublement");
 			categorie = 2;
-		}else if (request.getParameter("derouleur_categories").equals("Vêtement")){
+		}else if (request.getParameter("derouleur_categories").equals("Vetement")){
 			System.out.println("Vêtement");
 			categorie = 3;
-		}else if (request.getParameter("derouleur_categories").equals("Sport & Loisirs")){
+		}else if (request.getParameter("derouleur_categories").equals("Sport et Loisirs")){
 			System.out.println("Sport & Loisirs");
 			categorie = 4;
 		}else {

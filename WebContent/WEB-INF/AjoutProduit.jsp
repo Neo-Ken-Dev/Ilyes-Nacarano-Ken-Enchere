@@ -67,8 +67,8 @@
 			    <select name="derouleur_categories" id="categorie" class="form-control">
 				  <option>Informatique</option>
 				  <option>Ameublement</option>
-				  <option>Vêtement</option>
-				  <option>Sport&amp;Loisirs</option>
+				  <option>Vetement</option>
+				  <option>Sport et Loisirs</option>
 				</select>
 			</div>
             
