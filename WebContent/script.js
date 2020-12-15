@@ -6,6 +6,9 @@
 $("input[value='0']").change(function() {
     $("input[name='mesVentes']").prop('disabled', true);
     $("input[name='mesVentes']").prop('checked', false);
+    $("input[name='mesVentesEnCours']").prop('disabled', true);
+    $("input[name='ventesNonDebutees']").prop('disabled', true);
+    $("input[name='ventesTerminees']").prop('disabled', true);
     $("input[name='encheresOuvertes']").prop('disabled', false);
     $("input[name='mesEncheres']").prop('disabled', false);
     $("input[name='mesEncheresRemportees']").prop('disabled', false);
@@ -17,13 +20,12 @@ $("input[value='0']").change(function() {
     $("input[name='encheresOuvertes']").prop('checked', false);
     $("input[name='mesEncheres']").prop('disabled', true);
     $("input[name='mesEncheres']").prop('checked', false);
+    $("input[name='mesEncheresRemportees']").prop('disabled', true);
     $("input[name='mesEncheresRemportees']").prop('checked', false);
-    $("input[name='mesEncheresRemportees']").prop('checked', false);
-    
-    
-    
-    
     $("input[name='mesVentes']").prop('disabled', false);
+    $("input[name='mesVentesEnCours']").prop('disabled', false);
+    $("input[name='ventesNonDebutees']").prop('disabled', false);
+    $("input[name='ventesTerminees']").prop('disabled', false);
   });
   
   

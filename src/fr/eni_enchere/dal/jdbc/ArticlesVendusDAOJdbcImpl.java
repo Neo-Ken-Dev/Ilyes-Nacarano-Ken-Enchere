@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.eni_enchere.bo.ArticleVendus;
-import fr.eni_enchere.bo.Utilisateurs;
 import fr.eni_enchere.dal.ArticlesVendusDAO;
 import fr.eni_enchere.dal.ConnectionProvider;
 
@@ -24,6 +23,8 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 			"   JOIN CATEGORIES ON ARTICLES_VENDUS.no_categorie = CATEGORIES.no_categorie\r\n" + 
 			"   JOIN RETRAITS ON ARTICLES_VENDUS.no_article = RETRAITS.no_article\r\n" + 
 			"     WHERE ARTICLES_VENDUS.no_article = ?";
+	
+	
 	
 	
 	private void loadDatabase() {		
@@ -145,7 +146,25 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 			e.printStackTrace();
 		}		
 		return ArticleVendusWithAllInfo;
+	}
 
+	public List<ArticleVendus> selectByFilter() {
+		loadDatabase();
+		List<ArticleVendus> listeArticles = new ArrayList<ArticleVendus>();
+		
+		try {
+			PreparedStatement pstmt = connection.prepareStatement(SELECT_ALL);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {			
+				listeArticles.add(new ArticleVendus(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres"), rs.getDate("date_fin_encheres"), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_utilisateur"), rs.getInt("no_categorie")));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println(listeArticles);
+		return listeArticles;
 	}
 
 }

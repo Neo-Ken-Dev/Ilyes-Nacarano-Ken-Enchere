@@ -86,14 +86,14 @@ public class ServletLoginPage extends HttpServlet {
 		UtilisateursManager utilisateurManager = new UtilisateursManager();
 		
 		Utilisateurs utilisateur = utilisateurManager.verifierUtilisateur(pseudo, motDePasse);
-		
-		System.out.println(utilisateur);
-		
+				
 		if (utilisateur != null) {
 			
 			HttpSession session = request.getSession();
 			session.setMaxInactiveInterval(10);
-			session.setAttribute("utilisateur", utilisateur);			
+			session.setAttribute("utilisateur", utilisateur);
+			session.setAttribute("id", utilisateur.getNoUtilisateur());
+			System.out.println(utilisateur.getNoUtilisateur());
 			pageDestination = "/user/accueil";
 			
 			
@@ -112,13 +112,13 @@ public class ServletLoginPage extends HttpServlet {
 			response.sendRedirect(request.getContextPath()+ pageDestination);
 		}
 		
-		else {
+		
 			String messageErreur = "Oops!! Pseudo/Mot de passe invalide";
 			request.setAttribute("messageErreur", messageErreur);
 			pageDestination = "WEB-INF/connexion.jsp";
 			RequestDispatcher rd = request.getRequestDispatcher(pageDestination);
 			rd.forward(request, response);
-		}
+		
 		
 	
 	}

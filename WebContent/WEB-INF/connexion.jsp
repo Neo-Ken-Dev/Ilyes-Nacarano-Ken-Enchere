@@ -69,7 +69,7 @@
 
 		<div class="checkBoxDiv">
 			<label class="labelCheckBox"> <input type="checkbox" name="seSouvenirDeMoi" id="seSouvenirDeMoi">Se souvenir de moi
-			</label> <a href="">Mot de passe oublié</a>
+			</label> <a href="${pageContext.request.contextPath}/ServletPassword">Mot de passe oublié</a>
 		</div>
 	</div>
 	<div>
