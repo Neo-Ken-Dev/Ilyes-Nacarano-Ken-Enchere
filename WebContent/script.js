@@ -17,8 +17,9 @@ $("input[value='0']").change(function() {
     $("input[name='encheresOuvertes']").prop('checked', false);
     $("input[name='mesEncheres']").prop('disabled', true);
     $("input[name='mesEncheres']").prop('checked', false);
+    $("input[name='mesEncheresRemportees']").prop('disabled', true);
     $("input[name='mesEncheresRemportees']").prop('checked', false);
-    $("input[name='mesEncheresRemportees']").prop('checked', false);
+
     
     
     
