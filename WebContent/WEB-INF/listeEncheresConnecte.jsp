@@ -35,6 +35,15 @@
 
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
+			${compteCree }
+			 
+			<c:if test="${!empty compteCree}">
+			<div class="alert alert-success" role="alert">Compte crée avec succès !!! Merci de valider le lien ennvoyé à ${utilisateur.email } </div>			
+			</c:if>
+			
+			<c:if test="${!empty articleMisEnVente}">
+			<div class="alert alert-success" role="alert">Votre article : ${nomArticle} est valide et vient d'être mis aux enchères !!!  </div>			
+			</c:if>
 				<!-- Hamburger pour le format mobile -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"
@@ -189,7 +198,7 @@
 						<div class="">
 						
 							<h2 class="">
-							<a href="${pageContext.request.contextPath}/encherir?idArticle=${articleVendu.noArticle}">${articleVendu.nomArticle}</a>
+							<a href="${pageContext.request.contextPath}/encherir?idArticle=${articleVendu.noArticle}&prixVente=${articleVendu.prixVente}">${articleVendu.nomArticle}</a>
 							</h2>
 							<p class="">Prix : ${articleVendu.prixVente} points</p>
 							<p class="">Fin de l'enchère :

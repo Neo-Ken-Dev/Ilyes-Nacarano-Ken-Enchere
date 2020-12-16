@@ -10,10 +10,12 @@ public interface ArticlesVendusDAO {
 
 	public ArticleVendus ajouterProduit(ArticleVendus newArticle);
 	
-    ArticleVendus selectById(int id);
+    public ArticleVendus selectById(int id);
     
-    ArticleVendus selectByIdWithInfoFromOtherTable(int id);
+    public ArticleVendus selectByIdWithInfoFromOtherTable(int id);
 
 	public List<ArticleVendus> selectByFilter();
+	
+	public boolean update(ArticleVendus article);
 
 }

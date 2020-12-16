@@ -54,7 +54,7 @@
             
             <div class="col-lg-12">
               <h3 class="col-lg-5">Meilleur offre :</h3>
-              <h3 class="col-lg-7">210 point par bob</h3>
+              <h3 class="col-lg-7">${ArticleAEncherir.prixVente }</h3>
             </div>
             
             <div class="col-lg-12">

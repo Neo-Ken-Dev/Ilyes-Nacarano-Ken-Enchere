@@ -26,9 +26,9 @@
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 			<c:if test="${!empty email2 }">
-			<div class="alert alert-success" role="alert">Mot de passe réinitialisé !!! Merci de consulter votre boîte mail </div>
-			
+			<div class="alert alert-success" role="alert">Mot de passe réinitialisé !!! Merci de consulter votre boîte mail </div>			
 			</c:if>
+
 				<div class="navbar-header">
 					<a class="navbar-brand" href="${pageContext.request.contextPath}/">ENI-Encheres</a>
 				</div>

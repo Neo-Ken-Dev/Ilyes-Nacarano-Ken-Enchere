@@ -23,6 +23,8 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 			"   JOIN CATEGORIES ON ARTICLES_VENDUS.no_categorie = CATEGORIES.no_categorie\r\n" + 
 			"   JOIN RETRAITS ON ARTICLES_VENDUS.no_article = RETRAITS.no_article\r\n" + 
 			"     WHERE ARTICLES_VENDUS.no_article = ?";
+	private static final String UPDATE_ARTICLE = "UPDATE articles_vendus SET nom_article = ?, description = ?, date_debut_encheres = ?, date_fin_encheres = ?, prix_initial = ?, prix_vente = ?, no_utilisateur = ?, no_categorie = ? WHERE no_article = ?";
+	 
 	
 	
 	
@@ -135,8 +137,8 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 				ArticleVendusWithAllInfo.setDateDebutEncheres(Date.valueOf(rs.getString("date_debut_encheres")));
 				ArticleVendusWithAllInfo.setDateFinEncheres(Date.valueOf(rs.getString("date_fin_encheres")));
 				ArticleVendusWithAllInfo.setPrixInitial(Integer.parseInt(rs.getString("prix_initial")));
+				ArticleVendusWithAllInfo.setPrixVente(Integer.parseInt(rs.getString("prix_vente")));
 				ArticleVendusWithAllInfo.setNoUtilisateur(Integer.parseInt(rs.getString("no_utilisateur")));
-				
 				ArticleVendusWithAllInfo.setLibelleCategorie(rs.getString("libelle"));
 				ArticleVendusWithAllInfo.setRue(rs.getString("rue"));
 				ArticleVendusWithAllInfo.setCode_postal(rs.getString("code_postal"));
@@ -165,6 +167,36 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 		}
 		System.out.println(listeArticles);
 		return listeArticles;
+	}
+
+	@Override
+	public boolean update(ArticleVendus articleVendu) {
+		String UPDATE_ARTICLE = "UPDATE articles_vendus SET nom_article = ?, description = ?, date_debut_encheres = ?, date_fin_encheres = ?, prix_initial = ?, prix_vente = ?, no_categorie = ? WHERE no_article = ?";
+
+		loadDatabase();
+		boolean updateDone = false;
+		try (
+			
+			PreparedStatement stmt = connection.prepareStatement(UPDATE_ARTICLE);) {
+			stmt.setString(1, articleVendu.getNomArticle());
+			stmt.setString(2, articleVendu.getDescription());
+			stmt.setDate(3, articleVendu.getDateDebutEncheres());
+			stmt.setDate(4, articleVendu.getDateFinEncheres());
+			stmt.setInt(5, articleVendu.getPrixInitial());
+			stmt.setInt(6, articleVendu.getPrixVente());
+			stmt.setInt(7, articleVendu.getNoCategorie());
+			stmt.setInt(8, articleVendu.getNoArticle());
+			
+			
+
+			System.out.println(articleVendu);
+			stmt.executeUpdate();
+			updateDone = true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return updateDone;
+		
 	}
 
 }
