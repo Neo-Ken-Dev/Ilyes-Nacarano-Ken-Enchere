@@ -11,9 +11,11 @@
 <title>Inscription</title>
 <!-- Bootstrap-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!--Google Font Family-->
+<!-- CDN Google font "Chilanka" -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
+	rel="stylesheet">
 <!--Custom Styles CSS-->
 <link rel="stylesheet" href="style.css">
 </head>
