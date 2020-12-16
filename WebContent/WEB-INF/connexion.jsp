@@ -24,7 +24,11 @@
 
 <body>
 
-<%@ include file="logoTop.jsp"%>
+<nav class="navbar navbar-default">
+		<div class="navbar-header">
+			<a class="navbar-brand" href="${pageContext.request.contextPath}/">ENI-Encheres</a>
+		</div>
+</nav>
 
 <section id="connexion_et_monprofil">
 	<div class="container-fluid">

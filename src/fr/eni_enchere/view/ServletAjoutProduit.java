@@ -1,6 +1,5 @@
 package fr.eni_enchere.view;
 
-import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -8,13 +7,11 @@ import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
 
 import fr.eni_enchere.bll.ArticlesVendusManager;
 import fr.eni_enchere.bll.RetraitManager;
@@ -24,7 +21,7 @@ import fr.eni_enchere.bo.ArticleVendus;
  * Servlet implementation class ServletAjoutProduit
  */
 @WebServlet("/mettre_en_vente")
-@MultipartConfig( fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5 )
+//@MultipartConfig( fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5 )
 
 public class ServletAjoutProduit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -128,13 +125,13 @@ public class ServletAjoutProduit extends HttpServlet {
 		//PARTI PHOTO /////////////////////////////////////////////
 		
 	
-        
+        /*
         for ( Part part : request.getParts() ) {
             String fileName = getFileName( part );
             String fullPath = uploadPath + File.separator + fileName;
             part.write( fullPath );
         }
-    
+        */
 		
 		
 		/////////////////////////////////////////////////////////////////
@@ -147,7 +144,7 @@ public class ServletAjoutProduit extends HttpServlet {
 	}
 
 		////////////////////////pour photoooooo //////////////
-	
+	/*
 	   @Override
 	    public void init() throws ServletException {
 
@@ -166,5 +163,5 @@ public class ServletAjoutProduit extends HttpServlet {
 	    }
 	 
 	 ///////////////////////////////////////////////////////////////
-
+     */
 }

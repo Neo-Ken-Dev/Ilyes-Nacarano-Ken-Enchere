@@ -20,6 +20,7 @@ public class ValidationForm {
 	private final  String PHONE_PATTERN = "^(?:(?:\\+|00)33|0)\\s*[1-9](?:[\\s.-]*\\d{2}){4}$";
 	private final  String ZIPCODE_PATTERN = "\\d{5}";
 	private final  String PASSWORD_PATTERN = "\\d{5}";
+	//private final  String PSEUDO_PATTERN =""[a-zA-Z0-9_]*$";
 	
 	public boolean verificationEmail(HttpServletRequest request) {
 		
