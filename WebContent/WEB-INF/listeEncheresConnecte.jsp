@@ -95,8 +95,7 @@
 								<span class="input-group-text" id="basic-text1"><i
 									class="fas fa-search text-black" aria-hidden="true"></i></span>
 							</div>
-							<input class="form-control my-0 py-1" type="text"
-								placeholder="Le nom de l'article contient" aria-label="Search" value="keyword">
+							<input class="form-control my-0 py-1" type="text" placeholder="Le nom de l'article contient" aria-label="Search" value="keyword">
 						</div>
 						<div class="row categorieContainer">
 							<div class="titreCategorie">

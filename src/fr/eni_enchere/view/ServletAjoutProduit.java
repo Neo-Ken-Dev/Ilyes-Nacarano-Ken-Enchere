@@ -27,6 +27,13 @@ import fr.eni_enchere.bo.ArticleVendus;
 @MultipartConfig( fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5 )
 public class ServletAjoutProduit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+    public static final String IMAGES_FOLDER = "/Images";
+    
+    public String uploadPath;
+	
+	
+	
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
@@ -119,12 +126,7 @@ public class ServletAjoutProduit extends HttpServlet {
 		
 		//PARTI PHOTO /////////////////////////////////////////////
 		
-	    String IMAGES_FOLDER = "/Images";
-	    String uploadPath;
-	    
-	    uploadPath = getServletContext().getRealPath( IMAGES_FOLDER );
-        File uploadDir = new File( uploadPath );
-        if ( ! uploadDir.exists() ) uploadDir.mkdir();
+	
         
         for ( Part part : request.getParts() ) {
             String fileName = getFileName( part );
@@ -145,6 +147,15 @@ public class ServletAjoutProduit extends HttpServlet {
 	}
 
 		////////////////////////pour photoooooo //////////////
+	
+	   @Override
+	    public void init() throws ServletException {
+
+		   
+	        uploadPath = getServletContext().getRealPath( IMAGES_FOLDER );
+	        File uploadDir = new File( uploadPath );
+	        if ( ! uploadDir.exists() ) uploadDir.mkdir();
+	    }
 	
 	 private String getFileName( Part part ) {
 	        for ( String content : part.getHeader( "content-disposition" ).split( ";" ) ) {
