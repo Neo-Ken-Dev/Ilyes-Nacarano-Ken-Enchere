@@ -11,11 +11,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Modifier compte</title>
 <!-- Bootstrap-->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
-	crossorigin="anonymous">
-<!-- CDN Google font "Chilanka" -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!--Google Font Family-->
+
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
@@ -118,19 +116,20 @@
                             
                             <div class="col-md-6 passwordPart">
                                 <label for="confirmation">Confirmation: *</label>
-                                <input id="confirmation" type="password" name="confirmation" class="inscription-control" ">
+                                <input id="confirmation" type="password" name="confirmation" class="inscription-control">
                                 <c:if test="${!empty messageErreurConfirmation }">
                                 	<p class="comments">${messageErreurConfirmation }</p>                               
                                 </c:if>
                             </div>  
                             
                             <div class="col-md-12 creditPart">
-                                <h2>Crédit:<span>${utilisateur.credit}</span></h2>                               
+                            	<label for="credit">Crédit: *</label>
+                                <input id="credit" type="number" name="credit" class="inscription-control" value="${utilisateur.credit}">                            
                             </div>                         
                             
                             <c:if test="${!empty infoUpdate }">
              
-                					<a href="http://localhost:8080/lesObjectsSontNosAmis/connexion" class="col-md-12 btn-labeled btn-success"><i class="glyphicon glyphicon-ok"></i>Votre compte a été créé modifier succès - cliquez ici pour retourner sur la page d'accueil</a>
+                					<a href="http://localhost:8080/lesObjectsSontNosAmis/user/accueil" class="col-md-12 btn-labeled btn-success"><i class="glyphicon glyphicon-ok"></i>Votre compte a été créé modifier succès - cliquez ici pour retourner sur la page d'accueil</a>
                                                         
                             </c:if>
                             
@@ -139,10 +138,14 @@
 									<input type="submit" class="btn-primary buttonInscription btnEnregistrer" value="Enregistrer">
 								</div>
 								<div class="col-md-6 ">
+
+									<input type="reset" class="btn-primary buttonInscription" value="Supprimer mon compte" onclick="location.href='${pageContext.request.contextPath}/'">
+
 									<a href = "${pageContext.request.contextPath}/user/suppressionCompte">
 									<!--<input type="reset" class="btn-primary buttonInscription" value="Supprimer mon compte" onclick="confirmerSuppression()">  -->
 									 <button type="button" class="btn-primary buttonInscription" onclick=" return confirm('Êtes vous sûre de vouloir supprimer votre compte!') location.href='<%=request.getContextPath()%>/user/suppressionCompte';">Supprimer mon compte</button>									
 									</a>
+
 								</div>
 							</div> 
 

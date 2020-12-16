@@ -11,11 +11,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Page Profil</title>
 <!-- Bootstrap -->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
-	crossorigin="anonymous">
-<!-- CDN Google font "Chilanka" -->
+<link rel="stylesheet"href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!--Google Font Family-->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
@@ -26,12 +23,11 @@
 
 
 <body>
+  <%@ include file="logoTop.jsp"%>
   <section id="connexion_et_monprofil">
 	<div class="container-fluid">
 		<div class="containerProfil">
-			<div class="logo">
-				<%@ include file="logoTop.jsp"%>
-			</div>
+
 			<div class="enLigne col ">
 				<label class="labelProfil" for="nom">Pseudo : </label> <input class="form-control inputEnlectureSeul" type="text" placeholder="${utilisateur.pseudo}" readonly name="nom" id="nom">
 			</div>

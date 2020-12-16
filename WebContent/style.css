@@ -537,8 +537,9 @@ button * {
 	font-weight: 700;
 }
 
-#modificationProfil .creditPart h2 span {
-	margin-left: 55px;
+
+#modificationProfil .row {
+    margin-left: -65px;
 }
 
 #modification-form {
@@ -557,10 +558,16 @@ button * {
 #modificationProfil .container .heading h2 {
 	text-align: center;
 	padding-bottom: 40px;
+	margin-left: -85px;
 }
 
 #modificationProfil label {
 	width: 250px;
+}
+
+#modificationProfil input {
+	height: 35px;
+	border: 1px solid #ccc;
 }
 
 #modificationProfil .container {
@@ -568,12 +575,9 @@ button * {
 }
 
 #modificationProfil .btnEnregistrer {
-	width: 100px;
+	width: 110px;
 }
 
-#modificationProfil .divBtn {
-	margin-left: -150px;
-}
 /*** Media Queries ***/
 @media ( max-width : 1200px) {
 	#modificationProfil {
@@ -591,7 +595,7 @@ button * {
 		width: 200px;
 	}
 	#modificationProfil .btnEnregistrer {
-		width: 100px;
+		width: 110px;
 	}
 	#modificationProfil .btnCreer {
 		text-align: center;
@@ -629,6 +633,10 @@ button * {
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+}
+
+#enchereConnecte .littleScare{
+	box-shadow: 0px 0px;
 }
 
 /* Colonne 1 ---> Section de recherche et filtre*/
@@ -823,4 +831,109 @@ button * {
 }
 
 /*** Début page Ajouter Article ***/
+#ajout-produit h1{
+	text-align: center;
+	padding-bottom: 40px;
+}
+
+fieldset {
+    padding: 1px; 
+    margin: 1px; 
+    border-width: 2px;
+    border-style: groove;
+    border-color: threedface;
+    border-image: initial;
+    margin-inline-start: 2px;
+    margin-inline-end: 2px;
+    padding-block-start: 0.35em;
+    padding-inline-start: 0.75em;
+    padding-inline-end: 0.75em;
+    padding-block-end: 0.625em;
+    min-inline-size: min-content;
+}
+
+#ajout-produit legend {
+    width: 13%;	
+}
+
+
+#ajout-produit .col-md-6 {
+	height: 60px;
+}
+
+#ajout-produit .img-responsive {
+	padding-left: 450px;
+}
+
+@media ( max-width : 2000px) {
+	#ajout-produit .img-responsive {
+	padding-left: 250px;
+	}
+
+}
+
+@media ( max-width : 1550px) {
+	#ajout-produit .img-responsive {
+	padding-left: 100px;
+	}
+
+}
+
+@media ( max-width : 436px) {
+	#ajout-produit .img-responsive {
+	padding-left: 0px;
+	}
+
+}
+
+#ajout-produit .buttonInscription {
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+	width: 200px;
+	font-size: 18px;
+	padding: 10px 0px;
+}
+
+#ajout-produit .divBtn {
+	margin: 25px;
+	display: flex;
+}
+
+#ajout-produit .buttonEnregistrer {
+	width:100%;
+	font-size: 18px;
+	padding: 10px 0px;
+}
+
+#ajout-produit .buttonAnnuler {
+	width:100%;
+	font-size: 18px;
+	padding: 10px 0px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

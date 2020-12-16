@@ -40,7 +40,6 @@ public class ServletFormulaireInscription extends HttpServlet {
 		String zipCodeUser = request.getParameter("zipCode");
 		String cityUser = request.getParameter("city");
 		String passwordUser = request.getParameter("password");
-		String compteCree = null;
 		
 		Boolean isFormValid = true;
 		
@@ -111,17 +110,11 @@ public class ServletFormulaireInscription extends HttpServlet {
 			
 		//Valider l'ensemble du form
 		if (isFormValid) {
-			compteCree = "ok";
 			HttpSession session = request.getSession();	
-			//Utilisateurs utilisateur = (Utilisateurs) session.getAttribute("utilisateur");
 			UtilisateursManager newUser = new UtilisateursManager();
 			Utilisateurs utilisateur = newUser.addNewUser(pseudoUser, prenomUser, nomUser, emailUser, phoneUser, streetUser, zipCodeUser, cityUser, passwordUser);					
 			session.setAttribute("utilisateur", utilisateur);
-			//request.setAttribute("compteCree", compteCree);
-			System.out.println(compteCree);
-			
-			System.out.println("je crée cet utilisateur dans ma servletFormulaireInscription : " + utilisateur);
-			//request.setAttribute("utilisateur", utilisateur);
+
 			response.sendRedirect(request.getContextPath()+ "/user/accueil");			
 		}else {
 			//renvoyer la réponse sur la page de formulaire
@@ -129,9 +122,5 @@ public class ServletFormulaireInscription extends HttpServlet {
 			rd.forward(request, response);					
 		}
 
-		//renvoyer la réponse sur la page de formulaire
-		//RequestDispatcher rd = request.getRequestDispatcher("/user/accueil");
-		//rd.forward(request, response);		
-	   response.sendRedirect(request.getContextPath()+ "/user/accueil");
 	}
 }

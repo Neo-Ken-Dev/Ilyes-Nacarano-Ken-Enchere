@@ -54,7 +54,6 @@
 				</div>
 			</div>
 		</nav>
-
 		<div class="container-fluid">
 			<div class="titrePage">
 				<p>Liste des enchères</p>
@@ -92,6 +91,7 @@
 								</ul>
 							</div>
 						</div>
+						
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="colonne2">
@@ -111,7 +111,6 @@
 							src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg"
 							class="" />
 						<div class="">
-
 							<h2 class="">
 								<a
 									href="${pageContext.request.contextPath}/encherir?idArticle=${articleVendu.noArticle}&prixVente=${articleVendu.prixVente}">${articleVendu.nomArticle}</a>
@@ -122,7 +121,6 @@
 							<p class="">Vendeur: ${utilisateur.pseudo}</p>
 						</div>
 					</div>
-
 				</c:forEach>
 			</div>
 		</div>
@@ -139,7 +137,6 @@
 			integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
 			crossorigin="anonymous">
     </script>
-
 	</section>
 </body>
 </html>

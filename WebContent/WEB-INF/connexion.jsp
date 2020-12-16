@@ -24,54 +24,47 @@
 
 <body>
 
-<<<<<<< HEAD
-	<section id="connexion_et_monprofil">
-		<div class="container-fluid">
-			<div class="logoProfil">
-				<%@ include file="logoTop.jsp"%>
-			</div>
-=======
 <%@ include file="logoTop.jsp"%>
 
 <section id="connexion_et_monprofil">
 	<div class="container-fluid">
->>>>>>> 774770488ca0af50e99852bb677b987761455656
 
-			<form method="post"
-				action="${pageContext.request.contextPath}/connexion"
-				class="formLogin ">
+		<form method="post" action="${pageContext.request.contextPath}/connexion" class="formLogin ">
 
-				<c:if test="${!empty messageErreur }">
-					<div class="alert alert-danger" role="alert">
-						<p>${messageErreur}</p>
-					</div>
-				</c:if>
-
-				<c:choose>
-					<c:when test="${!empty messageErreur }">
-						<div class="form-group col form-inline has-error">
-					</c:when>
-					<c:otherwise>
-						<div class="form-group col form-inline">
-					</c:otherwise>
-				</c:choose>
-				<label for="identifiant"> Identifiant : </label> <input type="text"
-					name="identifiant" id="identifiant" placeholder="identifiant..."
-					class="form-control" required autofocus>
-		</div>
-
-		<c:choose>
-			<c:when test="${!empty messageErreur }">
-				<div class="form-group col form-inline has-error">
-			</c:when>
-			<c:otherwise>
-				<div class="form-group col form-inline">
-			</c:otherwise>
-		</c:choose>
-		<label for="motDePasse">Mot de passe : </label> <input type="password"
-			name="motDePasse" id="motDePasse" placeholder="mot de passe..."
-			class="form-control" required>
-		</div>
+			<c:if test="${!empty messageErreur }">
+				<div class="alert alert-danger" role="alert">
+					<p>${messageErreur}</p>
+				</div>
+			</c:if>
+  <!--partie erreur de Identifiant la div ligne 48 ferme la div qui souvre en fonction de l'erreur  -->
+	<c:choose>
+	  <c:when test="${!empty messageErreur }">
+		 <div class="form-group col form-inline has-error">
+	  </c:when>
+	  <c:otherwise>
+		 <div class="form-group col form-inline">
+	  </c:otherwise>
+	</c:choose>
+			
+			<label for="identifiant"> Identifiant : </label> 
+			<input type="text" name="identifiant" id="identifiant" placeholder="identifiant..." class="form-control" required autofocus>
+	    </div>
+   <!--  -->
+   <!--partie erreur de mot de passe la div ligne 63 ferme la div qui souvre en fonction de l'erreur  -->
+	<c:choose>
+		<c:when test="${!empty messageErreur }">
+			<div class="form-group col form-inline has-error">
+		</c:when>
+		<c:otherwise>
+			<div class="form-group col form-inline">
+		</c:otherwise>
+	</c:choose>
+	
+	  <label for="motDePasse">Mot de passe : </label>
+	  <input type="password" name="motDePasse" id="motDePasse" placeholder="mot de passe..." class="form-control" required>
+	
+	 </div>
+	<!--  -->
 		<div class="connexionDiv ">
 			<button class="btn btn-primary btnConnexion" type="submit">Connexion</button>
 
@@ -91,20 +84,15 @@
 		</form>
 		</div>
 
-		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-			integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-			crossorigin="anonymous">
-			
-		</script>
-		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script
-			src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-			integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-			crossorigin="anonymous">
-			
-		</script>
-	</section>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous">
+		
+	</script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">		
+	</script>
+  </section>
+
 </body>
 
 </html>

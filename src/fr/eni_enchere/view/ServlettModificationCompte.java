@@ -57,6 +57,7 @@ public class ServlettModificationCompte extends HttpServlet {
 		String cityUser = request.getParameter("city");
 		String passwordUser = request.getParameter("password");
 		String OldPasswordUser = request.getParameter("oldPassword");
+		int credit = Integer.parseInt(request.getParameter("credit"));
 	
 		Boolean isFormValid = true;
 		
@@ -121,27 +122,27 @@ public class ServlettModificationCompte extends HttpServlet {
 
 			//condition pour vérifier les autres champs vide
 			if (pseudoUser.trim().length()<=1 | pseudoUser.startsWith(" ")) {
-				String messageErreur = "* Votre pseudo est incorrecte ou contient un espace vide au début";
+				String messageErreur = "* Votre pseudo est incorrecte";
 				request.setAttribute("messageErreurPseudo", messageErreur);
 				isFormValid= false;		
 			}
 			if (prenomUser.trim().length()<=1 | prenomUser.startsWith(" ")) {
-				String messageErreur = "* Votre prénom est incorrecte ou contient un espace vide au début";
+				String messageErreur = "* Votre prénom est incorrecte";
 				request.setAttribute("messageErreurPrenom", messageErreur);
 				isFormValid= false;	
 			}
 			if (nomUser.trim().length()<=1 | nomUser.startsWith(" ")) {
-				String messageErreur = "* Votre nom est incorrecte ou contient un espace vide au début";
+				String messageErreur = "* Votre nom est incorrecte";
 				request.setAttribute("messageErreurNom", messageErreur);
 				isFormValid= false;	
 			}
 			if (streetUser.trim().length()<=1 | streetUser.startsWith(" ")) {
-				String messageErreur = "* Votre rue est incorrecte ou contient un espace vide au début";
+				String messageErreur = "* Votre rue est incorrecte";
 				request.setAttribute("messageErreurRue", messageErreur);
 				isFormValid= false;	
 			}
 			if (cityUser.trim().length()<=1 | cityUser.startsWith(" ")) {
-				String messageErreur = "* Votre ville est incorrecte ou contient un espace vide au début";
+				String messageErreur = "* Votre ville est incorrecte";
 				request.setAttribute("messageErreurVille", messageErreur);
 				isFormValid= false;	
 			}
@@ -150,7 +151,7 @@ public class ServlettModificationCompte extends HttpServlet {
 			if (isFormValid) {
 				UtilisateursManager newUser = new UtilisateursManager();
 				//Utilisateurs utilisateur = 
-				Utilisateurs utilisateur = newUser.updateUserProfil(id, pseudoUser, prenomUser, nomUser, emailUser, phoneUser, streetUser, zipCodeUser, cityUser, passwordUser);					
+				Utilisateurs utilisateur = newUser.updateUserProfil(id, pseudoUser, prenomUser, nomUser, emailUser, phoneUser, streetUser, zipCodeUser, cityUser, passwordUser, credit);					
 				request.setAttribute("infoUpdate", true);			
 				request.setAttribute("utilisateur", utilisateur);
 				

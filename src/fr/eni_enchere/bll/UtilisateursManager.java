@@ -39,8 +39,8 @@ public class UtilisateursManager {
 			return daoUtilisateur.selectionnerUtilisateurParId(id);
 	}
 	
-	public Utilisateurs updateUserProfil(int id, String pseudoUser, String prenomUser, String nomUser, String emailUser, String phoneUser, String streetUser, String zipCodeUser, String cityUser, String passwordUser) {
-		Utilisateurs utilisateur = new Utilisateurs(id, pseudoUser, nomUser, prenomUser, emailUser, phoneUser, streetUser, zipCodeUser, cityUser, passwordUser);
+	public Utilisateurs updateUserProfil(int id, String pseudoUser, String prenomUser, String nomUser, String emailUser, String phoneUser, String streetUser, String zipCodeUser, String cityUser, String passwordUser, int credit) {
+		Utilisateurs utilisateur = new Utilisateurs(id, pseudoUser, nomUser, prenomUser, emailUser, phoneUser, streetUser, zipCodeUser, cityUser, passwordUser, credit);
 		daoUtilisateur.modifierUtilisateur(utilisateur);
 		return utilisateur;
 	

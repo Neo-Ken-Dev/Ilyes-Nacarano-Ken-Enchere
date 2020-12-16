@@ -6,7 +6,6 @@ import java.util.Date;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -14,9 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import fr.eni_enchere.bll.ArticlesVendusManager;
 import fr.eni_enchere.bll.EnchereManager;
-import fr.eni_enchere.bll.UtilisateursManager;
 import fr.eni_enchere.bo.ArticleVendus;
-import fr.eni_enchere.bo.Utilisateurs;
 
 /**
  * Servlet implementation class ServletLoginPage

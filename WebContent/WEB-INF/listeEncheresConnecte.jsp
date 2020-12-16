@@ -9,20 +9,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Login - Inscription</title>
 <!-- Bootstrap -->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!-- CDN Google font "Chilanka" -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
 	rel="stylesheet">
 <!--Pour icone-->
-<link rel="stylesheet"
-	href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
-	integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
 <!--Custom Styles CSS-->
 <link rel="stylesheet" href="../style.css">
 <!--Jquery-->
@@ -65,7 +59,7 @@
 						<li class="active"><a href="#">Enchères<span
 								class="sr-only">(current)</span></a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/user/mettre_en_vente">Vendre
+							href="${pageContext.request.contextPath}/mettre_en_vente">Vendre
 								un article</a></li>
 						<c:if test="${!empty id }">
 
@@ -78,6 +72,7 @@
 				</div>
 			</div>
 		</nav>
+		
 		<div class="container-fluid">
 			<div class="titrePage">
 				<p>Liste des enchères</p>
@@ -105,7 +100,7 @@
 								<button type="button" class="btn btn-default dropdown-toggle"
 									data-toggle="dropdown" aria-haspopup="true"
 									aria-expanded="false">
-									Choisissez votre catégorie... <span class="caret"></span>
+									Choisissez votre catégorie... <span class="caret littleScare"></span>
 								</button>
 								<ul class="dropdown-menu divDropDown">
 									<c:forEach items="${listeCategories}" var="categorie">
@@ -118,7 +113,7 @@
 							<div class="col divAchats col-12 col-md-4">
 								<div class="radio">
 									<label> <input type="radio" name="filtering" value="0"
-										class="rbFilter" id="filteringON" checked="true"> <strong>Achats</strong>
+										class="rbFilter" id="filteringON" checked> <strong>Achats</strong>
 									</label>
 								</div>
 								<div class="divCheckboxAchat">
@@ -156,18 +151,18 @@
 										<div class="checkbox">
 											<label> <input type="checkbox"
 												name="mesVentesEnCours" value="mesVentesEnCours"
-												disabled="true"> mes ventes en cours
+												disabled> mes ventes en cours
 											</label>
 										</div>
 										<div class="checkbox">
 											<label> <input type="checkbox"
 												name="ventesNonDebutees" value="ventesNonDebutees"
-												disabled="true"> ventes non débutées
+												disabled> ventes non débutées
 											</label>
 										</div>
 										<div class="checkbox">
 											<label> <input type="checkbox" name="ventesTerminees"
-												value="ventesTerminees" disabled="true"> ventes
+												value="ventesTerminees" disabled> ventes
 												terminées
 											</label>
 										</div>
@@ -215,16 +210,9 @@
 		<!-- jQuery pour selectionner et deselectionner radioButton -->
 		<script src="../script.js"></script>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-		<script src="https://code.jquery.com/jquery-1.12.4.min.js"
-			integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
-			crossorigin="anonymous">
-    </script>
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
 		<!-- Include all compiled plugins (below), or include individual files as needed -->
-		<script
-			src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-			integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-			crossorigin="anonymous">
-    </script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 	</section>
 </body>

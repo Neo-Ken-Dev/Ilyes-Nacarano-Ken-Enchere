@@ -23,7 +23,7 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 			"   JOIN CATEGORIES ON ARTICLES_VENDUS.no_categorie = CATEGORIES.no_categorie\r\n" + 
 			"   JOIN RETRAITS ON ARTICLES_VENDUS.no_article = RETRAITS.no_article\r\n" + 
 			"     WHERE ARTICLES_VENDUS.no_article = ?";
-	private static final String UPDATE_ARTICLE = "UPDATE articles_vendus SET nom_article = ?, description = ?, date_debut_encheres = ?, date_fin_encheres = ?, prix_initial = ?, prix_vente = ?, no_utilisateur = ?, no_categorie = ? WHERE no_article = ?";
+	private static final String UPDATE_ARTICLE = "UPDATE articles_vendus SET nom_article = ?, description = ?, date_debut_encheres = ?, date_fin_encheres = ?, prix_initial = ?, prix_vente = ?, no_categorie = ? WHERE no_article = ?";
 	 
 	
 	
@@ -173,13 +173,11 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 
 	@Override
 	public boolean update(ArticleVendus articleVendu) {
-		String UPDATE_ARTICLE = "UPDATE articles_vendus SET nom_article = ?, description = ?, date_debut_encheres = ?, date_fin_encheres = ?, prix_initial = ?, prix_vente = ?, no_categorie = ? WHERE no_article = ?";
-
 		loadDatabase();
 		boolean updateDone = false;
-		try (
+		try {
 			
-			PreparedStatement stmt = connection.prepareStatement(UPDATE_ARTICLE);) {
+			PreparedStatement stmt = connection.prepareStatement(UPDATE_ARTICLE);
 			stmt.setString(1, articleVendu.getNomArticle());
 			stmt.setString(2, articleVendu.getDescription());
 			stmt.setDate(3, articleVendu.getDateDebutEncheres());
@@ -189,8 +187,6 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 			stmt.setInt(7, articleVendu.getNoCategorie());
 			stmt.setInt(8, articleVendu.getNoArticle());
 			
-			
-
 			System.out.println(articleVendu);
 			stmt.executeUpdate();
 			updateDone = true;

@@ -23,8 +23,9 @@ import fr.eni_enchere.bo.ArticleVendus;
 /**
  * Servlet implementation class ServletAjoutProduit
  */
-@WebServlet("/user/mettre_en_vente")
+@WebServlet("/mettre_en_vente")
 @MultipartConfig( fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5 )
+
 public class ServletAjoutProduit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
@@ -141,7 +142,6 @@ public class ServletAjoutProduit extends HttpServlet {
 		
 		//renvoyer la réponse sur la page enchere connecte	
 		RequestDispatcher rd = request.getRequestDispatcher("/user/accueil");
-		System.out.println("renvoie vers listenechereconnecter");
 		rd.forward(request, response);	
 		
 	}
