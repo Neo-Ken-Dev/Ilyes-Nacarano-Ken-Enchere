@@ -44,6 +44,11 @@ public class ServletFiltre extends HttpServlet {
 		String checkMesVentesEnCours = null;
 		String checkVentesNonDebutees = null;
 		String checkVentesTerminees = null;
+		String motDansRecherche = null;
+		
+		
+		motDansRecherche = request.getParameter("keyword");
+		
 		
 		if(btnRadioChoisi.equalsIgnoreCase("0")) {
 			checkEncheresOuvertes = request.getParameter("encheresOuvertes");
@@ -61,6 +66,9 @@ public class ServletFiltre extends HttpServlet {
 		
 		HttpSession session = request.getSession();	
 		Utilisateurs utilisateur = (Utilisateurs) session.getAttribute("utilisateur");
+		
+		session.setAttribute("keyword", motDansRecherche);
+		System.out.println("le mot dans la barre de recherche est : " + motDansRecherche);
 		
 		//int id = (int) session.getAttribute("id");	
 		

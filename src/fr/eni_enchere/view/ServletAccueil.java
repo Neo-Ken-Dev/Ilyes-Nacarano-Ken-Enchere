@@ -1,5 +1,6 @@
 package fr.eni_enchere.view;
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,7 +11,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import fr.eni_enchere.bll.ArticlesVendusManager;
+import fr.eni_enchere.bll.CategoriesManager;
 import fr.eni_enchere.bll.UtilisateursManager;
+import fr.eni_enchere.bo.ArticleVendus;
+import fr.eni_enchere.bo.Categories;
 import fr.eni_enchere.bo.Utilisateurs;
 /**
  * Servlet implementation class ServletAccueil
@@ -49,12 +54,10 @@ public class ServletAccueil extends HttpServlet {
 			session.setMaxInactiveInterval(60*5);
 			session.setAttribute("utilisateur", utilisateur);
 			
-			
 			System.out.println(cookieUtilisateurPseudo.getName());
 			System.out.println(cookieUtilisateurPseudo.getValue());
 			System.out.println(cookieUtilisateurMotDePasse.getName());
 			System.out.println(cookieUtilisateurMotDePasse.getValue());
-			
 			
 			pageDestination = "/user/accueil";
 			response.sendRedirect(request.getContextPath()+ pageDestination);
@@ -63,20 +66,29 @@ public class ServletAccueil extends HttpServlet {
 			//rd.forward(request, response);
 			
 		} else {
+			
+			//Mon hypothèse (Naca)
+			CategoriesManager categoriesManager = new CategoriesManager();
+			List<Categories> listeCategories =  categoriesManager.selectionCategories();
+			request.setAttribute("listeCategories", listeCategories);
+			System.out.println("Dans la servlet liste catégorie :" + listeCategories);
+			
+			ArticlesVendusManager articlesVendusManager = new ArticlesVendusManager();
+			List<ArticleVendus> listeArticlesVendus = articlesVendusManager.selectionArticlesVendus();
+			request.setAttribute("listeArticlesVendus", listeArticlesVendus);
+			System.out.println("Dans la servlet liste articles vendus : " + listeArticlesVendus);
+			//Mon hypothèse (Naca)
+			
 			RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/pageAccueil.jsp");
 			rd.forward(request, response);
 		}
-	
 		//RequestDispatcher rd = request.getRequestDispatcher("WEB-INF/connexion.jsp");
 		//rd.forward(request, response);
-		
-		
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 }

@@ -13,9 +13,10 @@
 <!-- Bootstrap-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!--Google Font Family-->
+
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
-	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+	href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
 	rel="stylesheet">
 <!--Custom Styles CSS-->
 <link rel="stylesheet" href="../style.css">
@@ -137,7 +138,14 @@
 									<input type="submit" class="btn-primary buttonInscription btnEnregistrer" value="Enregistrer">
 								</div>
 								<div class="col-md-6 ">
+
 									<input type="reset" class="btn-primary buttonInscription" value="Supprimer mon compte" onclick="location.href='${pageContext.request.contextPath}/'">
+
+									<a href = "${pageContext.request.contextPath}/user/suppressionCompte">
+									<!--<input type="reset" class="btn-primary buttonInscription" value="Supprimer mon compte" onclick="confirmerSuppression()">  -->
+									 <button type="button" class="btn-primary buttonInscription" onclick=" return confirm('Êtes vous sûre de vouloir supprimer votre compte!') location.href='<%=request.getContextPath()%>/user/suppressionCompte';">Supprimer mon compte</button>									
+									</a>
+
 								</div>
 							</div> 
 

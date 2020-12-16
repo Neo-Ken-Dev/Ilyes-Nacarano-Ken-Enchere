@@ -10,10 +10,10 @@
 <title>Login - Inscription</title>
 <!-- Bootstrap -->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!--Google Font Family-->
+<!-- CDN Google font "Chilanka" -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
-	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+	href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
 	rel="stylesheet">
 <!--Pour icone-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css">
@@ -22,6 +22,7 @@
 <!--Jquery-->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+
 </head>
 <body>
 	<section id="enchereConnecte">
@@ -29,15 +30,18 @@
 
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
-			${compteCree }
-			 
-			<c:if test="${!empty compteCree}">
-			<div class="alert alert-success" role="alert">Compte crée avec succès !!! Merci de valider le lien ennvoyé à ${utilisateur.email } </div>			
-			</c:if>
-			
-			<c:if test="${!empty articleMisEnVente}">
-			<div class="alert alert-success" role="alert">Votre article : ${nomArticle} est valide et vient d'être mis aux enchères !!!  </div>			
-			</c:if>
+				${compteCree }
+
+				<c:if test="${!empty compteCree}">
+					<div class="alert alert-success" role="alert">Compte crée
+						avec succès !!! Merci de valider le lien ennvoyé à
+						${utilisateur.email }</div>
+				</c:if>
+
+				<c:if test="${!empty articleMisEnVente}">
+					<div class="alert alert-success" role="alert">Votre article :
+						${nomArticle} est valide et vient d'être mis aux enchères !!!</div>
+				</c:if>
 				<!-- Hamburger pour le format mobile -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"
@@ -87,15 +91,12 @@
 									class="fas fa-search text-black" aria-hidden="true"></i></span>
 							</div>
 							<input class="form-control my-0 py-1" type="text"
-								placeholder="Le nom de l'article contient" aria-label="Search">
+								placeholder="Le nom de l'article contient" aria-label="Search" value="keyword">
 						</div>
 						<div class="row categorieContainer">
 							<div class="titreCategorie">
 								<label for="categories">Catégorie :</label>
 							</div>
-
-
-
 							<div class="btn-group divDropDown">
 								<button type="button" class="btn btn-default dropdown-toggle"
 									data-toggle="dropdown" aria-haspopup="true"
@@ -191,9 +192,10 @@
 							src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg"
 							class="" />
 						<div class="">
-						
+
 							<h2 class="">
-							<a href="${pageContext.request.contextPath}/encherir?idArticle=${articleVendu.noArticle}&prixVente=${articleVendu.prixVente}">${articleVendu.nomArticle}</a>
+								<a
+									href="${pageContext.request.contextPath}/encherir?idArticle=${articleVendu.noArticle}&prixVente=${articleVendu.prixVente}">${articleVendu.nomArticle}</a>
 							</h2>
 							<p class="">Prix : ${articleVendu.prixVente} points</p>
 							<p class="">Fin de l'enchère :

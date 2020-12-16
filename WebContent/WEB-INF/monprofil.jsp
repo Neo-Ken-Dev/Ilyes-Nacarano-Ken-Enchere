@@ -15,7 +15,7 @@
 <!--Google Font Family-->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
-	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+	href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
 	rel="stylesheet">
 <!--Custom Styles CSS-->
 <link rel="stylesheet" href="../style.css">

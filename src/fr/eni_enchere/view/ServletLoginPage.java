@@ -48,7 +48,8 @@ public class ServletLoginPage extends HttpServlet {
 				Utilisateurs utilisateur = utilisateurManager.verifierUtilisateur(cookieUtilisateurPseudo.getValue(), cookieUtilisateurMotDePasse.getValue());
 
 				HttpSession session = request.getSession();
-				session.setMaxInactiveInterval(60*5);
+				session.setMaxInactiveInterval(200000*30);
+
 				session.setAttribute("utilisateur", utilisateur);
 				
 				
@@ -90,7 +91,7 @@ public class ServletLoginPage extends HttpServlet {
 		if (utilisateur != null) {
 			
 			HttpSession session = request.getSession();
-			session.setMaxInactiveInterval(5*60);
+			session.setMaxInactiveInterval(60*200000);
 			session.setAttribute("utilisateur", utilisateur);
 			//session.setAttribute("id", utilisateur.getNoUtilisateur());
 			System.out.println("ID de la methode DOPost ServletLogin : " + utilisateur.getNoUtilisateur());

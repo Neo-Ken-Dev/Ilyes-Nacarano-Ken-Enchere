@@ -12,10 +12,10 @@
 <title>Modifier compte</title>
 <!-- Bootstrap-->
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-<!--Google Font Family-->
+<!-- CDN Google font "Chilanka" -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
-	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+	href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
 	rel="stylesheet">
 <!--Custom Styles CSS-->
 <link rel="stylesheet" href="style.css">
@@ -39,7 +39,7 @@
 	   <div class="row">	
 		<div class="col-lg-6">	
 		
-          <form id="ajout-produit-form" method="post" action="" role="form">
+          <form id="ajout-produit-form" method="post" action="" role="form enctype="multipart/form-data">
 
 			<div class="col-lg-12">
 			  <label for="article">Article :</label> 
@@ -63,7 +63,7 @@
             
             <div class="col-lg-12">
               <label for="file">Photo de l'article</label>
-              <input id="file" type="file" name="email" class="form-control" value="">
+              <input id="file" type="file" name="multiPartServlet" class="form-control" value="" accept="image/*" multiple >
             </div>
             
             <div class="col-lg-12">

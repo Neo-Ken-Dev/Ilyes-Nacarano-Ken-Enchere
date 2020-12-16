@@ -16,5 +16,7 @@ public interface UtilisateursDAO {
 	public Utilisateurs selectionnerUtilisateurParId(int id);
 	
 	void modifierUtilisateur(Utilisateurs nouvellesInfoUser);
+
+	public Boolean delete(Utilisateurs utilisateur);
 	
 }
