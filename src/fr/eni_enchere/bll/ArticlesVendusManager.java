@@ -18,7 +18,7 @@ public class ArticlesVendusManager {
 	}
 
    public ArticleVendus ajouterArticle(String nomArticle, String description, Date dateDebutEncheres, Date dateFinEncheres, int prixInitial, int noUtilisateur, int noCategorie) {
-	   ArticleVendus newArticle = new ArticleVendus(nomArticle, description, dateDebutEncheres, dateFinEncheres, prixInitial, noUtilisateur, noCategorie);
+	   ArticleVendus newArticle = new ArticleVendus(nomArticle, description, dateDebutEncheres, dateFinEncheres, prixInitial, 0, noUtilisateur, noCategorie);
 	   ArticleVendus newArticleAjouterAvecID = daoArticleVendus.ajouterProduit(newArticle);
    
 	   return newArticleAjouterAvecID;	   
