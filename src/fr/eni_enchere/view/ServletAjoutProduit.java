@@ -7,6 +7,7 @@ import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,7 +22,7 @@ import fr.eni_enchere.bo.ArticleVendus;
  * Servlet implementation class ServletAjoutProduit
  */
 @WebServlet("/mettre_en_vente")
-//@MultipartConfig( fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5 )
+@MultipartConfig( fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5 )
 
 public class ServletAjoutProduit extends HttpServlet {
 	private static final long serialVersionUID = 1L;

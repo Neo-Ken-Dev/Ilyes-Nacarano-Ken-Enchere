@@ -19,6 +19,26 @@
 	rel="stylesheet">
 <!--Custom Styles CSS-->
 <link rel="stylesheet" href="style.css">
+<script>
+            /* Cette fonction permet d'afficher une vignette pour chaque image sÃ©lectionnÃ©e */
+            function readFilesAndDisplayPreview(files) {
+                let imageList = document.querySelector('#list'); 
+                imageList.innerHTML = "";
+                
+                for ( let file of files ) {
+                    let reader = new FileReader();
+                    
+                    reader.addEventListener( "load", function( event ) {
+                        let span = document.createElement('span');
+                        span.innerHTML = '<img height="90" src="' + event.target.result + '" class="figure-img img-fluid rounded" alt="TestImage" /><input type="submit" value="Upload" class="btn btn-primary btn-lg btn-block" />';
+                        imageList.appendChild( span );
+                        
+                    });
+
+                    reader.readAsDataURL( file );
+                }
+            }
+        </script>
 </head>
 <body>
 
@@ -39,7 +59,7 @@
 	   <div class="row">	
 		<div class="col-lg-6">	
 		
-          <form id="ajout-produit-form" method="post" action="" role="form enctype="multipart/form-data">
+          <form id="ajout-produit-form" method="post" action="upload" enctype="multipart/form-data">
 
 			<div class="col-lg-12">
 			  <label for="article">Article :</label> 
@@ -63,7 +83,7 @@
             
             <div class="col-lg-12">
               <label for="file">Photo de l'article</label>
-              <input id="file" type="file" name="multiPartServlet" class="form-control" value="" accept="image/*" multiple >
+              <input id="file" type="file" name="multiPartServlet" class="form-control" value="" accept="image/*" multiple onchange="readFilesAndDisplayPreview(this.files);" >
             </div>
             
             <div class="col-lg-12">
