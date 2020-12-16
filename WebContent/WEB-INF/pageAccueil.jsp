@@ -92,69 +92,6 @@
 								</ul>
 							</div>
 						</div>
-						<div class="row divRadioEtCheckbox">
-							<div class="col divAchats col-12 col-md-4">
-								<div class="radio">
-									<label> <input type="radio" name="filtering" value="0"
-										class="rbFilter" id="filteringON" checked="true"> <strong>Achats</strong>
-									</label>
-								</div>
-								<div class="divCheckboxAchat">
-									<div id="filterOnControls">
-										<div class="checkbox">
-											<label> <input type="checkbox"
-												name="encheresOuvertes" value="encheresOuvertes">
-												enchères ouvertes
-											</label>
-										</div>
-										<div class="checkbox">
-											<label> <input type="checkbox" name="mesEncheres"
-												value="mesEncheres"> mes enchères
-											</label>
-										</div>
-										<div class="checkbox">
-											<label> <input type="checkbox"
-												name="mesEncheresRemportees" value="mesEncheresRemportees">
-												mes enchères remportées
-											</label>
-										</div>
-									</div>
-								</div>
-
-							</div>
-							<div class="col divMesVentes col-12 col-md-4">
-								<div class="radio">
-									<label> <input name="filtering" type="radio" value="1"
-										class="rbFilter" id="filteringOff"> <strong>Mes
-											ventes</strong>
-									</label>
-								</div>
-								<div class="divCheckMesVentes">
-									<div id="filterOnControls">
-										<div class="checkbox">
-											<label> <input type="checkbox"
-												name="mesVentesEnCours" value="mesVentesEnCours"
-												disabled="true"> mes ventes en cours
-											</label>
-										</div>
-										<div class="checkbox">
-											<label> <input type="checkbox"
-												name="ventesNonDebutees" value="ventesNonDebutees"
-												disabled="true"> ventes non débutées
-											</label>
-										</div>
-										<div class="checkbox">
-											<label> <input type="checkbox" name="ventesTerminees"
-												value="ventesTerminees" disabled="true"> ventes
-												terminées
-											</label>
-										</div>
-									</div>
-
-								</div>
-
-							</div>
-						</div>
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="colonne2">
@@ -190,7 +127,7 @@
 			</div>
 		</div>
 		<!-- jQuery pour selectionner et deselectionner radioButton -->
-		<script src="../script.js"></script>
+		<script src="script.js"></script>
 		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 		<script src="https://code.jquery.com/jquery-1.12.4.min.js"
 			integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"

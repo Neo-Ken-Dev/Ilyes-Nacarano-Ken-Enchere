@@ -37,7 +37,6 @@ public class ServletListeEnchereConnecte extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		
 		HttpSession session = request.getSession();	
 		Utilisateurs utilisateur = (Utilisateurs) session.getAttribute("utilisateur");
 		System.out.println("TEST UTILISATEUR 2 : " + utilisateur);
@@ -49,7 +48,6 @@ public class ServletListeEnchereConnecte extends HttpServlet {
 		//request.setAttribute("utilisateur", utilisateur);
 		//Peut être supprimé, me sert de test
 		session.setAttribute("id", id);
-
 
 		CategoriesManager categoriesManager = new CategoriesManager();
 		List<Categories> listeCategories =  categoriesManager.selectionCategories();
@@ -63,7 +61,6 @@ public class ServletListeEnchereConnecte extends HttpServlet {
 		
 		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/listeEncheresConnecte.jsp");
 		rd.forward(request, response);
-		
 	}
 
 	/**
@@ -71,9 +68,6 @@ public class ServletListeEnchereConnecte extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		
 		doGet(request, response);
-		
 	}
-
 }
