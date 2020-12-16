@@ -3,7 +3,6 @@
     
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,22 +10,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Inscription</title>
 <!-- Bootstrap-->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!--Google Font Family-->
 <link rel="preconnect" href="https://fonts.gstatic.com">
-<link
-	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
-	rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
 <!--Custom Styles CSS-->
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<div class="logo">
-			<%@ include file="logoTop.jsp"%>
-	</div>
+
+	<%@ include file="logoTop.jsp"%>
 	
 	<section id="inscription">
 
@@ -131,7 +124,7 @@
 									<input type="submit" class="btn-primary buttonInscription" value="Créer">
 								</div>
 								<div class="col-md-6 btnAnnuler">
-									<input type="reset" class="btn-primary buttonInscription" value="Annuler" onclick="location.href='index.html'">
+									<input type="reset" class="btn-primary buttonInscription" value="Annuler" onclick="location.href='${pageContext.request.contextPath}/'">
 								</div>
 							</div> 
 

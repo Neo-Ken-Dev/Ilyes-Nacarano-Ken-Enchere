@@ -11,10 +11,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Modifier compte</title>
 <!-- Bootstrap-->
-<link rel="stylesheet"
-	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
-	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
-	crossorigin="anonymous">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <!--Google Font Family-->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
@@ -24,21 +21,13 @@
 <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+
+  <%@ include file="logoTop.jsp"%>
   <section id="ajout-produit">
-	<nav class="navbar navbar-default">
-		<div class="container-fluid">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">ENI-Encheres</a>
-			</div>
-			
-			<div>
-			  <h1>Nouvelle vente</h1>
-			</div>			
-		</div>
-	</nav>
-	
 	<!-- debut partie produit -->
-	
+	<div>
+	  <h1>Nouvelle vente</h1>
+	</div>	
 	<div class="">
 	  <div class="">
 		<div class="col-lg-5">
@@ -79,7 +68,7 @@
             
             <div class="col-lg-12">
               <label for="price">Mise à prix : </label>
-              <input id="price" type="number" name="price" class="form-control" min="1" step="10" value="140">
+              <input id="price" type="number" name="price" class="form-control" min="" step="10" value="140">
             </div>
             
             <div class="col-lg-12">

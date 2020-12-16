@@ -43,7 +43,7 @@
 						réinitialisé !!! Merci de consulter votre boîte mail</div>
 				</c:if>
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">ENI-Encheres</a>
+					<a class="navbar-brand" href="${pageContext.request.contextPath}/">ENI-Encheres</a>
 				</div>
 				<div>
 					<ul class="nav navbar-nav navbar-right">
