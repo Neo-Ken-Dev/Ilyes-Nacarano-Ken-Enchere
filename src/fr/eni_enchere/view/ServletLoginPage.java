@@ -48,7 +48,8 @@ public class ServletLoginPage extends HttpServlet {
 				Utilisateurs utilisateur = utilisateurManager.verifierUtilisateur(cookieUtilisateurPseudo.getValue(), cookieUtilisateurMotDePasse.getValue());
 
 				HttpSession session = request.getSession();
-				session.setMaxInactiveInterval(200000);
+				session.setMaxInactiveInterval(200000*30);
+
 				session.setAttribute("utilisateur", utilisateur);
 				
 				

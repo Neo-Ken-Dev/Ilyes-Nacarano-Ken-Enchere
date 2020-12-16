@@ -1,6 +1,7 @@
 package fr.eni_enchere.view;
 
 import java.io.IOException;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -54,7 +55,7 @@ public class ServletFormulaireInscription extends HttpServlet {
 		
 		//verifier le telephone
 		if (!formValidation.verificationPhone(request)) {
-			String messageErreur = "* Vous avez du faire une erreur dans votre numéro de téléphone.";
+			String messageErreur = "* Vous avez du faire une erreur.";
 			request.setAttribute("messageErreurPhone", messageErreur);
 			isFormValid= false;
 		}
@@ -83,17 +84,17 @@ public class ServletFormulaireInscription extends HttpServlet {
 
 		//condition pour vérifier les autres champs vide
 		if (pseudoUser.trim().length()<=1 | pseudoUser.startsWith(" ")) {
-			String messageErreur = "* Votre pseudo est incorrecte ou contient un espace vide au début";
+			String messageErreur = "* Votre pseudo est incorrecte";
 			request.setAttribute("messageErreurPseudo", messageErreur);
 			isFormValid= false;		
 		}
 		if (prenomUser.trim().length()<=1 | prenomUser.startsWith(" ")) {
-			String messageErreur = "* Votre prénom est incorrecte ou contient un espace vide au début";
+			String messageErreur = "* Votre prénom est incorrecte";
 			request.setAttribute("messageErreurPrenom", messageErreur);
 			isFormValid= false;	
 		}
 		if (nomUser.trim().length()<=1 | nomUser.startsWith(" ")) {
-			String messageErreur = "* Votre nom est incorrecte ou contient un espace vide au début";
+			String messageErreur = "* Votre nom est incorrecte";
 			request.setAttribute("messageErreurNom", messageErreur);
 			isFormValid= false;	
 		}
@@ -121,9 +122,13 @@ public class ServletFormulaireInscription extends HttpServlet {
 			
 			System.out.println("je crée cet utilisateur dans ma servletFormulaireInscription : " + utilisateur);
 			//request.setAttribute("utilisateur", utilisateur);
-			
+			response.sendRedirect(request.getContextPath()+ "/user/accueil");			
+		}else {
+			//renvoyer la réponse sur la page de formulaire
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/formulaireInscription.jsp");
+			rd.forward(request, response);					
 		}
-		
+
 		//renvoyer la réponse sur la page de formulaire
 		//RequestDispatcher rd = request.getRequestDispatcher("/user/accueil");
 		//rd.forward(request, response);		

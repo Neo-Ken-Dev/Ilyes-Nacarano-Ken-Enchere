@@ -13,10 +13,10 @@
 	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
 	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
 	crossorigin="anonymous">
-<!--Google Font Family-->
+<!-- CDN Google font "Chilanka" -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
-	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+	href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
 	rel="stylesheet">
 <!--Pour icone-->
 <link rel="stylesheet"
@@ -28,6 +28,7 @@
 <!--Jquery-->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
+	
 </head>
 <body>
 	<section id="enchereConnecte">

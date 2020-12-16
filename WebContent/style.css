@@ -10,10 +10,14 @@ button * {
 	font-weight: bold;
 	box-shadow: 5px 10px;
 }
-/*** Fin du style GLOBAL ***/
+
+.logo_top {
+	color: #777;
+}
+/** Fin du style GLOBAL ***/
 
 /*** Début page d'ACCUEIL ***/
-#page_accueil .partie_recherche {
+/*#page_accueil .partie_recherche {
 	padding: 0px 4%;
 }
 
@@ -72,6 +76,183 @@ button * {
 #page_accueil .encheres {
 	border: 1px solid;
 	padding: 15px;
+}*/
+
+/* NavBar*/
+#accueilOffline .divNavbar {
+	float: right;
+}
+
+#accueilOffline .divNavbar {
+	float: right;
+}
+
+/* Toutes les divs sauf le titre*/
+#accueilOffline .divPrincipaleAvecFiltre {
+	margin-top: 30px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+/* Colonne 1 ---> Section de recherche et filtre*/
+#accueilOffline .colonne1 {
+	flex-grow: 2;
+	width: 200px;
+	padding-right: 0;
+	margin-left: 200px;
+}
+
+#accueilOffline .titrePage {
+	margin-top: 50px;
+	text-align: center;
+	font-size: 25px;
+}
+
+#accueilOffline .searchPlaceHolder {
+	width: 100%;
+}
+
+#accueilOffline .categorieContainer {
+	display: flex;
+}
+
+#accueilOffline .titreCategorie {
+	margin-top: 10px;
+	margin-left: 120px;
+}
+
+#accueilOffline .btn .caret {
+	margin-left: 100px;
+}
+
+#accueilOffline .divPrincipaleAvecFiltre h4 {
+	margin-left: 100px;
+	margin-bottom: 20px;
+}
+
+#accueilOffline .divCheckboxAchat {
+	margin-left: 20px;
+}
+
+#accueilOffline .divCheckMesVentes {
+	margin-left: 20px;
+}
+
+#accueilOffline .divRadioEtCheckbox {
+	margin-top: 10px;
+	display: flex;
+	justify-content: space-between;
+}
+
+#accueilOffline .divDropDown {
+	margin-left: 30px;
+}
+
+/*Colonne 2 ----> Bouton rechercher*/
+#accueilOffline .colonne2 {
+	padding-left: 0;
+	flex-grow: 1;
+	width: 400px;
+}
+
+#accueilOffline .btnRechercher {
+	width: 250px;
+	height: 100px;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3)
+}
+
+/*Le cadre exterieur: loupe et input search*/
+#accueilOffline .input-group {
+	margin-left: 100px;
+	margin-bottom: 20px;
+	border: solid 1px grey;
+	border-radius: 300px;
+	width: 300px;
+	height: 35px;
+	display: flex;
+	width: 400px;
+}
+
+#accueilOffline .input-group-prepend {
+	margin-left: 20px;
+}
+
+/*Cadre interieur de la loupe*/
+#accueilOffline .input-group-text {
+	background-color: transparent;
+	border-color: transparent;
+}
+
+/*Cadre de l'input search seul*/
+#accueilOffline .form-control {
+	background-color: transparent;
+	border-color: transparent;
+	-webkit-box-shadow: inset 0 0 0 rgba(255, 255, 255, 0) !important;
+	box-shadow: inset 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+#accueilOffline .fas {
+	font-size: 15px;
+	padding-left: 13px;
+	padding-top: 9px;
+	color: grey;
+}
+
+/* Vignette des produits*/
+#accueilOffline .alignerCarteProduit {
+	display: flex;
+	flex-direction: row;
+	flex-wrap:wrap;
+}
+
+#accueilOffline .card-product {
+	height: 150px;
+	background: white;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+	display:flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	width: 400px;
+	margin: 20px 0 10px 250px;
+}
+
+#accueilOffline .card-product-bis {	
+	height: 150px;	
+	width: 400px;
+}
+
+#accueilOffline .card-product img {
+  height: 100%;
+  width: 130px;
+  object-fit: cover;
+}
+
+#accueilOffline .card-product h2 {
+	font-size: 16px;
+	font-weight: bold;
+	margin: 0;
+}
+
+#accueilOffline .card-product p {
+	font-size: 12px;
+	line-height: 1.4;
+	opacity: .7;
+	margin-bottom: 0;
+	margin-top: 8px;
+}
+
+#accueilOffline .card-product .card-product-infos {
+	padding: 16px;
+}
+
+#accueilOffline .card-product h2 {
+	text-decoration-line: underline;
+}
+
+#accueilOffline .filterDiv {
+  display: none; /* caché par défaut */
 }
 /*** Fin page d'ACCUEIL ***/
 
@@ -265,7 +446,7 @@ button * {
 }
 
 #inscription label {
-	width: 150px;
+	width: 155px;
 }
 
 #inscriptionRow .passwordPart {
@@ -619,9 +800,9 @@ button * {
 
 /* "show" qui se rajoute aux elements pour afficher grace à javascript */
 .show {
-	
   display: flex !important;
 }
+
 .card-product-infos .show {
 	z-index: 10;
 }
@@ -640,4 +821,6 @@ button * {
 	margin-top: 200px;
 	
 }
+
+/*** Début page Ajouter Article ***/
 

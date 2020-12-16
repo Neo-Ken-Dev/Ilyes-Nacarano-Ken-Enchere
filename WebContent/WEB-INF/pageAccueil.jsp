@@ -1,108 +1,60 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-	
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
-<html>
+<html lang="fr">
 <head>
-<!-- meta de base pour du bootstrap -->
-<meta name="viewport" content="width=device-width, initial-scale=1"
-	charset="UTF-8">
-<!-- Lien au .css -->
-<link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap -->
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+	integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+	crossorigin="anonymous">
+<!--Google Font Family-->
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
+	rel="stylesheet">
+<!--Pour icone-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+	integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+	crossorigin="anonymous">
+<!--Custom Styles CSS-->
+<link rel="stylesheet" href="style.css">
+<!--Jquery-->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
 <!-- CDN Google font "Chilanka" -->
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link
 	href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
 	rel="stylesheet">
-<!-- CDN Bootstrap 3 -->
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <title>Accueil</title>
 </head>
 <body>
-	<section id=page_accueil> 
+	<section id=accueilOffline>
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
-			<c:if test="${!empty email2 }">
-			<div class="alert alert-success" role="alert">Mot de passe réinitialisé !!! Merci de consulter votre boîte mail </div>			
-			</c:if>
-
+				<c:if test="${!empty email2 }">
+					<div class="alert alert-success" role="alert">Mot de passe
+						réinitialisé !!! Merci de consulter votre boîte mail</div>
+				</c:if>
 				<div class="navbar-header">
-					<a class="navbar-brand" href="#">ENI-Encheres</a>
+					<a class="navbar-brand" href="${pageContext.request.contextPath}/">ENI-Encheres</a>
 				</div>
 				<div>
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="${pageContext.request.contextPath}/inscription">S'inscrire</a></li>
-						<li><a href="${pageContext.request.contextPath}/connexion">Se connecter</a></li>
+						<li><a href="${pageContext.request.contextPath}/connexion">Se
+								connecter</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav>
-		<!--debut partie enchere-->
-		<div class="container-fluid partie_recherche">
-			<div class="row">
-				<div class="">
-					<h1>Liste des enchères</h1>
-				</div>
-				<div>
-					<h2>Filtres :</h2>
-				</div>
-				<div>
-					<form>
-						<div class="col-sm-5">
-							<div>
-								<input class="barre_recherche" type="text"
-									placeholder="🔍 Le nom de l'article contient" name="search">
-							</div>
-							<div class="liste_categories">
-								<label for="categories">Catégorie :</label> <select
-									name="derouleur_categories" id="categories">
-									<option>Informatique</option>
-									<option>Ameublement</option>
-									<option>Vêtement</option>
-									<option>Sport&amp;Loisirs</option>
-								</select>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<input type="submit" value="Rechercher"
-								class="bouton_rechercher_accueil">
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- Liste enchères -->
-		<!-- Aura besoin d'une boucle pour afficher tous les résultats de la BDD -->
-		<div class="container-fluid resultats_encheres">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 enchere">
-					<div class="col-xs-4 col-sm-4">
-						<img class="img-responsive" src="exemple_image.jpg">
-					</div>
-					<div class="col-xs-8 col-sm-8">
-						<h4>PC Gamer pour travailler</h4>
-						<p>Prix: 210 point</p>
-						<p>Fin des enchère: 10/08/2020</p>
-						<p>Vendeur: jojo44</p>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 enchere">
-					<div class="col-xs-4 col-sm-4">
-						<img class="img-responsive" src="exemple_image.jpg">
-					</div>
-					<div class="col-xs-8 col-sm-8">
-						<h4>PC Gamer pour travailler</h4>
-						<p>Prix: 210 point</p>
-						<p>Fin des enchère: 10/08/2020</p>
-						<p>Vendeur: jojo44</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- *** Début code Ilyes *** -->
+
 		<div class="container-fluid">
 			<div class="titrePage">
 				<p>Liste des enchères</p>
@@ -168,6 +120,7 @@
 										</div>
 									</div>
 								</div>
+
 							</div>
 							<div class="col divMesVentes col-12 col-md-4">
 								<div class="radio">
@@ -197,7 +150,9 @@
 											</label>
 										</div>
 									</div>
+
 								</div>
+
 							</div>
 						</div>
 					</div>
@@ -219,17 +174,35 @@
 							src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg"
 							class="" />
 						<div class="">
-							<h2 class="">${articleVendu.nomArticle}</h2>
+
+							<h2 class="">
+								<a
+									href="${pageContext.request.contextPath}/encherir?idArticle=${articleVendu.noArticle}&prixVente=${articleVendu.prixVente}">${articleVendu.nomArticle}</a>
+							</h2>
 							<p class="">Prix : ${articleVendu.prixVente} points</p>
 							<p class="">Fin de l'enchère :
 								${articleVendu.dateFinEncheres}</p>
 							<p class="">Vendeur: ${utilisateur.pseudo}</p>
 						</div>
 					</div>
+
 				</c:forEach>
 			</div>
 		</div>
-		<!-- *** Fin code Ilyes *** -->
+		<!-- jQuery pour selectionner et deselectionner radioButton -->
+		<script src="../script.js"></script>
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://code.jquery.com/jquery-1.12.4.min.js"
+			integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ"
+			crossorigin="anonymous">
+    </script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+			integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+			crossorigin="anonymous">
+    </script>
+
 	</section>
 </body>
 </html>
