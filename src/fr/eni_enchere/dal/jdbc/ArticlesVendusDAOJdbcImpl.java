@@ -151,6 +151,7 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 		return ArticleVendusWithAllInfo;
 	}
 
+	//Méthode non fini
 	public List<ArticleVendus> selectByFilter() {
 		loadDatabase();
 		List<ArticleVendus> listeArticles = new ArrayList<ArticleVendus>();
@@ -198,6 +199,27 @@ public class ArticlesVendusDAOJdbcImpl implements ArticlesVendusDAO {
 		}
 		return updateDone;
 		
+	}
+
+	@Override
+	public List<ArticleVendus> selectByFilterLike() {
+		loadDatabase();
+		List<ArticleVendus> listeArticles = new ArrayList<ArticleVendus>();
+		
+		try {
+			PreparedStatement pstmt = connection.prepareStatement(SELECT_ALL);
+			ResultSet rs = pstmt.executeQuery();
+			
+			while(rs.next()) {			
+				listeArticles.add(new ArticleVendus(rs.getInt("no_article"), rs.getString("nom_article"), rs.getString("description"), rs.getDate("date_debut_encheres"), rs.getDate("date_fin_encheres"), rs.getInt("prix_initial"), rs.getInt("prix_vente"), rs.getInt("no_utilisateur"), rs.getInt("no_categorie")));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println(listeArticles);
+		return listeArticles;
+
 	}
 
 }

@@ -139,7 +139,10 @@
 									<input type="submit" class="btn-primary buttonInscription btnEnregistrer" value="Enregistrer">
 								</div>
 								<div class="col-md-6 ">
-									<input type="reset" class="btn-primary buttonInscription" value="Supprimer mon compte" onclick="location.href='index.html'">
+									<a href = "${pageContext.request.contextPath}/user/suppressionCompte">
+									<!--<input type="reset" class="btn-primary buttonInscription" value="Supprimer mon compte" onclick="confirmerSuppression()">  -->
+									 <button type="button" class="btn-primary buttonInscription" onclick=" return confirm('Êtes vous sûre de vouloir supprimer votre compte!') location.href='<%=request.getContextPath()%>/user/suppressionCompte';">Supprimer mon compte</button>									
+									</a>
 								</div>
 							</div> 
 

@@ -23,7 +23,7 @@ public class UtilisateursDAOJdbcImpl implements UtilisateursDAO {
 	private static final String CHECK_LOGIN = "SELECT * FROM UTILISATEURS WHERE (pseudo = ? AND  mot_de_passe = ?) ";
 	private static final String SELECT_BY_ID = "SELECT * FROM UTILISATEURS WHERE no_utilisateur = ?";
 	private static final String UPDATE_USER = "UPDATE UTILISATEURS SET pseudo = ?, nom = ?, prenom = ?, email = ?, telephone = ?, rue = ?, code_postal = ?, ville = ?, mot_de_passe = ?   WHERE  no_utilisateur = ?";
-	
+	private static final String DELETE_USER = "DELETE FROM UTILISATEURS WHERE no_utilisateur = ?";
 	private void loadDatabase() {		
 		try {
 			//on établie la connexion, on crée la requete.
@@ -158,6 +158,19 @@ public class UtilisateursDAOJdbcImpl implements UtilisateursDAO {
 		
 		
 		
+	}
+
+	@Override
+	public Boolean delete(Utilisateurs utilisateur) {
+		loadDatabase();
+		try {
+			PreparedStatement pstmt = connection.prepareStatement(DELETE_USER);
+			pstmt.setInt(1,	utilisateur.getNoUtilisateur());
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return true;	
 	}
 	
 

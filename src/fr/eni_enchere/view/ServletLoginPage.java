@@ -91,7 +91,7 @@ public class ServletLoginPage extends HttpServlet {
 		if (utilisateur != null) {
 			
 			HttpSession session = request.getSession();
-			session.setMaxInactiveInterval(5*60);
+			session.setMaxInactiveInterval(60*200000);
 			session.setAttribute("utilisateur", utilisateur);
 			//session.setAttribute("id", utilisateur.getNoUtilisateur());
 			System.out.println("ID de la methode DOPost ServletLogin : " + utilisateur.getNoUtilisateur());

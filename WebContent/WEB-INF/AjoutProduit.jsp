@@ -39,7 +39,7 @@
 	   <div class="row">	
 		<div class="col-lg-6">	
 		
-          <form id="ajout-produit-form" method="post" action="" role="form">
+          <form id="ajout-produit-form" method="post" action="" role="form enctype="multipart/form-data">
 
 			<div class="col-lg-12">
 			  <label for="article">Article :</label> 
@@ -63,7 +63,7 @@
             
             <div class="col-lg-12">
               <label for="file">Photo de l'article</label>
-              <input id="file" type="file" name="email" class="form-control" value="">
+              <input id="file" type="file" name="multiPartServlet" class="form-control" value="" accept="image/*" multiple >
             </div>
             
             <div class="col-lg-12">

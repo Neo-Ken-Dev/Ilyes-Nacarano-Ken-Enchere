@@ -1,5 +1,6 @@
 package fr.eni_enchere.view;
 
+import java.io.File;
 import java.io.IOException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -7,11 +8,13 @@ import java.util.Date;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.servlet.http.Part;
 
 import fr.eni_enchere.bll.ArticlesVendusManager;
 import fr.eni_enchere.bll.RetraitManager;
@@ -21,6 +24,7 @@ import fr.eni_enchere.bo.ArticleVendus;
  * Servlet implementation class ServletAjoutProduit
  */
 @WebServlet("/user/mettre_en_vente")
+@MultipartConfig( fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5 )
 public class ServletAjoutProduit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	/**
@@ -111,11 +115,45 @@ public class ServletAjoutProduit extends HttpServlet {
 		
 		request.setAttribute("articleMisEnVente", "ok");
 		request.setAttribute("nomArticle", nomArticle);
+		
+		
+		//PARTI PHOTO /////////////////////////////////////////////
+		
+	    String IMAGES_FOLDER = "/Images";
+	    String uploadPath;
+	    
+	    uploadPath = getServletContext().getRealPath( IMAGES_FOLDER );
+        File uploadDir = new File( uploadPath );
+        if ( ! uploadDir.exists() ) uploadDir.mkdir();
+        
+        for ( Part part : request.getParts() ) {
+            String fileName = getFileName( part );
+            String fullPath = uploadPath + File.separator + fileName;
+            part.write( fullPath );
+        }
+    
+		
+		
+		/////////////////////////////////////////////////////////////////
+		
+		
 		//renvoyer la réponse sur la page enchere connecte	
 		RequestDispatcher rd = request.getRequestDispatcher("/user/accueil");
 		System.out.println("renvoie vers listenechereconnecter");
 		rd.forward(request, response);	
 		
 	}
+
+		////////////////////////pour photoooooo //////////////
+	
+	 private String getFileName( Part part ) {
+	        for ( String content : part.getHeader( "content-disposition" ).split( ";" ) ) {
+	            if ( content.trim().startsWith( "filename" ) )
+	                return content.substring( content.indexOf( "=" ) + 2, content.length() - 1 );
+	        }
+	        return "Default.file";
+	    }
+	 
+	 ///////////////////////////////////////////////////////////////
 
 }

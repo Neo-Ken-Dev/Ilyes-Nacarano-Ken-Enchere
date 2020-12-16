@@ -43,6 +43,11 @@ public class ArticlesVendusManager {
 	public boolean update(ArticleVendus articleVendu) {
 		return daoArticleVendus.update(articleVendu);
 	}
+	
+	public List<ArticleVendus> selectionFiltreLike() {
+		return daoArticleVendus.selectByFilterLike();
+	}
+	
 
 
 }

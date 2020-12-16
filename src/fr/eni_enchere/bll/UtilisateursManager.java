@@ -46,6 +46,10 @@ public class UtilisateursManager {
 	
 	}
 
+	public boolean deleteUtilisateur(Utilisateurs utilisateur) {
+		return daoUtilisateur.delete(utilisateur);	
+	}
+
 	
 	
 }

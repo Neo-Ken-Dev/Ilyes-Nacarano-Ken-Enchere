@@ -18,4 +18,6 @@ public interface ArticlesVendusDAO {
 	
 	public boolean update(ArticleVendus article);
 
+	public List<ArticleVendus> selectByFilterLike();
+
 }
