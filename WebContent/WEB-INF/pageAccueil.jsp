@@ -54,72 +54,6 @@
 				</div>
 			</div>
 		</nav>
-
-		<!--debut partie enchere-->
-		<div class="container-fluid partie_recherche">
-			<div class="row">
-				<div class="">
-					<h1>Liste des enchères</h1>
-				</div>
-				<div>
-					<h2>Filtres :</h2>
-				</div>
-				<div>
-					<form>
-						<div class="col-sm-5">
-							<div>
-								<input class="barre_recherche" type="text"
-									placeholder="🔍 Le nom de l'article contient" name="search">
-							</div>
-							<div class="liste_categories">
-								<label for="categories">Catégorie :</label> 
-								<select
-									name="derouleur_categories" id="categories">
-									<option>Informatique</option>
-									<option>Ameublement</option>
-									<option>Vêtement</option>
-									<option>Sport&amp;Loisirs</option>
-								</select>
-							</div>
-						</div>
-						<div class="col-sm-6">
-							<input type="submit" value="Rechercher"
-								class="bouton_rechercher_accueil">
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-		<!-- Liste enchères -->
-		<!-- Aura besoin d'une boucle pour afficher tous les résultats de la BDD -->
-		<div class="container-fluid resultats_encheres">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 enchere">
-					<div class="col-xs-4 col-sm-4">
-						<img class="img-responsive" src="exemple_image.jpg">
-					</div>
-					<div class="col-xs-8 col-sm-8">
-						<h4>PC Gamer pour travailler</h4>
-						<p>Prix: 210 point</p>
-						<p>Fin des enchère: 10/08/2020</p>
-						<p>Vendeur: jojo44</p>
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 enchere">
-					<div class="col-xs-4 col-sm-4">
-						<img class="img-responsive" src="exemple_image.jpg">
-					</div>
-					<div class="col-xs-8 col-sm-8">
-						<h4>PC Gamer pour travailler</h4>
-						<p>Prix: 210 point</p>
-						<p>Fin des enchère: 10/08/2020</p>
-						<p>Vendeur: jojo44</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- *** Début code Ilyes *** -->
-
 		<div class="container-fluid">
 			<div class="titrePage">
 				<p>Liste des enchères</p>
@@ -157,6 +91,7 @@
 								</ul>
 							</div>
 						</div>
+						
 					</div>
 					<div class="col-12 col-md-4">
 						<div class="colonne2">
@@ -176,7 +111,6 @@
 							src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg"
 							class="" />
 						<div class="">
-
 							<h2 class="">
 								<a
 									href="${pageContext.request.contextPath}/encherir?idArticle=${articleVendu.noArticle}&prixVente=${articleVendu.prixVente}">${articleVendu.nomArticle}</a>
@@ -187,7 +121,6 @@
 							<p class="">Vendeur: ${utilisateur.pseudo}</p>
 						</div>
 					</div>
-
 				</c:forEach>
 			</div>
 		</div>
@@ -204,7 +137,6 @@
 			integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
 			crossorigin="anonymous">
     </script>
-
 	</section>
 </body>
 </html>
