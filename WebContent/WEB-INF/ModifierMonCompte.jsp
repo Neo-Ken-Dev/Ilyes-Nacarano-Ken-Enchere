@@ -129,7 +129,7 @@
                             
                             <c:if test="${!empty infoUpdate }">
              
-                					<a href="http://localhost:8080/lesObjectsSontNosAmis/user/accueil" class="col-md-12 btn-labeled btn-success"><i class="glyphicon glyphicon-ok"></i>Votre compte a été créé modifier succès - cliquez ici pour retourner sur la page d'accueil</a>
+                					<a href="${pageContext.request.contextPath}/user/accueil" class="col-md-12 btn-labeled btn-success"><i class="glyphicon glyphicon-ok"></i>Votre compte a été créé modifier succès - cliquez ici pour retourner sur la page d'accueil</a>
                                                         
                             </c:if>
                             
