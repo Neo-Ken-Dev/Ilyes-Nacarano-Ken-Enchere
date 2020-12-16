@@ -10,7 +10,12 @@ button * {
 	font-weight: bold;
 	box-shadow: 5px 10px;
 }
-/*** Fin du style GLOBAL ***/
+
+.logo_top {
+	color: #777;
+}
+
+/** Fin du style GLOBAL ***/
 
 /*** Début page d'ACCUEIL ***/
 #page_accueil .partie_recherche {
@@ -265,7 +270,7 @@ button * {
 }
 
 #inscription label {
-	width: 150px;
+	width: 155px;
 }
 
 #inscriptionRow .passwordPart {
@@ -640,4 +645,6 @@ button * {
 	margin-top: 200px;
 	
 }
+
+/*** Début page Ajouter Article ***/
 
