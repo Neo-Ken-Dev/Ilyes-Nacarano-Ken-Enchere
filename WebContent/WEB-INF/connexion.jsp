@@ -65,45 +65,6 @@
 	
 	 </div>
 	<!--  -->
-	<div class="connexionDiv ">
-		<button class="btn btn-primary btnConnexion" type="submit">Connexion</button>
-			<form method="post"
-				action="${pageContext.request.contextPath}/connexion"
-				class="formLogin ">
-
-				<c:if test="${!empty messageErreur }">
-					<div class="alert alert-danger" role="alert">
-						<p>${messageErreur}</p>
-					</div>
-				</c:if>
-
-				<c:choose>
-					<c:when test="${!empty messageErreur }">
-						<div class="form-group col form-inline has-error">
-					</c:when>
-					<c:otherwise>
-						<div class="form-group col form-inline">
-					</c:otherwise>
-				</c:choose>
-				<label for="identifiant"> Identifiant : </label> <input type="text"
-					name="identifiant" id="identifiant" placeholder="identifiant..."
-					class="form-control" required autofocus>
-		</div>
-
-		<c:choose>
-			<c:when test="${!empty messageErreur }">
-				<div class="form-group col form-inline has-error">
-			</c:when>
-			<c:otherwise>
-				<div class="form-group col form-inline">
-			</c:otherwise>
-		</c:choose>
-		<label for="motDePasse">Mot de passe : </label> <input type="password"
-			name="motDePasse" id="motDePasse" placeholder="mot de passe..."
-			class="form-control" required>
-		</div>
-		
-		
 		<div class="connexionDiv ">
 			<button class="btn btn-primary btnConnexion" type="submit">Connexion</button>
 
