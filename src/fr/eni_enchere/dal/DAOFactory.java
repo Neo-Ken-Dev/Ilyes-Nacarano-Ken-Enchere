@@ -1,5 +1,6 @@
 package fr.eni_enchere.dal;
 
+
 import fr.eni_enchere.dal.jdbc.ArticlesVendusDAOJdbcImpl;
 import fr.eni_enchere.dal.jdbc.CategoriesDAOJdbcImpl;
 import fr.eni_enchere.dal.jdbc.EnchereDAOJdbcImpl;
@@ -35,5 +36,7 @@ public abstract class DAOFactory {
 		return new EnchereDAOJdbcImpl();
 	}
 	
-	
+	public static ArticlesVendusDAO getArticleDAO() {
+		return new ArticlesVendusDAOJdbcImpl();
+	}
 }

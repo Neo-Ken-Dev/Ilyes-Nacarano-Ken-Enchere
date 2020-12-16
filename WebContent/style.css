@@ -712,7 +712,7 @@ button * {
 }
 #enchereConnecte .card-product img {
   height: 100%;
-  width: 130px;
+  width: 100px;
   object-fit: cover;
 }
 

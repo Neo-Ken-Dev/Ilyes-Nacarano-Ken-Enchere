@@ -29,27 +29,45 @@ public class ServletListeEnchereConnecte extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
 		HttpSession session = request.getSession();	
 		Utilisateurs utilisateur = (Utilisateurs) session.getAttribute("utilisateur");
-		
 		int id = utilisateur.getNoUtilisateur();
 		
 		//Peut être supprimé, me sert de test
 		session.setAttribute("id", id);
-
+		
 		CategoriesManager categoriesManager = new CategoriesManager();
 		List<Categories> listeCategories =  categoriesManager.selectionCategories();
 		request.setAttribute("listeCategories", listeCategories);
 		System.out.println("Dans la servlet liste catégorie :" + listeCategories);
 		
+		String filtering = request.getParameter("filtering");
+		String motDansRecherche = request.getParameter("keyword");
+		System.out.println("Dans le do get de Servlet connecte le motDansRecherche est : " + motDansRecherche);
+		System.out.println("Dans le do get de Servlet connecte le filtering est : " + filtering);
 		ArticlesVendusManager articlesVendusManager = new ArticlesVendusManager();
-		List<ArticleVendus> listeArticlesVendus = articlesVendusManager.selectionArticlesVendus();
-		request.setAttribute("listeArticlesVendus", listeArticlesVendus);
-		System.out.println("Dans la servlet liste articles vendus : " + listeArticlesVendus);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/listeEncheresConnecte.jsp");
-		rd.forward(request, response);		
+		if( motDansRecherche != null) {
+	
+			List<ArticleVendus> listeArticlesVendus = articlesVendusManager.selectionArticlesFiltreAchats(motDansRecherche);
+			request.setAttribute("listeArticlesVendus", listeArticlesVendus);
+			System.out.println("Dans la servlet listeEnchereConnecte les  articles vendus : " + listeArticlesVendus);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/listeEncheresConnecte.jsp");
+			rd.forward(request, response);	
+			
+			
+		}
+		
+		else {
+			List<ArticleVendus> listeArticlesVendus = articlesVendusManager.selectionArticlesVendus();
+			request.setAttribute("listeArticlesVendus", listeArticlesVendus);
+			System.out.println("Dans la servlet liste articles vendus : " + listeArticlesVendus);
+			
+			RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/listeEncheresConnecte.jsp");
+			rd.forward(request, response);		
+		}
 	}
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

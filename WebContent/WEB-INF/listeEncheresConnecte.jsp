@@ -77,7 +77,7 @@
 			<div class="titrePage">
 				<p>Liste des enchères</p>
 			</div>
-			<form action="${pageContext.request.contextPath}/ServletFiltre">
+			<form action="${pageContext.request.contextPath}/user/ServletFiltre">
 				<div class="row divPrincipaleAvecFiltre">
 					<div class=" col12 col-md-8  colonne1">
 						<div class="row ">
@@ -90,17 +90,18 @@
 								<span class="input-group-text" id="basic-text1"><i
 									class="fas fa-search text-black" aria-hidden="true"></i></span>
 							</div>
-							<input class="form-control my-0 py-1" type="text" placeholder="Le nom de l'article contient" aria-label="Search" value="keyword">
+							<input class="form-control my-0 py-1" type="text" placeholder="Le nom de l'article contient" aria-label="Search" name="keyword">
 						</div>
 						<div class="row categorieContainer">
 							<div class="titreCategorie">
 								<label for="categories">Catégorie :</label>
 							</div>
+							
 							<div class="btn-group divDropDown">
 								<button type="button" class="btn btn-default dropdown-toggle"
 									data-toggle="dropdown" aria-haspopup="true"
 									aria-expanded="false">
-									Choisissez votre catégorie... <span class="caret littleScare"></span>
+									Choisissez la catégorie <span class="caret littleScare"></span>
 								</button>
 								<ul class="dropdown-menu divDropDown">
 									<c:forEach items="${listeCategories}" var="categorie">
@@ -108,6 +109,8 @@
 									</c:forEach>
 								</ul>
 							</div>
+							
+							
 						</div>
 						<div class="row divRadioEtCheckbox">
 							<div class="col divAchats col-12 col-md-4">
@@ -186,20 +189,22 @@
 			</form>
 			<div class="alignerCarteProduit ">
 				<c:forEach items="${listeArticlesVendus}" var="articleVendu">
-					<div class="card-product filterDiv ${articleVendu.noCategorie}">
+					<div class="card-product filterDiv ${articleVendu.noCategorie} show">
 						<img
-							src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg"
+							src="${pageContext.servletContext.contextPath}/demoUpload/${articleVendu.image}"
 							class="" />
 						<div class="">
-
 							<h2 class="">
 								<a
 									href="${pageContext.request.contextPath}/encherir?idArticle=${articleVendu.noArticle}&prixVente=${articleVendu.prixVente}">${articleVendu.nomArticle}</a>
 							</h2>
 							<p class="">Prix : ${articleVendu.prixVente} points</p>
-							<p class="">Fin de l'enchère :
-								${articleVendu.dateFinEncheres}</p>
-							<p class="">Vendeur: ${utilisateur.pseudo}</p>
+							<p class="">Fin de l'enchère :	${articleVendu.dateFinEncheres}</p>
+							<p class="">
+							Vendeur: 
+							
+					<a	href="${pageContext.request.contextPath}/user/monprofil1?id=${id}">${utilisateur.pseudo}</a>
+							</p>
 						</div>
 					</div>
 

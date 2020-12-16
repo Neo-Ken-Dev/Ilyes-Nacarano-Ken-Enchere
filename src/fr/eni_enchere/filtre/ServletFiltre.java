@@ -3,6 +3,7 @@ package fr.eni_enchere.filtre;
 import java.io.IOException;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,7 @@ import fr.eni_enchere.bo.Utilisateurs;
 /**
  * Servlet implementation class ServletFiltre
  */
-@WebServlet("/ServletFiltre")
+@WebServlet("/user/ServletFiltre")
 public class ServletFiltre extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -48,7 +49,9 @@ public class ServletFiltre extends HttpServlet {
 		
 		
 		motDansRecherche = request.getParameter("keyword");
+		request.setAttribute("motDansRecherche", motDansRecherche);
 		
+		System.out.println("le mot dans la barre de recherche est : " + motDansRecherche);
 		
 		if(btnRadioChoisi.equalsIgnoreCase("0")) {
 			checkEncheresOuvertes = request.getParameter("encheresOuvertes");
@@ -67,8 +70,6 @@ public class ServletFiltre extends HttpServlet {
 		HttpSession session = request.getSession();	
 		Utilisateurs utilisateur = (Utilisateurs) session.getAttribute("utilisateur");
 		
-		session.setAttribute("keyword", motDansRecherche);
-		System.out.println("le mot dans la barre de recherche est : " + motDansRecherche);
 		
 		//int id = (int) session.getAttribute("id");	
 		
@@ -81,7 +82,7 @@ public class ServletFiltre extends HttpServlet {
 
 		System.out.println(id);
 		
-
+		
 
 		CategoriesManager categoriesManager = new CategoriesManager();
 		List<Categories> listeCategories =  categoriesManager.selectionCategories();
@@ -89,11 +90,17 @@ public class ServletFiltre extends HttpServlet {
 		System.out.println("Dans la servlet liste catégorie :" + listeCategories);
 		
 		ArticlesVendusManager articlesVendusManager = new ArticlesVendusManager();
-		List<ArticleVendus> listeArticlesVendus = articlesVendusManager.selectionArticlesVendus();
+		List<ArticleVendus> listeArticlesVendus = articlesVendusManager.selectionArticlesFiltreAchats(motDansRecherche);
 		request.setAttribute("listeArticlesVendus", listeArticlesVendus);
 		System.out.println("Dans la servlet liste articles vendus : " + listeArticlesVendus);
 		
-		response.sendRedirect(request.getContextPath()+"/user/accueil");
+		String filtering = request.getParameter("filtering");
+		request.setAttribute("filtering", "filtering");
+		
+		RequestDispatcher rd = request.getRequestDispatcher("/user/accueil");
+		rd.forward(request, response);
+		
+		//response.sendRedirect(request.getContextPath()+"/user/accueil");
 	}
 
 	/**
@@ -101,6 +108,7 @@ public class ServletFiltre extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		doGet(request, response);
+		System.out.println("je rentre aussi dans la servlet du doPost de ServletFiltre");
 	}
 
 }

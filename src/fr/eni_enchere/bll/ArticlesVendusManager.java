@@ -4,6 +4,7 @@ package fr.eni_enchere.bll;
 import java.sql.Date;
 import java.util.List;
 
+
 import fr.eni_enchere.bo.ArticleVendus;
 import fr.eni_enchere.dal.ArticlesVendusDAO;
 import fr.eni_enchere.dal.DAOFactory;
@@ -36,8 +37,8 @@ public class ArticlesVendusManager {
 		return daoArticleVendus.selectByIdWithInfoFromOtherTable(id);
 	}
 	
-	public List<ArticleVendus> selectionArticlesFiltreAchats() {
-		return daoArticleVendus.selectByFilter();
+	public List<ArticleVendus> selectionArticlesFiltreAchats(String motDansRecherche) {
+		return daoArticleVendus.selectByFilter(motDansRecherche);
 	}
 	
 	public boolean update(ArticleVendus articleVendu) {
@@ -46,6 +47,31 @@ public class ArticlesVendusManager {
 	
 	public List<ArticleVendus> selectionFiltreLike() {
 		return daoArticleVendus.selectByFilterLike();
+	}
+	
+	
+	// Code pour photo
+	public void saveImage(ArticleVendus a, String fileName) throws Exception {
+		
+		System.out.println("L'article dans saveImage est : " + a);
+		System.out.println("Le nom du fichier de la photo est : " + fileName);
+		
+		if (fileName != null && !fileName.isEmpty()) {
+			a.setImage(fileName);
+			daoArticleVendus.updateImage(a);
+			System.out.println("L'article avec la photo : " + a);
+		} else {
+			throw new Exception("Error File");
+		}
+	}
+
+	public ArticleVendus find(int id) throws Exception {
+		if (id != 0) {
+			ArticleVendus a = daoArticleVendus.read(id);
+			return a;
+		} else {
+			throw new Exception("Error find by id = " + id);
+		}
 	}
 	
 

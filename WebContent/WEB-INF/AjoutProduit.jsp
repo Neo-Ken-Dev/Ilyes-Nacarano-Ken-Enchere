@@ -31,7 +31,7 @@
                     
                     reader.addEventListener( "load", function( event ) {
                         let span = document.createElement('span');
-                        span.innerHTML = '<img height="90" src="' + event.target.result + '" class="figure-img img-fluid rounded" alt="TestImage" /><input type="submit" value="Upload" class="btn btn-primary btn-lg btn-block" />';
+                        span.innerHTML = '<img widht="300" src="' + event.target.result + '" class="figure-img img-fluid rounded" alt="TestImage" />';
                         imageList.appendChild( span );
                         
                     });
@@ -53,7 +53,9 @@
 	<div class="">
 	  <div class="">
 		<div class="col-lg-5">
-			<img class="img-responsive" src="../exemple_image.jpg">
+			<!-- <img class="img-responsive" src="../exemple_image.jpg"> -->
+			<figure id="list" class="img-responsive">
+			</figure>
 		</div>
 	  </div>
 		
@@ -61,8 +63,8 @@
 	   <div class="row">	
 		<div class="col-lg-6">	
 		
-          <form id="ajout-produit-form" method="post" action="upload" enctype="multipart/form-data">
-
+          <form id="ajout-produit-form" method="post" action="${pageContext.servletContext.contextPath}/user/mettre_en_vente" enctype="multipart/form-data">
+	
 			<div class="col-lg-12">
 			  <label for="article">Article :</label> 
 			  <input id="article" type="text" name="article" class="form-control" placeholder="" value="">
@@ -82,11 +84,15 @@
 				  <option>Sport et Loisirs</option>
 				</select>
 			</div>
+           
+            
             
             <div class="col-lg-12">
               <label for="file">Photo de l'article</label>
-              <input id="file" type="file" name="multiPartServlet" class="form-control" value="" accept="image/*" multiple onchange="readFilesAndDisplayPreview(this.files);" >
+              <input id="file" type="file" name="multiPartServlet" class="form-control" value="file" accept="image/*" multiple onchange="readFilesAndDisplayPreview(this.files);" >
             </div>
+            
+           
             
             <div class="col-lg-12">
               <label for="price">Mise à prix : </label>
@@ -121,7 +127,7 @@
             </fieldset>
            </div>  
             
-                 
+               
             <div class="col-md-12 divBtn">
 			  <div class="col-md-5 btnCreer">
 			    <input type="submit" class="btn-primary buttonEnregistrer" value="Enregistrer">
@@ -134,15 +140,10 @@
           </form>
         </div>	
        </div>
-	  </div>  
-         
-         
-         
-         
-         
-           
-	  
+	  </div>  	  
 	</div>		
   </section>
+  
+
 </body>
 </html>

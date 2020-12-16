@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.sql.Date;
 import java.util.List;
 
+
 public class ArticleVendus {
 	
 	private int noArticle;
@@ -16,6 +17,11 @@ public class ArticleVendus {
 	private int noUtilisateur;
 	private int noCategorie;
 	private List<ArticleVendus> articles = new ArrayList<>();
+	
+	//Attribut Image
+	private int id;
+	private String name;
+	private String image;
 	
 	//ajout d'attribut pour créer un objet regroupant les table ARTICLES_VENDUS / CATEGORIES et RETRAITS => voire constructeur Constructeur table réunie
 	private String libelleCategorie;
@@ -88,6 +94,20 @@ public class ArticleVendus {
 
 	}
 	
+	public ArticleVendus(int noArticle, String nomArticle, String description, Date dateDebutEncheres,
+			Date dateFinEncheres, int prixInitial, int prixVente, int noUtilisateur, int noCategorie, String image) {
+		super();
+		this.noArticle = noArticle;
+		this.nomArticle = nomArticle;
+		this.description = description;
+		this.dateDebutEncheres = dateDebutEncheres;
+		this.dateFinEncheres = dateFinEncheres;
+		this.prixInitial = prixInitial;
+		this.prixVente = prixVente;
+		this.noUtilisateur = noUtilisateur;
+		this.noCategorie = noCategorie;
+		this.image = image;
+	}
 
 	//GETTERS ET SETTERS -----------------------------------------
 
@@ -224,19 +244,73 @@ public class ArticleVendus {
 		this.ville = ville;
 	}
 
+	
+	//Constructor pour image
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getImage() {
+		return image;
+	}
+
+	public void setImage(String image) {
+		this.image = image;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + id;
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ArticleVendus other = (ArticleVendus) obj;
+		if (id != other.id)
+			return false;
+		return true;
+	}
+
+	@Override
+	public String toString() {
+		final int maxLen = 10;
+		return "ArticleVendus [noArticle=" + noArticle + ", nomArticle=" + nomArticle + ", description=" + description
+				+ ", dateDebutEncheres=" + dateDebutEncheres + ", dateFinEncheres=" + dateFinEncheres + ", prixInitial="
+				+ prixInitial + ", prixVente=" + prixVente + ", noUtilisateur=" + noUtilisateur + ", noCategorie="
+				+ noCategorie + ", articles="
+				+ (articles != null ? articles.subList(0, Math.min(articles.size(), maxLen)) : null) + ", id=" + id
+				+ ", name=" + name + ", image=" + image + ", libelleCategorie=" + libelleCategorie + ", rue=" + rue
+				+ ", code_postal=" + code_postal + ", ville=" + ville + "]";
+	}
 
 
 	
 	//Méthode to String -----------------------------------------
 	
 
-	@Override
-	public String toString() {
-		return "ArticleVendus [noArticle=" + noArticle + ", nomArticle=" + nomArticle + ", description=" + description
-				+ ", dateDebutEncheres=" + dateDebutEncheres + ", dateFinEncheres=" + dateFinEncheres + ", prixInitial="
-				+ prixInitial + ", prixVente=" + prixVente + ", noUtilisateur=" + noUtilisateur + ", noCategorie="
-				+ noCategorie + ", articles=" + articles + "]";
-	}
+
 
 
 
