@@ -123,7 +123,7 @@
                             </div>  
                             
                             <div class="col-md-12 creditPart">
-                            	<label for="credit">Crédit: *</label>
+                            	<label for="credit">Crédit:</label>
                                 <input id="credit" type="number" name="credit" class="inscription-control" value="${utilisateur.credit}">                            
                             </div>                         
                             

@@ -2,7 +2,6 @@
 
 /*** Début du style GLOBAL ***/
 body * {
-	/*background-color: #fcfcfc;*/
 	font-family: 'Chilanka';
 }
 
@@ -15,68 +14,6 @@ button * {
 	color: #777;
 }
 /** Fin du style GLOBAL ***/
-
-/*** Début page d'ACCUEIL ***/
-/*#page_accueil .partie_recherche {
-	padding: 0px 4%;
-}
-
-#page_accueil h1 {
-	font-weight: bold;
-	text-align: center;
-	margin-left: -200px;
-	font-size: 25px;
-}
-
-#page_accueil h2 {
-	font-weight: bold;
-}
-
-#page_accueil img {
-	max-height: 131px;
-}
-
-#page_accueil .barre_recherche {
-	width: 450px;
-	height: 35px;
-	border-radius: 11px;
-}
-
-#page_accueil .liste_categories {
-	margin-top: 20px;
-}
-
-#categories {
-	margin-left: 35px;
-	height: 25px;
-	width: 350px;
-}
-
-#page_accueil .bouton_rechercher_accueil {
-	padding-top: 30px;
-	padding-bottom: 30px;
-	padding-left: 150px;
-	padding-right: 150px;
-	box-shadow: 5px 10px;
-	font-weight: bold;
-	font-size: 18px;
-}
-
-#page_accueil .resultats_encheres {
-	margin-top: 100px;
-}
-
-#page_accueil .enchere {
-	width: 500px;
-	border: 3px solid;
-	margin: 0px 4%;
-	padding: 15px;
-}
-
-#page_accueil .encheres {
-	border: 1px solid;
-	padding: 15px;
-}*/
 
 /* NavBar*/
 #accueilOffline .divNavbar {
@@ -562,7 +499,7 @@ button * {
 }
 
 #modificationProfil label {
-	width: 250px;
+	width: 240px;
 }
 
 #modificationProfil input {
