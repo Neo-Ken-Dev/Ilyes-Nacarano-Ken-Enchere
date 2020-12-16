@@ -28,7 +28,7 @@
 <!--Jquery-->
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.min.js"></script>
-	
+
 </head>
 <body>
 	<section id="enchereConnecte">
@@ -36,15 +36,18 @@
 
 		<nav class="navbar navbar-default">
 			<div class="container-fluid">
-			${compteCree }
-			 
-			<c:if test="${!empty compteCree}">
-			<div class="alert alert-success" role="alert">Compte crée avec succès !!! Merci de valider le lien ennvoyé à ${utilisateur.email } </div>			
-			</c:if>
-			
-			<c:if test="${!empty articleMisEnVente}">
-			<div class="alert alert-success" role="alert">Votre article : ${nomArticle} est valide et vient d'être mis aux enchères !!!  </div>			
-			</c:if>
+				${compteCree }
+
+				<c:if test="${!empty compteCree}">
+					<div class="alert alert-success" role="alert">Compte crée
+						avec succès !!! Merci de valider le lien ennvoyé à
+						${utilisateur.email }</div>
+				</c:if>
+
+				<c:if test="${!empty articleMisEnVente}">
+					<div class="alert alert-success" role="alert">Votre article :
+						${nomArticle} est valide et vient d'être mis aux enchères !!!</div>
+				</c:if>
 				<!-- Hamburger pour le format mobile -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed"
@@ -99,9 +102,6 @@
 							<div class="titreCategorie">
 								<label for="categories">Catégorie :</label>
 							</div>
-
-
-
 							<div class="btn-group divDropDown">
 								<button type="button" class="btn btn-default dropdown-toggle"
 									data-toggle="dropdown" aria-haspopup="true"
@@ -197,9 +197,10 @@
 							src="https://d1eh9yux7w8iql.cloudfront.net/product_images/286281_fef79c54-2ee2-4427-819c-5e1f2ed0b392.jpg"
 							class="" />
 						<div class="">
-						
+
 							<h2 class="">
-							<a href="${pageContext.request.contextPath}/encherir?idArticle=${articleVendu.noArticle}&prixVente=${articleVendu.prixVente}">${articleVendu.nomArticle}</a>
+								<a
+									href="${pageContext.request.contextPath}/encherir?idArticle=${articleVendu.noArticle}&prixVente=${articleVendu.prixVente}">${articleVendu.nomArticle}</a>
 							</h2>
 							<p class="">Prix : ${articleVendu.prixVente} points</p>
 							<p class="">Fin de l'enchère :
