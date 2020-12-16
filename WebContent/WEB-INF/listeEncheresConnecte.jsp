@@ -59,7 +59,7 @@
 						<li class="active"><a href="#">Enchères<span
 								class="sr-only">(current)</span></a></li>
 						<li><a
-							href="${pageContext.request.contextPath}/mettre_en_vente">Vendre
+							href="${pageContext.request.contextPath}/user/mettre_en_vente">Vendre
 								un article</a></li>
 						<c:if test="${!empty id }">
 

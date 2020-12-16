@@ -21,8 +21,10 @@ import fr.eni_enchere.bo.ArticleVendus;
 /**
  * Servlet implementation class ServletAjoutProduit
  */
-@WebServlet("/mettre_en_vente")
+
+@WebServlet("/user/mettre_en_vente")
 @MultipartConfig( fileSizeThreshold = 1024 * 1024, maxFileSize = 1024 * 1024 * 5, maxRequestSize = 1024 * 1024 * 5 * 5 )
+
 
 public class ServletAjoutProduit extends HttpServlet {
 	private static final long serialVersionUID = 1L;

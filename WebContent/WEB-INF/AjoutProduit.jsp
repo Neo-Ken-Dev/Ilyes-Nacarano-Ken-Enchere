@@ -18,7 +18,8 @@
 	href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap"
 	rel="stylesheet">
 <!--Custom Styles CSS-->
-<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="../style.css">
 <script>
             /* Cette fonction permet d'afficher une vignette pour chaque image sÃ©lectionnÃ©e */
             function readFilesAndDisplayPreview(files) {
@@ -39,6 +40,7 @@
                 }
             }
         </script>
+
 </head>
 <body>
 
@@ -51,7 +53,7 @@
 	<div class="">
 	  <div class="">
 		<div class="col-lg-5">
-			<img class="img-responsive" src="exemple_image.jpg">
+			<img class="img-responsive" src="../exemple_image.jpg">
 		</div>
 	  </div>
 		
