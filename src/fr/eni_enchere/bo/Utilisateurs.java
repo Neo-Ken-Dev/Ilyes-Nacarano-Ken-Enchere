@@ -23,7 +23,7 @@ public class Utilisateurs {
 	
 	//contructeur sans credit ni administrateur pour mehode modifier utilisateur
 	public Utilisateurs(int noUtilisateur, String pseudo, String nom, String prenom, String email, String telephone, String rue,
-			String code_postal, String ville, String motDePasse) {
+			String code_postal, String ville, String motDePasse, int credit) {
 		super();
 		this.noUtilisateur = noUtilisateur;
 		this.pseudo = pseudo;
@@ -35,6 +35,7 @@ public class Utilisateurs {
 		this.code_postal = code_postal;
 		this.ville = ville;
 		this.motDePasse = motDePasse;
+		this.credit = credit;
 	}
 
 	public Utilisateurs(String pseudo, String nom, String prenom, String email, String telephone, String rue,

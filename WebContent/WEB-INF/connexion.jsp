@@ -26,7 +26,6 @@
 
 <section id="connexion_et_monprofil">
 	<div class="container-fluid">
-
 		<form method="post" action="${pageContext.request.contextPath}/connexion" class="formLogin ">
 
 			<c:if test="${!empty messageErreur }">
@@ -34,18 +33,21 @@
 					<p>${messageErreur}</p>
 				</div>
 			</c:if>
-
-			<c:choose>
-				<c:when test="${!empty messageErreur }">
-					<div class="form-group col form-inline has-error">
-				</c:when>
-				<c:otherwise>
-					<div class="form-group col form-inline">
-				</c:otherwise>
-			</c:choose>
-			<label for="identifiant"> Identifiant : </label> <input type="text" name="identifiant" id="identifiant" placeholder="identifiant..." class="form-control" required autofocus>
-	</div>
-
+  <!--partie erreur de Identifiant la div ligne 48 ferme la div qui souvre en fonction de l'erreur  -->
+	<c:choose>
+	  <c:when test="${!empty messageErreur }">
+		 <div class="form-group col form-inline has-error">
+	  </c:when>
+	  <c:otherwise>
+		 <div class="form-group col form-inline">
+	  </c:otherwise>
+	</c:choose>
+			
+			<label for="identifiant"> Identifiant : </label> 
+			<input type="text" name="identifiant" id="identifiant" placeholder="identifiant..." class="form-control" required autofocus>
+	    </div>
+   <!--  -->
+   <!--partie erreur de mot de passe la div ligne 63 ferme la div qui souvre en fonction de l'erreur  -->
 	<c:choose>
 		<c:when test="${!empty messageErreur }">
 			<div class="form-group col form-inline has-error">
@@ -54,10 +56,12 @@
 			<div class="form-group col form-inline">
 		</c:otherwise>
 	</c:choose>
-	<label for="motDePasse">Mot de passe : </label>
-	<input type="password" name="motDePasse" id="motDePasse"
-		placeholder="mot de passe..." class="form-control" required>
-	</div>
+	
+	  <label for="motDePasse">Mot de passe : </label>
+	  <input type="password" name="motDePasse" id="motDePasse" placeholder="mot de passe..." class="form-control" required>
+	
+	 </div>
+	<!--  -->
 	<div class="connexionDiv ">
 		<button class="btn btn-primary btnConnexion" type="submit">Connexion</button>
 
@@ -79,7 +83,7 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous">		
 	</script>
-	 </section>
+  </section>
 </body>
 
 </html>

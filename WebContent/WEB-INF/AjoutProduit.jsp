@@ -18,7 +18,7 @@
 	href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"
 	rel="stylesheet">
 <!--Custom Styles CSS-->
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -31,7 +31,7 @@
 	<div class="">
 	  <div class="">
 		<div class="col-lg-5">
-			<img class="img-responsive" src="../exemple_image.jpg">
+			<img class="img-responsive" src="exemple_image.jpg">
 		</div>
 	  </div>
 		
@@ -98,15 +98,16 @@
 			 </div>          
             </fieldset>
            </div>  
-                          
+            
+                 
             <div class="col-md-12 divBtn">
-			  <div class="col-md-6">
+			  <div class="col-md-5 btnCreer">
 			    <input type="submit" class="btn-primary buttonEnregistrer" value="Enregistrer">
 		      </div>
-			  <div class="col-md-6 ">
-			    <input type="reset" class="btn-primary buttonAnnuler" value="Annuler" onclick="location.href='index.html'">
+			  <div class="col-md-5 ">
+			    <input type="reset" class="btn-primary buttonAnnuler" value="Annuler" onclick="location.href='${pageContext.request.contextPath}/user/accueil'">
 			  </div>
-			</div> 
+			</div>    
 			
           </form>
         </div>	

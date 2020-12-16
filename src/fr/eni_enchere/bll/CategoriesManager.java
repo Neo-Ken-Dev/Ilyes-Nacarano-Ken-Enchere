@@ -1,11 +1,9 @@
 package fr.eni_enchere.bll;
 
 import java.util.List;
-
 import fr.eni_enchere.bo.Categories;
 import fr.eni_enchere.dal.CategoriesDAO;
 import fr.eni_enchere.dal.DAOFactory;
-import fr.eni_enchere.dal.UtilisateursDAO;
 
 public class CategoriesManager {
 	

@@ -20,7 +20,7 @@ import fr.eni_enchere.bo.ArticleVendus;
 /**
  * Servlet implementation class ServletAjoutProduit
  */
-@WebServlet("/user/mettre_en_vente")
+@WebServlet("/mettre_en_vente")
 public class ServletAjoutProduit extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	/**
@@ -113,7 +113,6 @@ public class ServletAjoutProduit extends HttpServlet {
 		request.setAttribute("nomArticle", nomArticle);
 		//renvoyer la réponse sur la page enchere connecte	
 		RequestDispatcher rd = request.getRequestDispatcher("/user/accueil");
-		System.out.println("renvoie vers listenechereconnecter");
 		rd.forward(request, response);	
 		
 	}

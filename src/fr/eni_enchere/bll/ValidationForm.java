@@ -2,11 +2,8 @@ package fr.eni_enchere.bll;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
 import javax.servlet.http.HttpServletRequest;
-
 /**
- * 
  * @author ken
  * Class pour vérifier les informations données dans les formulaires.
  *
@@ -16,7 +13,6 @@ La description de l'expression régulière pour le téléphone "^(?:(?:\+|00)33|
     \s*[1-9]              # First number (from 1 to 9)
     (?:[\s.-]*\d{2}){4}   # End of the phone number
 $
-
  */
 
 public class ValidationForm {

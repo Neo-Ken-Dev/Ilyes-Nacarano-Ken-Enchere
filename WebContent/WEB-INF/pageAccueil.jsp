@@ -57,7 +57,8 @@
 									placeholder="🔍 Le nom de l'article contient" name="search">
 							</div>
 							<div class="liste_categories">
-								<label for="categories">Catégorie :</label> <select
+								<label for="categories">Catégorie :</label> 
+								<select
 									name="derouleur_categories" id="categories">
 									<option>Informatique</option>
 									<option>Ameublement</option>

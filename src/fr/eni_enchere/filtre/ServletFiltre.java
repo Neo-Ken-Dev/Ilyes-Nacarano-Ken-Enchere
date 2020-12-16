@@ -3,7 +3,6 @@ package fr.eni_enchere.filtre;
 import java.io.IOException;
 import java.util.List;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -86,18 +85,13 @@ public class ServletFiltre extends HttpServlet {
 		request.setAttribute("listeArticlesVendus", listeArticlesVendus);
 		System.out.println("Dans la servlet liste articles vendus : " + listeArticlesVendus);
 		
-response.sendRedirect(request.getContextPath()+"/user/accueil");
-		
-		
-		//RequestDispatcher rd = request.getRequestDispatcher("/user/accueil");
-		//rd.forward(request, response);
+		response.sendRedirect(request.getContextPath()+"/user/accueil");
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 
